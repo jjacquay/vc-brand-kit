@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Virtuous Cycle — Brand Kit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-dd047f7c.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-fcf47c4a.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-d9127ec5.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-de9b820f.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-ec1c1cf8.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-b2502e31.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-82f9e3da.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-dd047f7c.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-fcf47c4a.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-d9127ec5.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-de9b820f.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-ec1c1cf8.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-b2502e31.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-82f9e3da.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-dd047f7c.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-fcf47c4a.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-d9127ec5.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-de9b820f.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-ec1c1cf8.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-b2502e31.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-82f9e3da.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-dd047f7c.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-fcf47c4a.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-d9127ec5.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-de9b820f.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-ec1c1cf8.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-b2502e31.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/inter-400-82f9e3da.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Spectral';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/spectral-400-italic-618bb17e.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Spectral';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/spectral-400-italic-5ffbc8fe.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Spectral';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/spectral-400-italic-dc080200.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Spectral';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/spectral-400-italic-74903ff7.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Spectral';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/spectral-400-italic-27de5aa9.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Spectral';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/spectral-500-italic-c3505805.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Spectral';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/spectral-500-italic-f487eb41.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Spectral';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/spectral-500-italic-64353963.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Spectral';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/spectral-500-italic-9c31d66e.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Spectral';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/spectral-500-italic-39ccb970.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Spectral';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/spectral-600-italic-336c13dc.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Spectral';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/spectral-600-italic-0ed766a6.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Spectral';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/spectral-600-italic-f678e0f0.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Spectral';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/spectral-600-italic-7231e0af.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Spectral';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/spectral-600-italic-ccf37154.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/spectral-400-75008391.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/spectral-400-9dfe4f23.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/spectral-400-8a5aa562.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/spectral-400-1f7bab22.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/spectral-400-061a2163.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/spectral-500-3809043a.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/spectral-500-ad16f3d3.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/spectral-500-4c32b95e.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/spectral-500-640e68c7.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/spectral-500-a5ad9adc.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/spectral-600-512cfa13.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/spectral-600-11bb0c29.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/spectral-600-09b7b551.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/spectral-600-9f444b88.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/spectral-600-7afc6439.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/spectral-700-0d81c9eb.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/spectral-700-8e8e68dd.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/spectral-700-7032f391.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/spectral-700-612a7207.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/spectral-700-c3d5201d.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>/* ============================================================
+   VIRTUOUS CYCLE — BRAND DESIGN SYSTEM
+   vc-brand.css · v2 (2026) · Verdant
+   Canonical stylesheet. Tokens first, then components.
+   Type:  Spectral (serif, speaks + reflects) · Inter (sans, explains)
+   Color: Verdant green family + warm neutrals. No off-family color.
+   ============================================================ */
+
+:root{
+  /* —— Green family (one hue, light → deep) —— */
+  --vc-mist:   #EEF3E0;   /* tints, table fills, quiet panels */
+  --vc-sage:   #CFE0A8;   /* rules, soft dividers, ribbon mids */
+  --vc-leaf:   #9DC65A;   /* diagram fills, secondary bars, charts */
+  --vc-green:  #6E9E10;   /* ANCHOR — VC Verdant. identity & accent */
+  --vc-moss:   #4F7510;   /* deeper accent, hovers, green TEXT on white */
+  --vc-pine:   #2F4A0C;   /* panels, dividers, depth */
+  --vc-field:  #16230A;   /* covers, dark grounds, reversed type */
+
+  /* —— Neutrals (warm, green-cast) —— */
+  --ink:       #1A2230;   /* display & body text */
+  --grey:      #555555;   /* captions, sources, metadata */
+  --grey-l:    #8A9384;   /* faint labels, folios */
+  --fill:      #F4F6F1;   /* warm house off-white */
+  --hair:      #E3E7DE;   /* hairline borders */
+  --paper:     #FFFFFF;
+
+  /* —— Semantic —— */
+  --accent:        var(--vc-green);   /* big accents, fills, bars */
+  --accent-text:   var(--vc-moss);    /* small green text (legible on white) */
+  --rule:          var(--vc-sage);
+  --ground-dark:   var(--vc-field);
+  --on-dark:       #FFFFFF;
+  --on-dark-soft:  #CFE0A8;
+
+  /* —— Type families —— */
+  --serif: 'Spectral', Georgia, 'Times New Roman', serif;
+  --sans:  'Inter', system-ui, Arial, sans-serif;
+  /* Office fallbacks: serif → Georgia · sans → Arial */
+
+  /* —— Spacing scale (px) —— */
+  --s1:6px; --s2:10px; --s3:16px; --s4:24px; --s5:36px; --s6:56px; --s7:72px;
+
+  --radius: 5px;
+}
+
+*{ box-sizing:border-box; }
+
+html,body{
+  margin:0; padding:0;
+  background:#DBDED3;
+  font-family:var(--sans);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+/* ============================================================
+   STAGE / PAGE (US Letter portrait, screen-scaled)
+   ============================================================ */
+.stage{
+  display:flex; flex-direction:column; align-items:center;
+  gap:28px; padding:48px 24px 96px;
+}
+.page{
+  width:816px; height:1056px;
+  background:var(--paper);
+  position:relative; overflow:hidden;
+  box-shadow:0 1px 0 rgba(0,0,0,.04), 0 24px 50px -22px rgba(22,35,10,.30);
+  color:var(--ink);
+}
+.page-inner{
+  position:absolute; inset:0;
+  padding:64px 64px 52px;
+  display:flex; flex-direction:column;
+}
+
+/* —— Green header band (the chosen header style) —— */
+.band{
+  position:absolute; top:0; left:0; right:0; height:56px;
+  background:var(--vc-green);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 28px; z-index:3;
+}
+.band .mk{ display:flex; align-items:center; gap:11px; }
+.band .mk img{ width:26px; height:26px; display:block; }
+.band .mk .wm{
+  font-family:var(--sans); font-weight:700; font-size:11px;
+  letter-spacing:.26em; text-transform:uppercase; color:#fff;
+}
+.band .sct{
+  font-family:var(--sans); font-weight:500; font-size:9px;
+  letter-spacing:.22em; text-transform:uppercase; color:var(--vc-mist);
+}
+.page.has-band .page-inner{ padding-top:96px; }
+
+/* ============================================================
+   TYPE — shared
+   ============================================================ */
+.kicker{
+  font-family:var(--sans); font-weight:600; font-size:10px;
+  letter-spacing:.30em; text-transform:uppercase; color:var(--accent-text);
+}
+.ptitle{
+  font-family:var(--serif); font-weight:600; font-size:40px;
+  line-height:1.06; letter-spacing:-.015em; color:var(--ink);
+  margin:14px 0 0; text-wrap:balance;
+}
+.ptitle .ac{ color:var(--accent); }
+.ptitle.smaller{ font-size:33px; }
+.lede{
+  font-family:var(--serif); font-weight:500; font-size:16px;
+  line-height:1.5; color:var(--vc-pine); margin:16px 0 0;
+  max-width:62ch; text-wrap:pretty;
+}
+.body{
+  font-family:var(--sans); font-weight:400; font-size:12.5px;
+  line-height:1.62; color:var(--ink); text-wrap:pretty;
+}
+.body strong{ font-weight:600; }
+.body + .body{ margin-top:12px; }
+.label{
+  font-family:var(--sans); font-weight:600; font-size:9px;
+  letter-spacing:.20em; text-transform:uppercase; color:var(--accent-text);
+}
+.takeaway{
+  font-family:var(--serif); font-style:italic; font-weight:500;
+  font-size:15px; line-height:1.5; color:var(--vc-pine);
+  border-left:2.5px solid var(--vc-green); padding-left:16px; text-wrap:pretty;
+}
+
+/* footer / folio */
+.foot{
+  margin-top:auto; padding-top:14px; border-top:1px solid var(--rule);
+  display:flex; justify-content:space-between; align-items:baseline;
+  font-family:var(--sans); font-weight:400; font-size:8px;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--grey-l);
+}
+.foot .folio{ font-weight:600; color:var(--grey); letter-spacing:.18em; }
+
+.rule{ height:1px; background:var(--rule); border:0; }
+.rule-strong{ height:2px; background:var(--vc-green); border:0; }
+
+/* ============================================================
+   COVER — verdant ground (not near-black)
+   ============================================================ */
+.cover{
+  background:linear-gradient(157deg,#5A8A12 0%,#3C5E0E 52%,#23380B 100%);
+  color:#fff;
+}
+/* Reserve the bottom third for the watercolor horizon; text lives in the
+   clean green field above it and is vertically centered there. */
+.cover .page-inner{ padding:58px 60px 420px; }
+.cover-water{
+  position:absolute; left:0; right:0; bottom:0; height:420px;
+  overflow:hidden; opacity:1;
+  -webkit-mask:linear-gradient(180deg,transparent 0%,#000 32%);
+  mask:linear-gradient(180deg,transparent 0%,#000 32%);
+}
+.cover-water img{ width:100%; height:100%; object-fit:cover; display:block; }
+.cover-top{ display:flex; align-items:center; gap:15px; position:relative; z-index:2; }
+.cover-top img{ width:54px; height:54px; }
+.cover-firm{
+  font-family:var(--sans); font-weight:700; font-size:13px;
+  letter-spacing:.30em; text-transform:uppercase; color:#fff;
+}
+/* auto margins top & bottom center the title block in the green field above
+   the watercolor — legible white type, no overlap with the illustration. */
+.cover-block{ margin:auto 0; position:relative; z-index:2; }
+.cover-eyebrow{
+  font-family:var(--sans); font-weight:600; font-size:11px;
+  letter-spacing:.36em; text-transform:uppercase; color:var(--vc-leaf);
+}
+.cover-title{
+  font-family:var(--serif); font-weight:600; font-size:64px;
+  line-height:1.0; letter-spacing:-.02em; margin:18px 0 0; color:#fff;
+}
+.cover-title em{ font-style:italic; font-weight:500; color:var(--vc-leaf); }
+.cover-essence{
+  font-family:var(--serif); font-style:italic; font-weight:500;
+  font-size:19px; line-height:1.45; color:#E8F0D6; margin:24px 0 0; max-width:34ch;
+}
+.cover-meta{
+  margin-top:40px; display:flex; gap:38px;
+  font-family:var(--sans); font-weight:400; font-size:9.5px;
+  letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.6);
+}
+.cover-meta .v{ display:block; color:#fff; font-weight:500; margin-top:4px; letter-spacing:.06em; }
+
+/* ============================================================
+   CONTENTS
+   ============================================================ */
+.toc-list{ margin-top:12px; display:flex; flex-direction:column; }
+.toc-row{
+  display:grid; grid-template-columns:38px 1fr auto; gap:18px;
+  align-items:baseline; padding:4.5px 0; border-bottom:1px solid var(--hair);
+}
+.toc-row .n{ font-family:var(--sans); font-weight:600; font-size:11px; color:var(--accent-text); letter-spacing:.08em; }
+.toc-row .t{ font-family:var(--serif); font-weight:600; font-size:17px; color:var(--ink); }
+.toc-row .d{ font-family:var(--sans); font-weight:400; font-size:10.5px; color:var(--grey); grid-column:2; margin-top:1px; }
+.toc-row .pg{ font-family:var(--sans); font-weight:500; font-size:11px; color:var(--grey-l); letter-spacing:.08em; }
+
+/* ============================================================
+   SECTION DIVIDER — full verdant page
+   ============================================================ */
+.divider{ background:linear-gradient(157deg,#5A8A12,#2F4A0C); color:#fff; }
+.divider .page-inner{ justify-content:center; }
+.divider .dnum{
+  font-family:var(--serif); font-weight:600; font-size:20px; color:var(--vc-leaf);
+  letter-spacing:.04em;
+}
+.divider .dttl{
+  font-family:var(--serif); font-weight:600; font-size:54px; line-height:1.04;
+  letter-spacing:-.02em; margin:10px 0 0; color:#fff; max-width:16ch;
+}
+.divider .dsub{
+  font-family:var(--serif); font-style:italic; font-size:18px; color:#E8F0D6;
+  margin:20px 0 0; max-width:40ch; line-height:1.45;
+}
+
+/* ============================================================
+   PERSONALITY traits
+   ============================================================ */
+.traits{ margin-top:22px; display:flex; flex-direction:column; }
+.trait{
+  display:grid; grid-template-columns:180px 1fr; gap:26px;
+  padding:17px 0; border-bottom:1px solid var(--hair); align-items:baseline;
+}
+.trait:first-child{ border-top:1px solid var(--hair); }
+.trait .name{ font-family:var(--serif); font-weight:600; font-size:23px; color:var(--accent); }
+.trait .desc{ font-family:var(--sans); font-weight:400; font-size:12.5px; line-height:1.55; color:var(--ink); }
+.trait .desc em{ color:var(--accent-text); font-style:italic; }
+
+/* ============================================================
+   LOGO page
+   ============================================================ */
+.logo-hero{
+  margin-top:22px; background:var(--fill); border:1px solid var(--rule);
+  display:flex; align-items:center; justify-content:center; padding:36px;
+  flex:1; min-height:0;
+}
+.logo-hero img{ max-height:340px; max-width:66%; object-fit:contain; }
+.logo-grid{ margin-top:18px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.logo-cell{ border:1px solid var(--hair); background:var(--paper); display:flex; flex-direction:column; }
+.logo-cell .frame{ flex:1; display:flex; align-items:center; justify-content:center; padding:24px; min-height:140px; }
+.logo-cell .frame.dark{ background:var(--vc-field); }
+.logo-cell .frame.tint{ background:var(--fill); }
+.logo-cell img{ max-height:88px; max-width:78%; object-fit:contain; }
+.logo-cell .cap{
+  border-top:1px solid var(--hair); padding:8px 12px;
+  font-family:var(--sans); font-weight:500; font-size:9px;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--grey);
+}
+
+/* clear space / min size */
+.spec-row{ margin-top:20px; display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.spec{ border:1px solid var(--hair); padding:20px 22px; display:flex; flex-direction:column; gap:12px; }
+.clearspace-box{
+  position:relative; background:var(--fill); border:1px dashed var(--rule);
+  height:148px; display:flex; align-items:center; justify-content:center;
+}
+.clearspace-box img{ height:92px; }
+.clearspace-box .x{ position:absolute; font-family:var(--sans); font-weight:600; font-size:11px; color:var(--accent-text); }
+
+/* misuse */
+.misuse-grid{ margin-top:18px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.misuse{ border:1px solid var(--hair); display:flex; flex-direction:column; }
+.misuse .vis{ height:124px; display:flex; align-items:center; justify-content:center; background:var(--fill); overflow:hidden; position:relative; }
+.misuse .vis img{ height:80px; }
+.misuse .cap{
+  display:flex; gap:8px; align-items:flex-start; padding:10px 12px;
+  border-top:1px solid var(--hair); font-family:var(--sans); font-weight:400;
+  font-size:10.5px; line-height:1.4; color:var(--ink);
+}
+.misuse .cap .no{
+  flex-shrink:0; width:15px; height:15px; border-radius:50%; background:var(--ink);
+  color:#fff; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:600;
+}
+
+/* ============================================================
+   COLOR page
+   ============================================================ */
+.ramp{ margin-top:18px; display:grid; grid-template-columns:repeat(7,1fr); border:1px solid var(--hair); overflow:hidden; border-radius:var(--radius); }
+.ramp .step{ display:flex; flex-direction:column; border-right:1px solid var(--hair); }
+.ramp .step:last-child{ border-right:0; }
+.ramp .step .chip{ height:92px; position:relative; }
+.ramp .step .anchor{
+  position:absolute; left:8px; bottom:8px; font-family:var(--sans); font-weight:600;
+  font-size:7px; letter-spacing:.12em; text-transform:uppercase; color:#fff;
+  background:rgba(0,0,0,.26); padding:2px 6px; border-radius:99px;
+}
+.ramp .step .info{ padding:10px 11px 13px; border-top:1px solid var(--hair); }
+.ramp .step .nm{ font-family:var(--serif); font-weight:600; font-size:12.5px; color:var(--ink); line-height:1.05; }
+.ramp .step .hex{ font-family:var(--sans); font-weight:400; font-size:9px; color:var(--grey); letter-spacing:.02em; margin-top:3px; }
+.ramp .step .use{ font-family:var(--sans); font-weight:400; font-size:8px; line-height:1.4; color:var(--grey-l); margin-top:6px; }
+.neut{ margin-top:14px; display:grid; grid-template-columns:repeat(4,1fr); gap:13px; }
+.neut .n{ display:flex; align-items:center; gap:10px; }
+.neut .n .sw{ width:32px; height:32px; border-radius:4px; border:1px solid rgba(0,0,0,.08); flex-shrink:0; }
+.neut .n .lab b{ display:block; font-family:var(--sans); font-weight:600; font-size:11px; color:var(--ink); }
+.neut .n .lab span{ font-family:var(--sans); font-weight:400; font-size:9px; color:var(--grey); }
+.color-take{ margin-top:18px; }
+
+/* ============================================================
+   TYPOGRAPHY page — two families
+   ============================================================ */
+.voice{ padding:18px 0; border-bottom:1px solid var(--hair); display:grid; grid-template-columns:150px 1fr; gap:28px; }
+.voice:first-of-type{ border-top:1px solid var(--hair); }
+.voice .who .face{ font-family:var(--serif); font-weight:600; font-size:21px; color:var(--ink); }
+.voice .who .face.sans{ font-family:var(--sans); font-weight:700; }
+.voice .who .role{ font-family:var(--sans); font-weight:600; font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent-text); margin-top:6px; }
+.voice .who .meta{ font-family:var(--sans); font-weight:400; font-size:10px; line-height:1.5; color:var(--grey); margin-top:8px; }
+.sample-display{ font-family:var(--serif); font-weight:600; font-size:31px; line-height:1.08; color:var(--ink); letter-spacing:-.01em; }
+.sample-display .ac{ color:var(--accent); }
+.sample-lede{ font-family:var(--serif); font-weight:500; font-size:15px; color:var(--vc-pine); line-height:1.45; margin-top:8px; }
+.sample-body{ font-family:var(--sans); font-weight:400; font-size:12px; line-height:1.6; color:var(--ink); margin-top:8px; }
+.sample-body b{ font-weight:600; }
+.sample-take{ font-family:var(--serif); font-style:italic; font-size:14.5px; color:var(--vc-pine); line-height:1.45; }
+.scale-strip{ display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-top:10px; }
+.scale-strip span{ font-family:var(--sans); color:var(--grey); font-size:9px; letter-spacing:.08em; text-transform:uppercase; }
+
+/* ============================================================
+   VOICE & LANGUAGE page
+   ============================================================ */
+.dodont{ margin-top:22px; display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.dd-col{ border:1px solid var(--hair); padding:18px 20px; }
+.dd-col.do{ border-top:3px solid var(--vc-green); }
+.dd-col.dont{ border-top:3px solid var(--ink); }
+.dd-col h4{ margin:0 0 12px; font-family:var(--sans); font-weight:600; font-size:10px; letter-spacing:.20em; text-transform:uppercase; }
+.dd-col.do h4{ color:var(--accent-text); }
+.dd-col.dont h4{ color:var(--ink); }
+.dd-col .ex{ padding:9px 0; border-bottom:1px dashed var(--hair); }
+.dd-col .ex:last-child{ border-bottom:0; }
+.dd-col .ex .q{ font-family:var(--serif); font-style:italic; font-size:13px; line-height:1.4; color:var(--ink); }
+.phrases{ margin-top:22px; }
+.phrase-grid{ margin-top:12px; display:grid; grid-template-columns:repeat(2,1fr); gap:8px 24px; }
+.phrase{
+  display:flex; align-items:baseline; gap:10px;
+  font-family:var(--serif); font-weight:500; font-size:14px; color:var(--ink);
+  padding:6px 0; border-bottom:1px solid var(--hair);
+}
+.phrase::before{ content:''; width:14px; height:2px; background:var(--vc-green); flex-shrink:0; transform:translateY(-4px); }
+
+/* ============================================================
+   PROCESS page (5 phase)
+   ============================================================ */
+.process{ margin-top:20px; display:flex; flex-direction:column; flex:1; }
+.phase{ display:grid; grid-template-columns:56px 150px 1fr; gap:22px; align-items:center; padding:18px 0; border-bottom:1px solid var(--hair); }
+.phase:first-child{ border-top:1px solid var(--hair); }
+.phase .ring{
+  width:46px; height:46px; border-radius:50%; border:1.5px solid var(--vc-green);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--serif); font-weight:600; font-size:17px; color:var(--accent-text);
+}
+.phase .nm{ font-family:var(--serif); font-weight:600; font-size:23px; color:var(--ink); }
+.phase .nm small{ display:block; font-family:var(--sans); font-weight:600; font-size:8.5px; letter-spacing:.20em; text-transform:uppercase; color:var(--accent-text); margin-top:4px; }
+.phase .desc{ font-family:var(--sans); font-weight:400; font-size:12px; line-height:1.55; color:var(--ink); }
+
+/* ============================================================
+   RIBBON / motif
+   ============================================================ */
+.ribbon-show{ margin-top:20px; height:188px; background:var(--vc-field); display:flex; align-items:center; overflow:hidden; }
+.ribbon-show img{ width:100%; height:124px; display:block; }
+.ribbon-show.light{ background:var(--fill); border:1px solid var(--rule); }
+
+/* ============================================================
+   ANATOMY page
+   ============================================================ */
+.callouts{ margin-top:20px; display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.callout{ padding:14px 15px; }
+.callout.find{ background:var(--vc-mist); border-left:3px solid var(--vc-green); }
+.callout.risk{ background:var(--fill); border-left:3px solid var(--ink); }
+.callout.rec { background:#E7F0D4; border-left:3px solid var(--vc-moss); }
+.callout .cl{ font-family:var(--sans); font-weight:600; font-size:8px; letter-spacing:.18em; text-transform:uppercase; margin-bottom:7px; }
+.callout.find .cl{ color:var(--accent-text); }
+.callout.risk .cl{ color:var(--ink); }
+.callout.rec  .cl{ color:var(--vc-moss); }
+.callout p{ margin:0; font-family:var(--sans); font-weight:400; font-size:10px; line-height:1.45; color:var(--ink); }
+.anat{ margin-top:20px; display:grid; grid-template-columns:270px 1fr; gap:26px; }
+.minipage{ border:1px solid var(--hair); background:#fff; aspect-ratio:8.5/11; display:flex; flex-direction:column; padding:0; overflow:hidden; }
+.minipage .mp-band{ height:16px; background:var(--vc-green); }
+.minipage .mp-body{ flex:1; padding:11px; display:flex; flex-direction:column; gap:6px; }
+.mp-line{ height:5px; background:var(--hair); border-radius:2px; }
+.mp-line.short{ width:50%; }
+.mp-line.green{ background:var(--vc-sage); }
+.mp-block{ flex:1; background:var(--fill); border:1px solid var(--hair); }
+.anat-notes .an{ padding:8px 0; border-bottom:1px solid var(--hair); }
+.anat-notes .an .t{ font-family:var(--sans); font-weight:600; font-size:10.5px; color:var(--ink); }
+.anat-notes .an .d{ font-family:var(--sans); font-weight:400; font-size:10px; line-height:1.45; color:var(--grey); margin-top:2px; }
+
+/* ============================================================
+   COLLATERAL page
+   ============================================================ */
+.collateral{ margin-top:20px; display:grid; grid-template-columns:1fr 1fr; gap:18px; flex:1; }
+.collat{ border:1px solid var(--hair); display:flex; flex-direction:column; overflow:hidden; }
+.collat .vis{ flex:1; min-height:0; background:var(--fill); display:flex; align-items:center; justify-content:center; overflow:hidden; padding:14px; }
+.collat .vis img{ max-width:100%; max-height:100%; object-fit:contain; }
+.collat .cap{ border-top:1px solid var(--hair); padding:10px 14px; }
+.collat .cap .t{ font-family:var(--sans); font-weight:600; font-size:10px; letter-spacing:.10em; text-transform:uppercase; color:var(--accent-text); }
+.collat .cap .d{ font-family:var(--sans); font-weight:400; font-size:10px; line-height:1.4; color:var(--grey); margin-top:3px; }
+
+/* ============================================================
+   BACK COVER
+   ============================================================ */
+.back{ background:linear-gradient(157deg,#3C5E0E,#16230A); color:#fff; }
+.back .page-inner{ justify-content:center; align-items:flex-start; padding:72px; }
+.back .b-icon{ width:60px; height:60px; margin-bottom:30px; }
+.back-quote{ font-family:var(--serif); font-weight:600; font-size:42px; line-height:1.1; letter-spacing:-.015em; color:#fff; max-width:16ch; }
+.back-quote em{ font-style:italic; font-weight:500; color:var(--vc-leaf); }
+.back-sub{ font-family:var(--serif); font-style:italic; font-size:17px; color:#E8F0D6; margin-top:22px; max-width:36ch; line-height:1.45; }
+.back-contact{
+  margin-top:46px; padding-top:22px; border-top:1px solid rgba(255,255,255,.2);
+  display:flex; gap:42px; font-family:var(--sans); font-weight:400; font-size:10px;
+  letter-spacing:.10em; color:rgba(255,255,255,.7);
+}
+.back-contact .v{ display:block; color:#fff; font-weight:500; margin-top:4px; letter-spacing:.04em; }
+
+/* ============================================================
+   ADVISORY REPORT / MEMO — data & exhibit components
+   Extends the system; reusable across deliverables.
+   Findings as titles · ranges, never point estimates · sources in grey.
+   ============================================================ */
+
+/* —— Cover: prepared-for + report title sizing —— */
+.cover-prepared{ margin-top:30px; display:flex; flex-direction:column; gap:6px; position:relative; z-index:2; }
+.cover-prepared .pf-k{ font-family:var(--sans); font-weight:600; font-size:9px; letter-spacing:.30em; text-transform:uppercase; color:var(--vc-leaf); }
+.cover-prepared .pf-v{ font-family:var(--serif); font-weight:500; font-size:18px; color:#fff; line-height:1.3; }
+.cover-title.report{ font-size:50px; line-height:1.04; }
+
+/* —— Memo header (letter format: To / From / Re / Date) —— */
+.memo-meta{ margin-top:18px; display:grid; grid-template-columns:1fr 1fr; gap:9px 40px; }
+.memo-meta .row{ display:grid; grid-template-columns:58px 1fr; gap:14px; align-items:baseline; padding-bottom:8px; border-bottom:1px solid var(--hair); }
+.memo-meta .k{ font-family:var(--sans); font-weight:600; font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent-text); }
+.memo-meta .v{ font-family:var(--sans); font-weight:500; font-size:12px; color:var(--ink); line-height:1.35; }
+.memo-meta .v em{ font-family:var(--serif); font-style:italic; font-weight:500; color:var(--vc-pine); }
+
+/* —— Stat row (grounded facts that open a page) —— */
+.stats{ margin-top:22px; display:grid; gap:0; border-top:2px solid var(--vc-green); border-bottom:1px solid var(--hair); }
+.stats.c3{ grid-template-columns:repeat(3,1fr); }
+.stats.c4{ grid-template-columns:repeat(4,1fr); }
+.stat{ padding:16px 22px 16px 0; border-right:1px solid var(--hair); }
+.stat:last-child{ border-right:0; }
+.stat .n{ font-family:var(--serif); font-weight:600; font-size:31px; line-height:1; color:var(--ink); letter-spacing:-.01em; font-variant-numeric:tabular-nums; }
+.stat .n .u{ font-size:15px; color:var(--accent-text); font-weight:600; margin-left:1px; }
+.stat .l{ font-family:var(--sans); font-weight:600; font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent-text); margin-top:10px; }
+.stat .s{ font-family:var(--sans); font-weight:400; font-size:10px; color:var(--grey); margin-top:4px; line-height:1.4; }
+
+/* —— Exhibit wrapper —— */
+.exhibit{ margin-top:24px; }
+.exhibit .xhead{ display:flex; align-items:baseline; justify-content:space-between; gap:18px; margin-bottom:14px; }
+.exhibit .xnum{ font-family:var(--sans); font-weight:600; font-size:9px; letter-spacing:.24em; text-transform:uppercase; color:var(--accent-text); white-space:nowrap; }
+.exhibit .xtitle{ font-family:var(--serif); font-weight:600; font-size:19px; line-height:1.2; color:var(--ink); text-wrap:balance; margin:0; }
+.exhibit .xtitle .ac{ color:var(--accent); }
+.exhibit .xsrc{ font-family:var(--sans); font-weight:400; font-size:9px; color:var(--grey); letter-spacing:.04em; margin-top:10px; }
+
+/* —— Data table —— */
+.xt{ width:100%; border-collapse:collapse; font-family:var(--sans); }
+.xt thead th{ font-weight:600; font-size:8.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-text); text-align:left; padding:0 14px 8px 0; border-bottom:2px solid var(--vc-green); vertical-align:bottom; }
+.xt thead th.num{ text-align:right; }
+.xt tbody td{ font-weight:400; font-size:11.5px; color:var(--ink); padding:9px 14px 9px 0; border-bottom:1px solid var(--hair); line-height:1.45; vertical-align:top; }
+.xt tbody td.num{ text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.xt tbody td .lead{ font-weight:600; }
+.xt tbody td .sub{ display:block; font-weight:400; font-size:10px; color:var(--grey); margin-top:2px; line-height:1.4; }
+.xt.zebra tbody tr:nth-child(even){ background:var(--vc-mist); }
+.xt tbody tr.total td{ border-top:2px solid var(--vc-green); border-bottom:0; font-weight:600; color:var(--ink); padding-top:11px; }
+.xt tbody tr.total td .lead{ color:var(--accent-text); }
+
+/* qualitative dot rating — stays in the green family */
+.dots{ display:inline-flex; gap:3px; }
+.dots i{ width:7px; height:7px; border-radius:50%; background:var(--hair); display:inline-block; }
+.dots i.on{ background:var(--vc-green); }
+
+/* —— Range bars (ranges, never point estimates) —— */
+.ranges{ margin-top:6px; display:flex; flex-direction:column; gap:15px; }
+.range{ display:grid; grid-template-columns:168px 1fr 86px; gap:18px; align-items:center; }
+.range .rl{ font-family:var(--sans); font-weight:500; font-size:11.5px; color:var(--ink); line-height:1.25; }
+.range .rl small{ display:block; font-weight:400; font-size:9px; color:var(--grey); margin-top:2px; letter-spacing:.02em; }
+.range .rtrack{ position:relative; height:14px; background:var(--vc-mist); border-radius:99px; overflow:hidden; }
+.range .rfill{ position:absolute; top:0; bottom:0; background:linear-gradient(90deg,var(--vc-leaf),var(--vc-green)); border-radius:99px; }
+.range .rv{ font-family:var(--sans); font-weight:600; font-size:11.5px; color:var(--accent-text); text-align:right; font-variant-numeric:tabular-nums; }
+.range-axis{ display:grid; grid-template-columns:168px 1fr 86px; gap:18px; margin-top:12px; }
+.range-axis .scale{ grid-column:2; position:relative; height:14px; border-top:1px solid var(--hair); }
+.range-axis .scale span{ position:absolute; top:5px; transform:translateX(-50%); font-family:var(--sans); font-weight:400; font-size:8px; color:var(--grey-l); letter-spacing:.04em; }
+.range-axis .scale span:first-child{ transform:none; }
+.range-axis .scale span:last-child{ transform:translateX(-100%); }
+
+/* —— Gated next-steps (recommendation actions) —— */
+.gates{ margin-top:18px; display:flex; flex-direction:column; }
+.gate{ display:grid; grid-template-columns:30px 1fr auto; gap:16px; padding:13px 0; border-bottom:1px solid var(--hair); align-items:baseline; }
+.gate:first-child{ border-top:1px solid var(--hair); }
+.gate .gn{ font-family:var(--serif); font-weight:600; font-size:15px; color:var(--accent-text); font-variant-numeric:tabular-nums; }
+.gate .gt{ font-family:var(--sans); font-weight:600; font-size:12.5px; color:var(--ink); }
+.gate .gt small{ display:block; font-weight:400; font-size:11px; color:var(--grey); margin-top:3px; line-height:1.5; letter-spacing:0; }
+.gate .gw{ font-family:var(--sans); font-weight:600; font-size:8.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-text); white-space:nowrap; padding-top:2px; }
+
+/* —— Sources / notes block —— */
+.sources{ margin-top:16px; padding-top:11px; border-top:1px solid var(--hair); }
+.sources .s{ font-family:var(--sans); font-weight:400; font-size:8.5px; line-height:1.55; color:var(--grey); }
+.sources .s + .s{ margin-top:3px; }
+
+/* —— Two-column body —— */
+.cols2{ margin-top:18px; display:grid; grid-template-columns:1fr 1fr; gap:34px; }
+.cols2 .label{ margin-bottom:8px; }
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+@media print{
+  @page{ size:letter portrait; margin:0; }
+  html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  html,body{ background:#fff; }
+  .stage{ padding:0; gap:0; }
+  .page{ box-shadow:none; width:8.5in; height:11in; page-break-after:always; break-after:page; }
+  .page:last-child{ page-break-after:auto; }
+}
+</style>
+<style>/* ============================================================
+   VIRTUOUS CYCLE — TEMPLATE EXTENSIONS
+   vc-templates.css · v1 (2026)
+   Extends vc-brand.css for the stationery + collateral suite:
+   letterhead, memo, business cards, envelope, compliments slip,
+   email signature, proposal, capabilities, brand-kit index.
+
+   System note — two coherent header modes:
+   · BAND       (vc-brand.css .band) — data deliverables: reports, exhibits.
+   · MASTHEAD   (.masthead, here)     — correspondence: letters, memos,
+                                        envelopes, comp slips.
+   Load AFTER vc-brand.css.
+   ============================================================ */
+
+/* ============================================================
+   STAGE HELPERS
+   ============================================================ */
+/* A neutral board for laying out small artifacts (cards, envelopes)
+   that are not full Letter pages. */
+.board{
+  display:flex; flex-direction:column; align-items:center;
+  gap:40px; padding:56px 24px 110px;
+}
+.board-row{ display:flex; flex-wrap:wrap; gap:36px; align-items:flex-start; justify-content:center; }
+.board-cap{
+  font-family:var(--sans); font-weight:600; font-size:9px; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--grey-l); text-align:center; margin-bottom:-22px;
+}
+.specimen{ display:flex; flex-direction:column; align-items:center; gap:13px; }
+.specimen .sp-label{
+  font-family:var(--sans); font-weight:600; font-size:9px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--grey); display:flex; gap:8px; align-items:baseline;
+}
+.specimen .sp-label .dim{ color:var(--grey-l); font-weight:400; letter-spacing:.06em; }
+
+/* ============================================================
+   CORRESPONDENCE MASTHEAD (letterhead / memo / comp slip)
+   mark + typeset wordmark + tagline · contact block · hairline
+   ============================================================ */
+.masthead{
+  display:grid; grid-template-columns:1fr auto; gap:24px; align-items:flex-start;
+  padding-bottom:18px; border-bottom:1px solid var(--hair);
+}
+.masthead .mh-id{ display:flex; align-items:center; gap:13px; }
+.masthead .mh-mark{ width:46px; height:46px; flex-shrink:0; object-fit:contain; display:block; }
+.masthead .mh-words{ display:flex; flex-direction:column; gap:4px; }
+.masthead .mh-wordmark{
+  font-family:var(--serif); font-weight:600; font-size:24px; line-height:1;
+  letter-spacing:.17em; text-transform:uppercase; color:var(--vc-green);
+}
+.masthead .mh-tagline{
+  font-family:var(--serif); font-style:italic; font-weight:500; font-size:13px;
+  line-height:1.3; color:var(--grey);
+}
+.masthead .mh-tagline .ac{ color:var(--accent-text); }
+.masthead .mh-contact{
+  text-align:right; font-family:var(--sans); font-weight:400; font-size:10px;
+  line-height:1.7; color:var(--grey); letter-spacing:.02em;
+}
+.masthead .mh-contact a{ color:var(--accent-text); text-decoration:none; }
+.masthead .mh-contact .strong{ color:var(--ink); font-weight:600; }
+
+/* Continuation-page mini masthead */
+.mast-mini{
+  display:flex; align-items:center; gap:9px; padding-bottom:13px;
+  border-bottom:1px solid var(--hair);
+}
+.mast-mini img{ width:22px; height:22px; }
+.mast-mini .wm{
+  font-family:var(--sans); font-weight:700; font-size:10px; letter-spacing:.24em;
+  text-transform:uppercase; color:var(--vc-green);
+}
+.mast-mini .pg{
+  margin-left:auto; font-family:var(--sans); font-weight:500; font-size:9px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--grey-l);
+}
+
+/* ============================================================
+   LETTER BODY
+   ============================================================ */
+.letter{ margin-top:40px; display:flex; flex-direction:column; flex:1; }
+.letter-date{
+  font-family:var(--sans); font-weight:400; font-size:12px; color:var(--grey);
+  letter-spacing:.02em;
+}
+.letter-to{
+  margin-top:26px; font-family:var(--sans); font-weight:400; font-size:12.5px;
+  line-height:1.65; color:var(--ink);
+}
+.letter-to .nm{ font-weight:600; }
+.letter-to .ttl{ font-style:italic; color:var(--grey); }
+.letter-re{
+  margin-top:24px; display:flex; gap:10px; align-items:baseline;
+  font-family:var(--sans); font-size:12.5px; color:var(--ink); line-height:1.5;
+}
+.letter-re .k{
+  font-weight:600; font-size:9px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--accent-text); white-space:nowrap; padding-top:1px;
+}
+.letter-re .v{ font-weight:600; }
+.letter-salute{
+  margin-top:24px; font-family:var(--sans); font-weight:400; font-size:12.5px; color:var(--ink);
+}
+.letter-body{ font-family:var(--sans); font-weight:400; font-size:12.5px; line-height:1.75; color:var(--ink); text-wrap:pretty; }
+.letter-body p{ margin:13px 0 0; }
+.letter-body p:first-child{ margin-top:14px; }
+.letter-body strong{ font-weight:600; }
+.letter-body em{ font-style:italic; }
+/* one reflective line, brand-style */
+.letter-body .reflect{
+  font-family:var(--serif); font-style:italic; font-weight:500; font-size:14px;
+  color:var(--vc-pine); line-height:1.5;
+}
+.letter-signoff{ margin-top:26px; font-family:var(--sans); font-weight:400; font-size:12.5px; color:var(--ink); }
+.letter-sig{ margin-top:8px; }
+.letter-sig .sig-name{
+  font-family:var(--serif); font-weight:600; font-size:21px; color:var(--ink);
+  line-height:1; letter-spacing:-.005em;
+}
+.letter-sig .sig-script{
+  font-family:'Spectral',serif; font-style:italic; font-weight:500; font-size:30px;
+  color:var(--vc-pine); line-height:1; padding:6px 0 9px; letter-spacing:.01em;
+}
+.letter-sig .sig-role{
+  font-family:var(--sans); font-weight:600; font-size:9px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--accent-text); margin-top:6px;
+}
+.letter-sig .sig-firm{
+  font-family:var(--sans); font-weight:400; font-size:11px; color:var(--grey); margin-top:3px;
+}
+.letter-encl{
+  margin-top:22px; padding-top:12px; border-top:1px solid var(--hair);
+  font-family:var(--sans); font-weight:400; font-size:10px; color:var(--grey); letter-spacing:.02em;
+}
+.letter-encl .k{ font-weight:600; color:var(--accent-text); letter-spacing:.12em; text-transform:uppercase; font-size:9px; }
+
+/* ============================================================
+   MEMO MASTHEAD
+   ============================================================ */
+.memo-title{
+  margin-top:30px; font-family:var(--serif); font-weight:600; font-size:34px;
+  line-height:1; letter-spacing:.02em; color:var(--ink);
+}
+.memo-title .ac{ color:var(--accent); }
+.memo-kick{
+  font-family:var(--sans); font-weight:600; font-size:10px; letter-spacing:.30em;
+  text-transform:uppercase; color:var(--accent-text);
+}
+
+/* ============================================================
+   BUSINESS CARD  (3.5 x 2 in → 336 x 192 px @96dpi)
+   ============================================================ */
+.bc{
+  width:336px; height:192px; background:var(--paper); position:relative;
+  overflow:hidden; box-shadow:0 1px 0 rgba(0,0,0,.04), 0 18px 38px -16px rgba(22,35,10,.34);
+  border-radius:7px;
+}
+.bc-front{ padding:24px 26px; display:flex; flex-direction:column; }
+.bc-front .bc-logo{ display:flex; align-items:center; gap:11px; }
+.bc-front .bc-logo img{ width:38px; height:38px; }
+.bc-front .bc-logo .wm{
+  font-family:var(--serif); font-weight:600; font-size:16px; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--vc-green); line-height:1;
+}
+.bc-front .bc-logo .wm small{
+  display:block; font-family:var(--serif); font-style:italic; font-weight:500;
+  font-size:8.5px; letter-spacing:.01em; text-transform:none; color:var(--grey); margin-top:4px;
+}
+.bc-front .bc-person{ margin-top:auto; }
+.bc-front .bc-name{ font-family:var(--serif); font-weight:600; font-size:17px; color:var(--ink); line-height:1; }
+.bc-front .bc-role{
+  font-family:var(--sans); font-weight:600; font-size:8px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--accent-text); margin-top:6px;
+}
+.bc-front .bc-contact{
+  margin-top:12px; padding-top:11px; border-top:1px solid var(--hair);
+  display:grid; grid-template-columns:1fr 1fr; gap:5px 16px;
+  font-family:var(--sans); font-weight:400; font-size:9px; color:var(--grey); letter-spacing:.02em;
+}
+.bc-front .bc-contact span{ white-space:nowrap; }
+.bc-front .bc-contact .ic{ color:var(--accent-text); }
+
+/* card back — verdant field, reversed mark */
+.bc-back{
+  background:linear-gradient(157deg,#5A8A12 0%,#3C5E0E 52%,#23380B 100%);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;
+}
+.bc-back img{ width:60px; height:60px; filter:brightness(0) invert(1); }
+.bc-back .tag{
+  font-family:var(--serif); font-style:italic; font-weight:500; font-size:12px;
+  color:#E8F0D6; letter-spacing:.01em; text-align:center; max-width:24ch; line-height:1.4;
+}
+.bc-back .wm{
+  font-family:var(--sans); font-weight:700; font-size:9px; letter-spacing:.30em;
+  text-transform:uppercase; color:#fff;
+}
+
+/* ============================================================
+   ENVELOPE  (#10 → 9.5 x 4.125 in → 912 x 396 px @96dpi)
+   ============================================================ */
+.env{
+  width:912px; height:396px; background:var(--paper); position:relative; overflow:hidden;
+  box-shadow:0 1px 0 rgba(0,0,0,.04), 0 22px 46px -18px rgba(22,35,10,.30);
+  border-radius:3px;
+}
+.env-return{ position:absolute; top:34px; left:42px; display:flex; align-items:center; gap:12px; }
+.env-return img{ width:38px; height:38px; }
+.env-return .wm{
+  font-family:var(--serif); font-weight:600; font-size:15px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--vc-green); line-height:1;
+}
+.env-return .addr{
+  font-family:var(--sans); font-weight:400; font-size:9.5px; line-height:1.55;
+  color:var(--grey); margin-top:5px; letter-spacing:.02em;
+}
+.env-stamp{
+  position:absolute; top:30px; right:42px; width:58px; height:64px;
+  border:1px dashed var(--rule); border-radius:3px; display:flex; align-items:center;
+  justify-content:center; text-align:center;
+  font-family:var(--sans); font-weight:500; font-size:7px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--grey-l); line-height:1.4;
+}
+.env-to{
+  position:absolute; left:50%; top:54%; transform:translate(-50%,-50%);
+  font-family:var(--sans); font-weight:400; font-size:13px; line-height:1.7; color:var(--ink);
+  letter-spacing:.01em; min-width:240px;
+}
+.env-to .nm{ font-weight:600; }
+.env-to .lbl{
+  display:block; font-family:var(--sans); font-weight:600; font-size:8px; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--grey-l); margin-bottom:8px;
+}
+.env-flap{
+  position:absolute; left:0; right:0; bottom:0; height:5px; background:var(--vc-green);
+}
+
+/* ============================================================
+   COMPLIMENTS SLIP  (8.5 x 3.667 in → 816 x 352 px @96dpi)
+   ============================================================ */
+.slip{
+  width:816px; height:352px; background:var(--paper); position:relative; overflow:hidden;
+  box-shadow:0 1px 0 rgba(0,0,0,.04), 0 22px 46px -18px rgba(22,35,10,.30);
+  padding:42px 52px; display:flex; flex-direction:column;
+}
+.slip .with{
+  font-family:var(--serif); font-weight:500; font-size:30px; color:var(--ink);
+  letter-spacing:-.01em; margin-top:auto;
+}
+.slip .with em{ font-style:italic; color:var(--vc-green); }
+.slip-foot{
+  margin-top:18px; padding-top:14px; border-top:1px solid var(--hair);
+  display:flex; justify-content:space-between; align-items:baseline;
+  font-family:var(--sans); font-weight:400; font-size:10px; color:var(--grey); letter-spacing:.04em;
+}
+.slip-foot a{ color:var(--accent-text); text-decoration:none; }
+
+/* ============================================================
+   EMAIL SIGNATURE  (screen tool)
+   ============================================================ */
+.sig-tool{ max-width:760px; margin:0 auto; padding:56px 28px 110px; }
+.sig-tool-head{ margin-bottom:34px; }
+.sig-tool-head .kick{
+  font-family:var(--sans); font-weight:600; font-size:10px; letter-spacing:.3em;
+  text-transform:uppercase; color:var(--accent-text);
+}
+.sig-tool-head h1{
+  font-family:var(--serif); font-weight:600; font-size:38px; color:var(--ink);
+  margin:12px 0 0; letter-spacing:-.01em;
+}
+.sig-tool-head p{
+  font-family:var(--serif); font-weight:500; font-size:15px; color:var(--vc-pine);
+  margin:12px 0 0; line-height:1.5; max-width:56ch;
+}
+.sig-card{
+  background:var(--paper); border:1px solid var(--hair); border-radius:8px;
+  margin-bottom:24px; overflow:hidden;
+  box-shadow:0 18px 38px -22px rgba(22,35,10,.22);
+}
+.sig-card-head{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:14px 20px; border-bottom:1px solid var(--hair); background:var(--fill);
+}
+.sig-card-head .t{
+  font-family:var(--sans); font-weight:600; font-size:10px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--accent-text);
+}
+.sig-card-head .t small{
+  display:block; font-weight:400; font-size:10px; letter-spacing:.02em; text-transform:none;
+  color:var(--grey); margin-top:3px;
+}
+.sig-copy{
+  font-family:var(--sans); font-weight:600; font-size:10px; letter-spacing:.12em;
+  text-transform:uppercase; color:#fff; background:var(--vc-green); border:0;
+  padding:9px 16px; border-radius:99px; cursor:pointer; transition:background .15s; white-space:nowrap;
+}
+.sig-copy:hover{ background:var(--vc-moss); }
+.sig-copy.done{ background:var(--vc-pine); }
+.sig-preview{ padding:26px 24px; background:#fff; }
+.sig-mailbg{ background:linear-gradient(180deg,#fbfcf9,#f4f6f1); }
+
+/* ============================================================
+   PROPOSAL / CAPABILITIES helpers
+   ============================================================ */
+.fee-note{
+  font-family:var(--sans); font-weight:400; font-size:10px; color:var(--grey);
+  line-height:1.55; margin-top:12px; letter-spacing:.01em;
+}
+.accept{
+  margin-top:26px; display:grid; grid-template-columns:1fr 1fr; gap:40px;
+  padding-top:22px; border-top:2px solid var(--vc-green);
+}
+.accept .sigline{ display:flex; flex-direction:column; gap:6px; }
+.accept .sigline .ln{ height:34px; border-bottom:1px solid var(--ink); }
+.accept .sigline .lbl{
+  font-family:var(--sans); font-weight:600; font-size:9px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--grey); }
+.accept .sigline .sub{ font-family:var(--sans); font-weight:400; font-size:10px; color:var(--grey-l); }
+
+/* checklist for scope/deliverables */
+.checklist{ margin-top:8px; display:flex; flex-direction:column; }
+.checklist .ck{
+  display:grid; grid-template-columns:18px 1fr; gap:12px; padding:10px 0;
+  border-bottom:1px solid var(--hair); align-items:baseline;
+}
+.checklist .ck:first-child{ border-top:1px solid var(--hair); }
+.checklist .ck .mk{ color:var(--vc-green); font-size:13px; line-height:1.4; }
+.checklist .ck .tx{ font-family:var(--sans); font-weight:400; font-size:12px; line-height:1.55; color:var(--ink); }
+.checklist .ck .tx b{ font-weight:600; }
+
+/* compact two-up summary cards */
+.facets{ margin-top:20px; display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+.facet{ border:1px solid var(--hair); padding:18px 20px; }
+.facet .h{ font-family:var(--serif); font-weight:600; font-size:17px; color:var(--ink); }
+.facet .h .ac{ color:var(--accent); }
+.facet p{ font-family:var(--sans); font-weight:400; font-size:11px; line-height:1.55; color:var(--grey); margin:8px 0 0; }
+
+/* ============================================================
+   BRAND-KIT INDEX
+   ============================================================ */
+.kit{ max-width:1080px; margin:0 auto; padding:0 28px 120px; }
+.kit-hero{
+  background:linear-gradient(157deg,#5A8A12 0%,#3C5E0E 52%,#23380B 100%); color:#fff;
+  border-radius:14px; padding:60px 56px; position:relative; overflow:hidden; margin:40px 0 44px;
+}
+.kit-hero .k-mark{ width:54px; height:54px; filter:brightness(0) invert(1); }
+.kit-hero .k-firm{
+  font-family:var(--sans); font-weight:700; font-size:12px; letter-spacing:.3em;
+  text-transform:uppercase; color:#fff; margin-top:18px;
+}
+.kit-hero h1{
+  font-family:var(--serif); font-weight:600; font-size:52px; line-height:1.04;
+  letter-spacing:-.02em; margin:14px 0 0; max-width:18ch;
+}
+.kit-hero h1 em{ font-style:italic; font-weight:500; color:var(--vc-leaf); }
+.kit-hero p{
+  font-family:var(--serif); font-style:italic; font-weight:500; font-size:17px;
+  color:#E8F0D6; margin:18px 0 0; max-width:46ch; line-height:1.45;
+}
+.kit-hero .k-meta{
+  margin-top:30px; display:flex; gap:36px; font-family:var(--sans); font-weight:400;
+  font-size:9.5px; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.6);
+}
+.kit-hero .k-meta .v{ display:block; color:#fff; font-weight:500; margin-top:5px; letter-spacing:.05em; }
+
+.kit-sec{ margin:0 0 16px; }
+.kit-sec .kt{
+  font-family:var(--sans); font-weight:600; font-size:10px; letter-spacing:.24em;
+  text-transform:uppercase; color:var(--accent-text); padding-bottom:10px;
+  border-bottom:1px solid var(--hair); margin:36px 0 22px; display:flex; gap:10px; align-items:baseline;
+}
+.kit-sec .kt .n{ color:var(--grey-l); font-weight:400; }
+.kit-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.kit-grid.two{ grid-template-columns:repeat(2,1fr); }
+.kit-card{
+  display:flex; flex-direction:column; text-decoration:none; color:inherit;
+  background:var(--paper); border:1px solid var(--hair); border-radius:10px; overflow:hidden;
+  transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+.kit-card:hover{ transform:translateY(-3px); box-shadow:0 22px 44px -24px rgba(22,35,10,.34); border-color:var(--vc-sage); }
+.kit-thumb{
+  height:158px; background:var(--fill); position:relative; overflow:hidden;
+  border-bottom:1px solid var(--hair); display:flex; align-items:center; justify-content:center;
+}
+.kit-thumb.dark{ background:linear-gradient(157deg,#5A8A12,#23380B); }
+.kit-card .kc-body{ padding:16px 18px 18px; display:flex; flex-direction:column; gap:5px; }
+.kit-card .kc-tag{
+  font-family:var(--sans); font-weight:600; font-size:8.5px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--accent-text);
+}
+.kit-card .kc-title{ font-family:var(--serif); font-weight:600; font-size:19px; color:var(--ink); line-height:1.1; }
+.kit-card .kc-desc{ font-family:var(--sans); font-weight:400; font-size:11px; line-height:1.5; color:var(--grey); margin-top:2px; }
+.kit-foot{
+  margin-top:40px; padding-top:22px; border-top:1px solid var(--hair); display:flex;
+  justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:12px;
+  font-family:var(--sans); font-weight:400; font-size:10px; color:var(--grey-l); letter-spacing:.08em;
+}
+.kit-foot .em{ color:var(--accent-text); font-weight:600; }
+
+/* ============================================================
+   PRINT — small artifacts print one-per-page, centered
+   ============================================================ */
+@media print{
+  .board{ padding:0; gap:0; display:block; }
+  .board-row{ gap:0; display:block; }
+  .board-cap, .specimen .sp-label, .sig-tool, .kit, .no-print{ display:none !important; }
+  .specimen{ gap:0; page-break-after:always; }
+}
+</style>
+<style>
+  /* ---- mini thumbnail mocks (self-contained, on-brand) ---- */
+  .m-page{ width:104px; height:135px; background:#fff; border:1px solid var(--hair);
+    box-shadow:0 8px 20px -10px rgba(22,35,10,.42); display:flex; flex-direction:column; overflow:hidden; }
+  .m-band{ height:14px; background:var(--vc-green); flex-shrink:0; }
+  .m-mast{ display:flex; align-items:center; gap:5px; padding:9px 9px 8px; border-bottom:1px solid var(--hair); }
+  .m-mast img{ width:13px; height:13px; }
+  .m-mast .w{ height:5px; width:44px; background:var(--vc-green); border-radius:2px; opacity:.85; }
+  .m-body{ padding:10px 11px; display:flex; flex-direction:column; gap:5px; flex:1; }
+  .m-ttl{ height:7px; width:62%; background:var(--vc-pine); border-radius:2px; margin-bottom:3px; }
+  .ln{ height:3.5px; background:var(--hair); border-radius:2px; }
+  .ln.g{ background:var(--vc-sage); }
+  .ln.s{ width:78%; } .ln.t{ width:52%; }
+  .m-blk{ flex:1; background:var(--fill); border:1px solid var(--hair); margin-top:3px; border-radius:2px; }
+
+  .m-cover{ width:104px; height:135px; border-radius:2px; overflow:hidden;
+    background:linear-gradient(157deg,#5A8A12,#23380B); box-shadow:0 8px 20px -10px rgba(22,35,10,.5);
+    display:flex; flex-direction:column; justify-content:flex-end; padding:13px; position:relative; }
+  .m-cover img{ width:22px; height:22px; filter:brightness(0) invert(1); position:absolute; top:13px; left:13px; }
+  .m-cover .ct{ height:7px; width:74%; background:#fff; border-radius:2px; opacity:.95; }
+  .m-cover .cs{ height:4px; width:54%; background:var(--vc-leaf); border-radius:2px; margin-top:6px; }
+
+  .m-card-wrap{ position:relative; width:150px; height:96px; }
+  .m-card{ position:absolute; width:132px; height:76px; border-radius:6px; box-shadow:0 8px 18px -8px rgba(22,35,10,.42); }
+  .m-card.back{ left:18px; top:0; background:linear-gradient(157deg,#5A8A12,#23380B);
+    display:flex; align-items:center; justify-content:center; }
+  .m-card.back img{ width:30px; height:30px; filter:brightness(0) invert(1); }
+  .m-card.front{ left:0; top:20px; background:#fff; border:1px solid var(--hair); padding:11px 13px;
+    display:flex; flex-direction:column; gap:5px; }
+  .m-card.front .row{ display:flex; align-items:center; gap:5px; }
+  .m-card.front .row img{ width:14px; height:14px; }
+  .m-card.front .row .w{ height:4px; width:42px; background:var(--vc-green); border-radius:2px; }
+  .m-card.front .nm{ height:5px; width:54%; background:var(--vc-pine); border-radius:2px; margin-top:auto; }
+  .m-card.front .ro{ height:3px; width:38%; background:var(--vc-sage); border-radius:2px; }
+
+  .m-env{ width:158px; height:92px; background:#fff; border:1px solid var(--hair); border-radius:3px;
+    box-shadow:0 8px 18px -8px rgba(22,35,10,.4); position:relative; overflow:hidden; }
+  .m-env .ret{ position:absolute; top:13px; left:14px; display:flex; align-items:center; gap:5px; }
+  .m-env .ret img{ width:14px; height:14px; }
+  .m-env .ret .w{ height:4px; width:40px; background:var(--vc-green); border-radius:2px; }
+  .m-env .to{ position:absolute; left:50%; top:54%; transform:translate(-50%,-50%); display:flex; flex-direction:column; gap:3px; }
+  .m-env .to .ln{ width:54px; }
+  .m-env .flap{ position:absolute; left:0; right:0; bottom:0; height:3px; background:var(--vc-green); }
+
+  .m-sig{ display:flex; align-items:stretch; gap:11px; padding-left:1px; }
+  .m-sig .mk{ width:38px; height:38px; padding-right:11px; border-right:2px solid var(--vc-green); display:flex; align-items:center; }
+  .m-sig .mk img{ width:34px; height:34px; }
+  .m-sig .tx{ display:flex; flex-direction:column; gap:4px; justify-content:center; }
+  .m-sig .tx .nm{ height:6px; width:64px; background:var(--vc-pine); border-radius:2px; }
+  .m-sig .tx .ro{ height:3.5px; width:46px; background:var(--vc-moss); border-radius:2px; }
+  .m-sig .tx .ct{ height:3.5px; width:78px; background:var(--vc-sage); border-radius:2px; margin-top:2px; }
+
+  .ref{ display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
+  .ref a{ font-family:var(--sans); font-weight:500; font-size:11px; color:var(--accent-text);
+    text-decoration:none; border:1px solid var(--hair); border-radius:99px; padding:7px 15px;
+    display:inline-flex; align-items:center; gap:7px; transition:border-color .15s, background .15s; }
+  .ref a:hover{ border-color:var(--vc-sage); background:var(--vc-mist); }
+  .ref a .d{ width:6px; height:6px; border-radius:50%; background:var(--vc-green); }
+
+  /* merch + events mini-thumbnails */
+  .m-stk{ width:96px; height:96px; border-radius:50%; background:linear-gradient(157deg,#5A8A12,#23380B);
+    display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 5px #fff, 0 12px 24px -12px rgba(22,35,10,.5); }
+  .m-stk img{ width:46px; height:46px; filter:brightness(0) invert(1); }
+  .m-tee{ width:120px; height:120px; border-radius:12px; background:#18280C; display:flex; align-items:center; justify-content:center; box-shadow:0 14px 26px -12px rgba(22,35,10,.55); }
+  .m-tee img{ width:54px; height:54px; filter:brightness(0) invert(1); }
+  .m-banner{ width:74px; height:152px; border-radius:5px; background:linear-gradient(157deg,#5A8A12,#23380B);
+    display:flex; flex-direction:column; align-items:center; padding:16px 0 0; gap:9px; box-shadow:0 14px 28px -12px rgba(22,35,10,.55); }
+  .m-banner img{ width:30px; height:30px; filter:brightness(0) invert(1); }
+  .m-banner .bl{ width:44px; height:3px; border-radius:2px; background:rgba(255,255,255,.55); }
+  .m-banner .bl.leaf{ background:var(--vc-leaf); width:20px; margin-bottom:3px; }
+  .m-badge{ width:142px; height:100px; background:#fff; border:1px solid var(--hair); border-radius:8px; overflow:hidden; box-shadow:0 14px 26px -12px rgba(22,35,10,.4); }
+  .m-badge .bt{ height:25px; background:linear-gradient(157deg,#5A8A12,#23380B); display:flex; align-items:center; gap:5px; padding:0 10px; }
+  .m-badge .bt img{ width:13px; height:13px; filter:brightness(0) invert(1); }
+  .m-badge .bt .w{ height:3px; width:42px; background:rgba(255,255,255,.85); border-radius:2px; }
+  .m-badge .bb{ padding:13px 12px; display:flex; flex-direction:column; gap:6px; }
+  .m-badge .bb .nm{ height:6px; width:62%; background:var(--vc-pine); border-radius:2px; }
+  .m-badge .bb .ro{ height:3.5px; width:42%; background:var(--vc-moss); border-radius:2px; }
+  .m-postcard{ width:150px; height:104px; border-radius:6px; overflow:hidden; background:linear-gradient(157deg,#5A8A12,#23380B);
+    display:flex; flex-direction:column; justify-content:space-between; padding:13px; box-shadow:0 14px 26px -12px rgba(22,35,10,.55); }
+  .m-postcard img{ width:22px; height:22px; filter:brightness(0) invert(1); }
+  .m-postcard .pt{ height:6px; width:72%; background:#fff; border-radius:2px; opacity:.95; }
+  .m-postcard .pt.s{ width:48%; background:var(--vc-leaf); margin-top:5px; }
+</style>
+</head>
+<body>
+
+<div class="kit">
+
+  <!-- HERO -->
+  <header class="kit-hero">
+    <img class="k-mark" src="assets/img/logo-mark.png" alt="Virtuous Cycle mark">
+    <div class="k-firm">Virtuous Cycle</div>
+    <h1>The brand kit — <em>one system,</em> every artifact</h1>
+    <p>Templates and collateral built on the canonical design system. Open any piece, edit the content, print or copy. Restraint is the brand.</p>
+    <div class="k-meta">
+      <div>Edition<span class="v">VC-BRAND-2026-02</span></div>
+      <div>Anchor<span class="v">Verdant #6E9E10</span></div>
+      <div>Type<span class="v">Spectral · Inter</span></div>
+    </div>
+  </header>
+
+  <!-- FOUNDATIONS -->
+  <section class="kit-sec">
+    <div class="kt">Foundations <span class="n">— the system &amp; its rules</span></div>
+    <div class="kit-grid">
+
+      <a class="kit-card" href="Brand Guide.html">
+        <div class="kit-thumb dark">
+          <div class="m-cover"><img src="assets/img/logo-mark.png" alt=""><div class="ct"></div><div class="cs"></div></div>
+        </div>
+        <div class="kc-body">
+          <div class="kc-tag">Guidelines</div>
+          <div class="kc-title">Brand Guide</div>
+          <div class="kc-desc">The designed guidelines — essence, color, type, logo, voice, and the Virtuous Cycle Process.</div>
+        </div>
+      </a>
+
+      <div class="kit-card" style="cursor:default;">
+        <div class="kit-thumb">
+          <div class="m-page"><div class="m-band"></div><div class="m-body">
+            <div class="m-ttl"></div><div class="ln g"></div><div class="ln s"></div><div class="ln t"></div>
+            <div class="m-blk"></div></div></div>
+        </div>
+        <div class="kc-body">
+          <div class="kc-tag">Components</div>
+          <div class="kc-title">vc-brand.css</div>
+          <div class="kc-desc">Tokens and components: pages, bands, type scale, exhibits, tables, ranges, callouts. The source every template loads.</div>
+        </div>
+      </div>
+
+      <div class="kit-card" style="cursor:default;">
+        <div class="kit-thumb">
+          <div class="m-page"><div class="m-mast"><img src="assets/img/logo-mark.png" alt=""><div class="w"></div></div>
+          <div class="m-body"><div class="ln"></div><div class="ln s"></div><div class="ln g t"></div><div class="m-blk"></div></div></div>
+        </div>
+        <div class="kc-body">
+          <div class="kc-tag">Machine-readable</div>
+          <div class="kc-title">Tokens &amp; brief</div>
+          <div class="kc-desc">Paste into any model to brief the brand.</div>
+          <div class="ref">
+            <a href="brand/tokens.json"><span class="d"></span>tokens.json</a>
+            <a href="brand/BRAND.md"><span class="d"></span>BRAND.md</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CORRESPONDENCE -->
+  <section class="kit-sec">
+    <div class="kt">Correspondence <span class="n">— the masthead system</span></div>
+    <div class="kit-grid">
+
+      <a class="kit-card" href="Letterhead.html">
+        <div class="kit-thumb">
+          <div class="m-page"><div class="m-mast"><img src="assets/img/logo-mark.png" alt=""><div class="w"></div></div>
+          <div class="m-body"><div class="ln t"></div><div class="ln"></div><div class="ln s"></div><div class="ln"></div><div class="ln s"></div><div class="ln"></div><div class="ln t"></div></div></div>
+        </div>
+        <div class="kc-body">
+          <div class="kc-tag">Stationery</div>
+          <div class="kc-title">Letterhead</div>
+          <div class="kc-desc">Correspondence template with masthead, contact block, and a continuation sheet.</div>
+        </div>
+      </a>
+
+      <a class="kit-card" href="Memo.html">
+        <div class="kit-thumb">
+          <div class="m-page"><div class="m-mast"><img src="assets/img/logo-mark.png" alt=""><div class="w"></div></div>
+          <div class="m-body"><div class="m-ttl"></div><div class="ln g s"></div><div class="ln"></div><div class="ln s"></div>
+          <div style="display:flex;gap:4px;margin-top:2px;"><div class="m-blk" style="margin:0;border-top:2px solid var(--vc-green);"></div><div class="m-blk" style="margin:0;"></div><div class="m-blk" style="margin:0;"></div></div></div></div>
+        </div>
+        <div class="kc-body">
+          <div class="kc-tag">Stationery</div>
+          <div class="kc-title">Memorandum</div>
+          <div class="kc-desc">Short-form advisory memo — To/From/Re, callouts, and gated next steps on one page.</div>
+        </div>
+      </a>
+
+      <a class="kit-card" href="Stationery.html">
+        <div class="kit-thumb">
+          <div class="m-env">
+            <div class="ret"><img src="assets/img/logo-mark.png" alt=""><div class="w"></div></div>
+            <div class="to"><div class="ln"></div><div class="ln s"></div><div class="ln t"></div></div>
+            <div class="flap"></div>
+          </div>
+        </div>
+        <div class="kc-body">
+          <div class="kc-tag">Stationery</div>
+          <div class="kc-title">Envelope &amp; slip</div>
+          <div class="kc-desc">No. 10 envelope and compliments slip on the same correspondence lockup.</div>
+        </div>
+      </a>
+
+      <a class="kit-card" href="Email Signature.html">
+        <div class="kit-thumb">
+          <div class="m-sig">
+            <div class="mk"><img src="assets/img/logo-mark.png" alt=""></div>
+            <div class="tx"><div class="nm"></div><div class="ro"></div><div class="ct"></div></div>
+          </div>
+        </div>
+        <div class="kc-body">
+          <div class="kc-tag">Digital</div>
+          <div class="kc-title">Email signatures</div>
+          <div class="kc-desc">Three mail-safe signatures with copy-to-clipboard. Georgia &amp; Arial fallbacks.</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- COLLATERAL -->
+  <section class="kit-sec">
+    <div class="kt">Collateral <span class="n">— identity in hand</span></div>
+    <div class="kit-grid two">
+
+      <a class="kit-card" href="Business Cards.html">
+        <div class="kit-thumb">
+          <div class="m-card-wrap">
+            <div class="m-card back"><img src="assets/img/logo-mark.png" alt=""></div>
+            <div class="m-card front"><div class="row"><img src="assets/img/logo-mark.png" alt=""><div class="w"></div></div><div class="nm"></div><div class="ro"></div></div>
+          </div>
+        </div>
+        <div class="kc-body">
+          <div class="kc-tag">Print</div>
+          <div class="kc-title">Business cards</div>
+          <div class="kc-desc">Front/back pair with bleed, trim, and safe-area print specs.</div>
+        </div>
+      </a>
+
+      <a class="kit-card" href="Capabilities.html">
+        <div class="kit-thumb">
+          <div class="m-page"><div class="m-band"></div><div class="m-body">
+            <div class="m-ttl" style="width:74%;"></div><div class="ln g s"></div>
+            <div style="display:flex;gap:4px;margin:3px 0;"><div class="ln" style="flex:1;height:11px;"></div><div class="ln" style="flex:1;height:11px;"></div><div class="ln" style="flex:1;height:11px;"></div></div>
+            <div class="ln t"></div><div class="ln s"></div><div class="m-blk" style="flex:0;height:18px;background:linear-gradient(157deg,#5A8A12,#2F4A0C);border:0;"></div></div></div>
+        </div>
+        <div class="kc-body">
+          <div class="kc-tag">Leave-behind</div>
+          <div class="kc-title">Capabilities</div>
+          <div class="kc-desc">One-page firm overview — the Process, who we serve, and roles taken.</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- DELIVERABLES -->
+  <section class="kit-sec">
+    <div class="kt">Deliverables <span class="n">— the work product</span></div>
+    <div class="kit-grid">
+
+      <a class="kit-card" href="Advisory Report.html">
+        <div class="kit-thumb dark">
+          <div class="m-cover"><img src="assets/img/logo-mark.png" alt=""><div class="ct"></div><div class="cs"></div></div>
+        </div>
+        <div class="kc-body">
+          <div class="kc-tag">Report</div>
+          <div class="kc-title">Advisory Report</div>
+          <div class="kc-desc">Multi-page report — cover, exhibits, ranges, and findings written as titles.</div>
+        </div>
+      </a>
+
+      <a class="kit-card" href="Proposal.html">
+        <div class="kit-thumb dark">
+          <div class="m-cover"><img src="assets/img/logo-mark.png" alt=""><div class="ct"></div><div class="cs"></div></div>
+        </div>
+        <div class="kc-body">
+          <div class="kc-tag">Proposal</div>
+          <div class="kc-title">Engagement Proposal</div>
+          <div class="kc-desc">Cover, the five-phase approach, scope, fee ranges, and an acceptance block.</div>
+        </div>
+      </a>
+
+      <a class="kit-card" href="Invoice.html">
+        <div class="kit-thumb">
+          <div class="m-page"><div class="m-mast"><img src="assets/img/logo-mark.png" alt=""><div class="w"></div></div>
+          <div class="m-body"><div class="m-ttl" style="background:var(--ink);"></div><div class="ln s"></div><div class="ln"></div>
+          <div class="m-blk"></div><div style="display:flex;justify-content:flex-end;"><div class="ln" style="width:44px;height:14px;background:var(--vc-pine);"></div></div></div></div>
+        </div>
+        <div class="kc-body">
+          <div class="kc-tag">Billing</div>
+          <div class="kc-title">Invoice</div>
+          <div class="kc-desc">Statement of services with engagement scope, totals, and payment methods.</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- MERCHANDISE & EVENTS -->
+  <section class="kit-sec">
+    <div class="kt">Merchandise &amp; events <span class="n">— the firm in the world</span></div>
+    <div class="kit-grid">
+
+      <a class="kit-card" href="Stickers.html">
+        <div class="kit-thumb"><div class="m-stk"><img src="assets/img/brand-thumbnail.png" alt=""></div></div>
+        <div class="kc-body">
+          <div class="kc-tag">Merchandise</div>
+          <div class="kc-title">Stickers</div>
+          <div class="kc-desc">Die-cut knot, circle badges, and bumpers — two inks, a white keyline.</div>
+        </div>
+      </a>
+
+      <a class="kit-card" href="Apparel.html">
+        <div class="kit-thumb dark"><div class="m-tee"><img src="assets/img/brand-thumbnail.png" alt=""></div></div>
+        <div class="kc-body">
+          <div class="kc-tag">Merchandise</div>
+          <div class="kc-title">Apparel &amp; merch</div>
+          <div class="kc-desc">Tees, tote, and cap across the green-family colorways.</div>
+        </div>
+      </a>
+
+      <a class="kit-card" href="Conference Flyer.html">
+        <div class="kit-thumb"><div class="m-page"><div class="m-mast"><img src="assets/img/logo-mark.png" alt=""><div class="w"></div></div>
+          <div class="m-body"><div class="m-ttl"></div><div class="ln s"></div><div class="ln"></div><div class="m-blk" style="flex:0;height:22px;background:linear-gradient(157deg,#5A8A12,#2F4A0C);border:0;"></div></div></div></div>
+        <div class="kc-body">
+          <div class="kc-tag">Events</div>
+          <div class="kc-title">Conference Flyer</div>
+          <div class="kc-desc">A presence one-pager — ND Church Properties, ULI, and beyond.</div>
+        </div>
+      </a>
+
+      <a class="kit-card" href="Pull-up Banner.html">
+        <div class="kit-thumb"><div class="m-banner"><img src="assets/img/brand-thumbnail.png" alt=""><div class="bl leaf"></div><div class="bl"></div><div class="bl"></div></div></div>
+        <div class="kc-body">
+          <div class="kc-tag">Events</div>
+          <div class="kc-title">Pull-up Banner</div>
+          <div class="kc-desc">The booth roll-up — 33 × 80 in, read across a hall.</div>
+        </div>
+      </a>
+
+      <a class="kit-card" href="Conference Kit.html">
+        <div class="kit-thumb"><div class="m-badge"><div class="bt"><img src="assets/img/logo-mark.png" alt=""><div class="w"></div></div><div class="bb"><div class="nm"></div><div class="ro"></div></div></div></div>
+        <div class="kc-body">
+          <div class="kc-tag">Events</div>
+          <div class="kc-title">Conference Kit</div>
+          <div class="kc-desc">Name badge, lanyard, and table tent for the table.</div>
+        </div>
+      </a>
+
+      <a class="kit-card" href="Postcard.html">
+        <div class="kit-thumb"><div class="m-postcard"><img src="assets/img/brand-thumbnail.png" alt=""><div><div class="pt"></div><div class="pt s"></div></div></div></div>
+        <div class="kc-body">
+          <div class="kc-tag">Direct mail</div>
+          <div class="kc-title">Postcard</div>
+          <div class="kc-desc">A leave-behind and follow-up — watercolor front, message back.</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <footer class="kit-foot">
+    <div>Virtuous Cycle LLC · <span class="em">Land, livelihood &amp; the common good</span> · Pensacola, Florida</div>
+    <div>jarah@virtuouscycle.dev · virtuouscycle.dev</div>
+  </footer>
+
+</div>
+
+
+</body></html>
