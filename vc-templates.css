@@ -1,0 +1,407 @@
+/* ============================================================
+   VIRTUOUS CYCLE — TEMPLATE EXTENSIONS
+   vc-templates.css · v1 (2026)
+   Extends vc-brand.css for the stationery + collateral suite:
+   letterhead, memo, business cards, envelope, compliments slip,
+   email signature, proposal, capabilities, brand-kit index.
+
+   System note — two coherent header modes:
+   · BAND       (vc-brand.css .band) — data deliverables: reports, exhibits.
+   · MASTHEAD   (.masthead, here)     — correspondence: letters, memos,
+                                        envelopes, comp slips.
+   Load AFTER vc-brand.css.
+   ============================================================ */
+
+/* ============================================================
+   STAGE HELPERS
+   ============================================================ */
+/* A neutral board for laying out small artifacts (cards, envelopes)
+   that are not full Letter pages. */
+.board{
+  display:flex; flex-direction:column; align-items:center;
+  gap:40px; padding:56px 24px 110px;
+}
+.board-row{ display:flex; flex-wrap:wrap; gap:36px; align-items:flex-start; justify-content:center; }
+.board-cap{
+  font-family:var(--sans); font-weight:600; font-size:9px; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--grey-l); text-align:center; margin-bottom:-22px;
+}
+.specimen{ display:flex; flex-direction:column; align-items:center; gap:13px; }
+.specimen .sp-label{
+  font-family:var(--sans); font-weight:600; font-size:9px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--grey); display:flex; gap:8px; align-items:baseline;
+}
+.specimen .sp-label .dim{ color:var(--grey-l); font-weight:400; letter-spacing:.06em; }
+
+/* ============================================================
+   CORRESPONDENCE MASTHEAD (letterhead / memo / comp slip)
+   mark + typeset wordmark + tagline · contact block · hairline
+   ============================================================ */
+.masthead{
+  display:grid; grid-template-columns:1fr auto; gap:24px; align-items:flex-start;
+  padding-bottom:18px; border-bottom:1px solid var(--hair);
+}
+.masthead .mh-id{ display:flex; align-items:center; gap:13px; }
+.masthead .mh-mark{ width:46px; height:46px; flex-shrink:0; object-fit:contain; display:block; }
+.masthead .mh-words{ display:flex; flex-direction:column; gap:4px; }
+.masthead .mh-wordmark{
+  font-family:var(--serif); font-weight:600; font-size:24px; line-height:1;
+  letter-spacing:.17em; text-transform:uppercase; color:var(--vc-green);
+}
+.masthead .mh-tagline{
+  font-family:var(--serif); font-style:italic; font-weight:500; font-size:13px;
+  line-height:1.3; color:var(--grey);
+}
+.masthead .mh-tagline .ac{ color:var(--accent-text); }
+.masthead .mh-contact{
+  text-align:right; font-family:var(--sans); font-weight:400; font-size:10px;
+  line-height:1.7; color:var(--grey); letter-spacing:.02em;
+}
+.masthead .mh-contact a{ color:var(--accent-text); text-decoration:none; }
+.masthead .mh-contact .strong{ color:var(--ink); font-weight:600; }
+
+/* Continuation-page mini masthead */
+.mast-mini{
+  display:flex; align-items:center; gap:9px; padding-bottom:13px;
+  border-bottom:1px solid var(--hair);
+}
+.mast-mini img{ width:22px; height:22px; }
+.mast-mini .wm{
+  font-family:var(--sans); font-weight:700; font-size:10px; letter-spacing:.24em;
+  text-transform:uppercase; color:var(--vc-green);
+}
+.mast-mini .pg{
+  margin-left:auto; font-family:var(--sans); font-weight:500; font-size:9px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--grey-l);
+}
+
+/* ============================================================
+   LETTER BODY
+   ============================================================ */
+.letter{ margin-top:40px; display:flex; flex-direction:column; flex:1; }
+.letter-date{
+  font-family:var(--sans); font-weight:400; font-size:12px; color:var(--grey);
+  letter-spacing:.02em;
+}
+.letter-to{
+  margin-top:26px; font-family:var(--sans); font-weight:400; font-size:12.5px;
+  line-height:1.65; color:var(--ink);
+}
+.letter-to .nm{ font-weight:600; }
+.letter-to .ttl{ font-style:italic; color:var(--grey); }
+.letter-re{
+  margin-top:24px; display:flex; gap:10px; align-items:baseline;
+  font-family:var(--sans); font-size:12.5px; color:var(--ink); line-height:1.5;
+}
+.letter-re .k{
+  font-weight:600; font-size:9px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--accent-text); white-space:nowrap; padding-top:1px;
+}
+.letter-re .v{ font-weight:600; }
+.letter-salute{
+  margin-top:24px; font-family:var(--sans); font-weight:400; font-size:12.5px; color:var(--ink);
+}
+.letter-body{ font-family:var(--sans); font-weight:400; font-size:12.5px; line-height:1.75; color:var(--ink); text-wrap:pretty; }
+.letter-body p{ margin:13px 0 0; }
+.letter-body p:first-child{ margin-top:14px; }
+.letter-body strong{ font-weight:600; }
+.letter-body em{ font-style:italic; }
+/* one reflective line, brand-style */
+.letter-body .reflect{
+  font-family:var(--serif); font-style:italic; font-weight:500; font-size:14px;
+  color:var(--vc-pine); line-height:1.5;
+}
+.letter-signoff{ margin-top:26px; font-family:var(--sans); font-weight:400; font-size:12.5px; color:var(--ink); }
+.letter-sig{ margin-top:8px; }
+.letter-sig .sig-name{
+  font-family:var(--serif); font-weight:600; font-size:21px; color:var(--ink);
+  line-height:1; letter-spacing:-.005em;
+}
+.letter-sig .sig-script{
+  font-family:'Spectral',serif; font-style:italic; font-weight:500; font-size:30px;
+  color:var(--vc-pine); line-height:1; padding:6px 0 9px; letter-spacing:.01em;
+}
+.letter-sig .sig-role{
+  font-family:var(--sans); font-weight:600; font-size:9px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--accent-text); margin-top:6px;
+}
+.letter-sig .sig-firm{
+  font-family:var(--sans); font-weight:400; font-size:11px; color:var(--grey); margin-top:3px;
+}
+.letter-encl{
+  margin-top:22px; padding-top:12px; border-top:1px solid var(--hair);
+  font-family:var(--sans); font-weight:400; font-size:10px; color:var(--grey); letter-spacing:.02em;
+}
+.letter-encl .k{ font-weight:600; color:var(--accent-text); letter-spacing:.12em; text-transform:uppercase; font-size:9px; }
+
+/* ============================================================
+   MEMO MASTHEAD
+   ============================================================ */
+.memo-title{
+  margin-top:30px; font-family:var(--serif); font-weight:600; font-size:34px;
+  line-height:1; letter-spacing:.02em; color:var(--ink);
+}
+.memo-title .ac{ color:var(--accent); }
+.memo-kick{
+  font-family:var(--sans); font-weight:600; font-size:10px; letter-spacing:.30em;
+  text-transform:uppercase; color:var(--accent-text);
+}
+
+/* ============================================================
+   BUSINESS CARD  (3.5 x 2 in → 336 x 192 px @96dpi)
+   ============================================================ */
+.bc{
+  width:336px; height:192px; background:var(--paper); position:relative;
+  overflow:hidden; box-shadow:0 1px 0 rgba(0,0,0,.04), 0 18px 38px -16px rgba(22,35,10,.34);
+  border-radius:7px;
+}
+.bc-front{ padding:24px 26px; display:flex; flex-direction:column; }
+.bc-front .bc-logo{ display:flex; align-items:center; gap:11px; }
+.bc-front .bc-logo img{ width:38px; height:38px; }
+.bc-front .bc-logo .wm{
+  font-family:var(--serif); font-weight:600; font-size:16px; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--vc-green); line-height:1;
+}
+.bc-front .bc-logo .wm small{
+  display:block; font-family:var(--serif); font-style:italic; font-weight:500;
+  font-size:8.5px; letter-spacing:.01em; text-transform:none; color:var(--grey); margin-top:4px;
+}
+.bc-front .bc-person{ margin-top:auto; }
+.bc-front .bc-name{ font-family:var(--serif); font-weight:600; font-size:17px; color:var(--ink); line-height:1; }
+.bc-front .bc-role{
+  font-family:var(--sans); font-weight:600; font-size:8px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--accent-text); margin-top:6px;
+}
+.bc-front .bc-contact{
+  margin-top:12px; padding-top:11px; border-top:1px solid var(--hair);
+  display:grid; grid-template-columns:1fr 1fr; gap:5px 16px;
+  font-family:var(--sans); font-weight:400; font-size:9px; color:var(--grey); letter-spacing:.02em;
+}
+.bc-front .bc-contact span{ white-space:nowrap; }
+.bc-front .bc-contact .ic{ color:var(--accent-text); }
+
+/* card back — verdant field, reversed mark */
+.bc-back{
+  background:linear-gradient(157deg,#5A8A12 0%,#3C5E0E 52%,#23380B 100%);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;
+}
+.bc-back img{ width:60px; height:60px; filter:brightness(0) invert(1); }
+.bc-back .tag{
+  font-family:var(--serif); font-style:italic; font-weight:500; font-size:12px;
+  color:#E8F0D6; letter-spacing:.01em; text-align:center; max-width:24ch; line-height:1.4;
+}
+.bc-back .wm{
+  font-family:var(--sans); font-weight:700; font-size:9px; letter-spacing:.30em;
+  text-transform:uppercase; color:#fff;
+}
+
+/* ============================================================
+   ENVELOPE  (#10 → 9.5 x 4.125 in → 912 x 396 px @96dpi)
+   ============================================================ */
+.env{
+  width:912px; height:396px; background:var(--paper); position:relative; overflow:hidden;
+  box-shadow:0 1px 0 rgba(0,0,0,.04), 0 22px 46px -18px rgba(22,35,10,.30);
+  border-radius:3px;
+}
+.env-return{ position:absolute; top:34px; left:42px; display:flex; align-items:center; gap:12px; }
+.env-return img{ width:38px; height:38px; }
+.env-return .wm{
+  font-family:var(--serif); font-weight:600; font-size:15px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--vc-green); line-height:1;
+}
+.env-return .addr{
+  font-family:var(--sans); font-weight:400; font-size:9.5px; line-height:1.55;
+  color:var(--grey); margin-top:5px; letter-spacing:.02em;
+}
+.env-stamp{
+  position:absolute; top:30px; right:42px; width:58px; height:64px;
+  border:1px dashed var(--rule); border-radius:3px; display:flex; align-items:center;
+  justify-content:center; text-align:center;
+  font-family:var(--sans); font-weight:500; font-size:7px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--grey-l); line-height:1.4;
+}
+.env-to{
+  position:absolute; left:50%; top:54%; transform:translate(-50%,-50%);
+  font-family:var(--sans); font-weight:400; font-size:13px; line-height:1.7; color:var(--ink);
+  letter-spacing:.01em; min-width:240px;
+}
+.env-to .nm{ font-weight:600; }
+.env-to .lbl{
+  display:block; font-family:var(--sans); font-weight:600; font-size:8px; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--grey-l); margin-bottom:8px;
+}
+.env-flap{
+  position:absolute; left:0; right:0; bottom:0; height:5px; background:var(--vc-green);
+}
+
+/* ============================================================
+   COMPLIMENTS SLIP  (8.5 x 3.667 in → 816 x 352 px @96dpi)
+   ============================================================ */
+.slip{
+  width:816px; height:352px; background:var(--paper); position:relative; overflow:hidden;
+  box-shadow:0 1px 0 rgba(0,0,0,.04), 0 22px 46px -18px rgba(22,35,10,.30);
+  padding:42px 52px; display:flex; flex-direction:column;
+}
+.slip .with{
+  font-family:var(--serif); font-weight:500; font-size:30px; color:var(--ink);
+  letter-spacing:-.01em; margin-top:auto;
+}
+.slip .with em{ font-style:italic; color:var(--vc-green); }
+.slip-foot{
+  margin-top:18px; padding-top:14px; border-top:1px solid var(--hair);
+  display:flex; justify-content:space-between; align-items:baseline;
+  font-family:var(--sans); font-weight:400; font-size:10px; color:var(--grey); letter-spacing:.04em;
+}
+.slip-foot a{ color:var(--accent-text); text-decoration:none; }
+
+/* ============================================================
+   EMAIL SIGNATURE  (screen tool)
+   ============================================================ */
+.sig-tool{ max-width:760px; margin:0 auto; padding:56px 28px 110px; }
+.sig-tool-head{ margin-bottom:34px; }
+.sig-tool-head .kick{
+  font-family:var(--sans); font-weight:600; font-size:10px; letter-spacing:.3em;
+  text-transform:uppercase; color:var(--accent-text);
+}
+.sig-tool-head h1{
+  font-family:var(--serif); font-weight:600; font-size:38px; color:var(--ink);
+  margin:12px 0 0; letter-spacing:-.01em;
+}
+.sig-tool-head p{
+  font-family:var(--serif); font-weight:500; font-size:15px; color:var(--vc-pine);
+  margin:12px 0 0; line-height:1.5; max-width:56ch;
+}
+.sig-card{
+  background:var(--paper); border:1px solid var(--hair); border-radius:8px;
+  margin-bottom:24px; overflow:hidden;
+  box-shadow:0 18px 38px -22px rgba(22,35,10,.22);
+}
+.sig-card-head{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:14px 20px; border-bottom:1px solid var(--hair); background:var(--fill);
+}
+.sig-card-head .t{
+  font-family:var(--sans); font-weight:600; font-size:10px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--accent-text);
+}
+.sig-card-head .t small{
+  display:block; font-weight:400; font-size:10px; letter-spacing:.02em; text-transform:none;
+  color:var(--grey); margin-top:3px;
+}
+.sig-copy{
+  font-family:var(--sans); font-weight:600; font-size:10px; letter-spacing:.12em;
+  text-transform:uppercase; color:#fff; background:var(--vc-green); border:0;
+  padding:9px 16px; border-radius:99px; cursor:pointer; transition:background .15s; white-space:nowrap;
+}
+.sig-copy:hover{ background:var(--vc-moss); }
+.sig-copy.done{ background:var(--vc-pine); }
+.sig-preview{ padding:26px 24px; background:#fff; }
+.sig-mailbg{ background:linear-gradient(180deg,#fbfcf9,#f4f6f1); }
+
+/* ============================================================
+   PROPOSAL / CAPABILITIES helpers
+   ============================================================ */
+.fee-note{
+  font-family:var(--sans); font-weight:400; font-size:10px; color:var(--grey);
+  line-height:1.55; margin-top:12px; letter-spacing:.01em;
+}
+.accept{
+  margin-top:26px; display:grid; grid-template-columns:1fr 1fr; gap:40px;
+  padding-top:22px; border-top:2px solid var(--vc-green);
+}
+.accept .sigline{ display:flex; flex-direction:column; gap:6px; }
+.accept .sigline .ln{ height:34px; border-bottom:1px solid var(--ink); }
+.accept .sigline .lbl{
+  font-family:var(--sans); font-weight:600; font-size:9px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--grey); }
+.accept .sigline .sub{ font-family:var(--sans); font-weight:400; font-size:10px; color:var(--grey-l); }
+
+/* checklist for scope/deliverables */
+.checklist{ margin-top:8px; display:flex; flex-direction:column; }
+.checklist .ck{
+  display:grid; grid-template-columns:18px 1fr; gap:12px; padding:10px 0;
+  border-bottom:1px solid var(--hair); align-items:baseline;
+}
+.checklist .ck:first-child{ border-top:1px solid var(--hair); }
+.checklist .ck .mk{ color:var(--vc-green); font-size:13px; line-height:1.4; }
+.checklist .ck .tx{ font-family:var(--sans); font-weight:400; font-size:12px; line-height:1.55; color:var(--ink); }
+.checklist .ck .tx b{ font-weight:600; }
+
+/* compact two-up summary cards */
+.facets{ margin-top:20px; display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+.facet{ border:1px solid var(--hair); padding:18px 20px; }
+.facet .h{ font-family:var(--serif); font-weight:600; font-size:17px; color:var(--ink); }
+.facet .h .ac{ color:var(--accent); }
+.facet p{ font-family:var(--sans); font-weight:400; font-size:11px; line-height:1.55; color:var(--grey); margin:8px 0 0; }
+
+/* ============================================================
+   BRAND-KIT INDEX
+   ============================================================ */
+.kit{ max-width:1080px; margin:0 auto; padding:0 28px 120px; }
+.kit-hero{
+  background:linear-gradient(157deg,#5A8A12 0%,#3C5E0E 52%,#23380B 100%); color:#fff;
+  border-radius:14px; padding:60px 56px; position:relative; overflow:hidden; margin:40px 0 44px;
+}
+.kit-hero .k-mark{ width:54px; height:54px; filter:brightness(0) invert(1); }
+.kit-hero .k-firm{
+  font-family:var(--sans); font-weight:700; font-size:12px; letter-spacing:.3em;
+  text-transform:uppercase; color:#fff; margin-top:18px;
+}
+.kit-hero h1{
+  font-family:var(--serif); font-weight:600; font-size:52px; line-height:1.04;
+  letter-spacing:-.02em; margin:14px 0 0; max-width:18ch;
+}
+.kit-hero h1 em{ font-style:italic; font-weight:500; color:var(--vc-leaf); }
+.kit-hero p{
+  font-family:var(--serif); font-style:italic; font-weight:500; font-size:17px;
+  color:#E8F0D6; margin:18px 0 0; max-width:46ch; line-height:1.45;
+}
+.kit-hero .k-meta{
+  margin-top:30px; display:flex; gap:36px; font-family:var(--sans); font-weight:400;
+  font-size:9.5px; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.6);
+}
+.kit-hero .k-meta .v{ display:block; color:#fff; font-weight:500; margin-top:5px; letter-spacing:.05em; }
+
+.kit-sec{ margin:0 0 16px; }
+.kit-sec .kt{
+  font-family:var(--sans); font-weight:600; font-size:10px; letter-spacing:.24em;
+  text-transform:uppercase; color:var(--accent-text); padding-bottom:10px;
+  border-bottom:1px solid var(--hair); margin:36px 0 22px; display:flex; gap:10px; align-items:baseline;
+}
+.kit-sec .kt .n{ color:var(--grey-l); font-weight:400; }
+.kit-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.kit-grid.two{ grid-template-columns:repeat(2,1fr); }
+.kit-card{
+  display:flex; flex-direction:column; text-decoration:none; color:inherit;
+  background:var(--paper); border:1px solid var(--hair); border-radius:10px; overflow:hidden;
+  transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+.kit-card:hover{ transform:translateY(-3px); box-shadow:0 22px 44px -24px rgba(22,35,10,.34); border-color:var(--vc-sage); }
+.kit-thumb{
+  height:158px; background:var(--fill); position:relative; overflow:hidden;
+  border-bottom:1px solid var(--hair); display:flex; align-items:center; justify-content:center;
+}
+.kit-thumb.dark{ background:linear-gradient(157deg,#5A8A12,#23380B); }
+.kit-card .kc-body{ padding:16px 18px 18px; display:flex; flex-direction:column; gap:5px; }
+.kit-card .kc-tag{
+  font-family:var(--sans); font-weight:600; font-size:8.5px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--accent-text);
+}
+.kit-card .kc-title{ font-family:var(--serif); font-weight:600; font-size:19px; color:var(--ink); line-height:1.1; }
+.kit-card .kc-desc{ font-family:var(--sans); font-weight:400; font-size:11px; line-height:1.5; color:var(--grey); margin-top:2px; }
+.kit-foot{
+  margin-top:40px; padding-top:22px; border-top:1px solid var(--hair); display:flex;
+  justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:12px;
+  font-family:var(--sans); font-weight:400; font-size:10px; color:var(--grey-l); letter-spacing:.08em;
+}
+.kit-foot .em{ color:var(--accent-text); font-weight:600; }
+
+/* ============================================================
+   PRINT — small artifacts print one-per-page, centered
+   ============================================================ */
+@media print{
+  .board{ padding:0; gap:0; display:block; }
+  .board-row{ gap:0; display:block; }
+  .board-cap, .specimen .sp-label, .sig-tool, .kit, .no-print{ display:none !important; }
+  .specimen{ gap:0; page-break-after:always; }
+}

@@ -1,0 +1,228 @@
+/* ============================================================
+   VIRTUOUS CYCLE — MERCH & EVENTS COLLATERAL
+   vc-collateral.css · v1 (2026)
+   Extends vc-brand.css + vc-templates.css for swag and event
+   materials: stickers, apparel, pull-up banner, conference badge
+   + table tent, and the postcard mailer.
+   Load AFTER vc-brand.css and vc-templates.css.
+   ============================================================ */
+
+/* shared dark verdant ground used across merch + events */
+:root{ --field-grad: linear-gradient(157deg,#5A8A12 0%,#3C5E0E 52%,#23380B 100%); }
+
+/* ============================================================
+   STICKERS
+   ============================================================ */
+.stk-board{ display:flex; flex-wrap:wrap; gap:46px 40px; align-items:flex-start; justify-content:center; max-width:880px; }
+.stk{
+  position:relative; background:var(--paper);
+  /* die-cut look: white border + soft lift */
+  box-shadow:0 0 0 7px #fff, 0 1px 0 7px rgba(0,0,0,.05), 0 20px 38px -16px rgba(22,35,10,.40);
+}
+.stk.dark{ background:var(--vc-field); }
+.stk.green{ background:var(--vc-green); }
+
+/* circle badge */
+.stk-circle{ width:210px; height:210px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+.stk-circle svg{ position:absolute; inset:0; width:100%; height:100%; }
+.stk-circle .knot{ width:78px; height:78px; z-index:2; }
+.stk-circle .ring-line{ fill:none; }
+
+/* die-cut knot — shape sticker (mark only, white keyline) */
+.stk-die{
+  width:184px; height:184px; border-radius:24px; display:flex; align-items:center; justify-content:center;
+}
+.stk-die img{ width:128px; height:128px; }
+
+/* square rounded with mark + line */
+.stk-square{
+  width:200px; height:200px; border-radius:22px; padding:26px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; text-align:center;
+}
+.stk-square img{ width:74px; height:74px; }
+.stk-square .wm{ font-family:var(--serif); font-weight:600; font-size:15px; letter-spacing:.16em; text-transform:uppercase; line-height:1.2; }
+.stk-square.dark .wm, .stk-square.green .wm{ color:#fff; }
+.stk-square .wm small{ display:block; font-family:var(--serif); font-style:italic; font-weight:500; font-size:9px; letter-spacing:.02em; text-transform:none; margin-top:6px; }
+.stk-square.dark .wm small{ color:var(--vc-leaf); }
+
+/* bumper / die-cut pill */
+.stk-bumper{
+  height:84px; border-radius:48px; padding:0 40px; display:flex; align-items:center; gap:16px;
+}
+.stk-bumper img{ width:46px; height:46px; flex-shrink:0; }
+.stk-bumper .tx{ font-family:var(--serif); font-style:italic; font-weight:500; font-size:21px; white-space:nowrap; }
+.stk-bumper.dark .tx{ color:#E8F0D6; }
+.stk-bumper.dark .tx b{ color:#fff; font-style:normal; font-weight:600; }
+.stk-bumper.paper .tx{ color:var(--vc-pine); }
+.stk-bumper.paper .tx b{ color:var(--vc-green); font-style:normal; font-weight:600; }
+
+/* ============================================================
+   APPAREL & MERCH
+   ============================================================ */
+.garment{ display:flex; flex-direction:column; align-items:center; gap:14px; }
+.garment .gfig{
+  width:286px; height:286px; display:flex; align-items:center; justify-content:center;
+  background:var(--fill); border:1px solid var(--hair); border-radius:10px; position:relative; overflow:hidden;
+}
+.garment .gfig.dark{ background:#11210B; }
+.garment .gfig.mist{ background:#E9EEDD; }
+/* the garment SVG fills via currentColor */
+.garment svg.tee, .garment svg.tote, .garment svg.cap{ width:208px; height:auto; display:block; filter:drop-shadow(0 16px 24px rgba(0,0,0,.22)); }
+/* print overlay sits on the garment */
+.garment .print{ position:absolute; display:flex; flex-direction:column; align-items:center; gap:7px; z-index:3; }
+.garment .print img{ display:block; }
+.garment .print .wm{ font-family:var(--serif); font-weight:600; letter-spacing:.16em; text-transform:uppercase; line-height:1; }
+.garment .print .tag{ font-family:var(--serif); font-style:italic; font-weight:500; line-height:1.3; }
+
+/* chest print (small, on upper chest) */
+.garment .print.chest{ top:47%; left:50%; transform:translate(-50%,-50%); }
+.garment .print.chest img{ width:42px; height:42px; }
+.garment .print.chest .wm{ font-size:8px; }
+/* full back print (centered on the body, kept within the silhouette) */
+.garment .print.back{ top:62%; left:50%; transform:translate(-50%,-50%); }
+.garment .print.back img{ width:74px; height:74px; }
+.garment .print.back .wm{ font-size:12px; }
+.garment .print.back .tag{ font-size:9.5px; }
+/* tote print */
+.garment .print.tote-print{ top:60%; left:50%; transform:translate(-50%,-50%); }
+.garment .print.tote-print img{ width:78px; height:78px; }
+.garment .print.tote-print .tag{ font-size:9.5px; }
+/* cap print */
+.garment .print.cap-print{ top:50%; left:50%; transform:translate(-50%,-50%); }
+.garment .print.cap-print img{ width:44px; height:44px; }
+
+.swatch-row{ display:flex; gap:9px; align-items:center; justify-content:center; margin-top:2px; }
+.swatch-row .sw{ width:17px; height:17px; border-radius:50%; border:1px solid rgba(0,0,0,.12); }
+
+/* ============================================================
+   PULL-UP BANNER  (33 × 80 in roll-up → 0.4125 ratio)
+   rendered at 760 × 1842 px, scaled inside its board
+   ============================================================ */
+.banner-board{ display:flex; gap:60px; flex-wrap:wrap; align-items:flex-start; justify-content:center; }
+.banner{
+  width:760px; height:1842px; position:relative; overflow:hidden;
+  background:var(--paper); box-shadow:0 30px 70px -30px rgba(22,35,10,.5);
+  display:flex; flex-direction:column;
+}
+.banner.field{ background:var(--field-grad); color:#fff; }
+/* scale the tall banner down so it fits the board on screen */
+.banner-scale{ transform:scale(.42); transform-origin:top center; height:calc(1842px * .42); }
+.banner-scale .banner{ flex-shrink:0; }
+
+.banner .b-top{ padding:96px 84px 0; display:flex; flex-direction:column; align-items:center; text-align:center; }
+.banner .b-mark{ width:150px; height:150px; }
+.banner .b-firm{ font-family:var(--sans); font-weight:700; font-size:30px; letter-spacing:.34em; text-transform:uppercase; margin-top:34px; }
+.banner.field .b-firm{ color:#fff; }
+.banner .b-rule{ width:74px; height:4px; background:var(--vc-leaf); margin:40px 0; }
+.banner .b-tag{ font-family:var(--serif); font-weight:600; font-size:62px; line-height:1.08; letter-spacing:-.01em; max-width:15ch; }
+.banner.field .b-tag{ color:#fff; }
+.banner .b-tag .em{ font-style:italic; font-weight:500; color:var(--vc-leaf); }
+.banner .b-cap{ font-family:var(--serif); font-style:italic; font-weight:500; font-size:27px; line-height:1.4; color:#E8F0D6; margin-top:34px; max-width:26ch; }
+
+.banner .b-mid{ margin-top:64px; display:flex; flex-direction:column; gap:0; align-self:stretch; padding:0 84px; }
+.banner .b-point{ display:flex; gap:22px; align-items:flex-start; padding:26px 0; border-top:1px solid rgba(255,255,255,.16); }
+.banner .b-point:last-child{ border-bottom:1px solid rgba(255,255,255,.16); }
+.banner .b-point .rn{ font-family:var(--serif); font-weight:600; font-size:26px; color:var(--vc-leaf); line-height:1; width:42px; flex-shrink:0; }
+.banner .b-point .pt{ font-family:var(--sans); font-weight:600; font-size:25px; color:#fff; line-height:1.3; }
+.banner .b-point .pt small{ display:block; font-family:var(--serif); font-style:italic; font-weight:400; font-size:19px; color:#CFE0A8; margin-top:7px; letter-spacing:0; text-transform:none; }
+
+.banner .b-foot{ margin-top:auto; padding:54px 84px 96px; display:flex; flex-direction:column; align-items:center; gap:30px; text-align:center; }
+.banner .b-qr{ width:172px; height:172px; border-radius:14px; background:#fff; display:flex; align-items:center; justify-content:center; padding:14px; }
+.banner .b-qr img{ width:100%; height:100%; object-fit:contain; }
+.banner .b-contact{ font-family:var(--sans); font-weight:400; font-size:24px; line-height:1.7; color:#E8F0D6; letter-spacing:.01em; }
+.banner .b-contact .s{ color:#fff; font-weight:600; }
+
+/* ============================================================
+   CONFERENCE BADGE  (4 × 3 in landscape → 384 × 288 px)
+   ============================================================ */
+.badge{
+  width:384px; height:288px; background:var(--paper); border-radius:12px; overflow:hidden;
+  box-shadow:0 1px 0 rgba(0,0,0,.05), 0 22px 46px -20px rgba(22,35,10,.34);
+  display:flex; flex-direction:column; position:relative;
+}
+.badge .bg-top{ height:60px; background:var(--field-grad); display:flex; align-items:center; gap:11px; padding:0 22px; }
+.badge .bg-top img{ width:30px; height:30px; }
+.badge .bg-top .wm{ font-family:var(--sans); font-weight:700; font-size:12px; letter-spacing:.26em; text-transform:uppercase; color:#fff; }
+.badge .bg-top .ev{ margin-left:auto; font-family:var(--sans); font-weight:500; font-size:8px; letter-spacing:.14em; text-transform:uppercase; color:#CFE0A8; text-align:right; line-height:1.4; }
+.badge .bg-body{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:0 24px; }
+.badge .bg-name{ font-family:var(--serif); font-weight:600; font-size:34px; line-height:1; color:var(--ink); letter-spacing:-.01em; }
+.badge .bg-role{ font-family:var(--sans); font-weight:600; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-text); margin-top:9px; }
+.badge .bg-firm{ font-family:var(--sans); font-weight:400; font-size:12px; color:var(--grey); margin-top:4px; }
+.badge .bg-foot{ height:14px; background:var(--vc-green); }
+.badge .bg-punch{ position:absolute; top:13px; left:50%; transform:translateX(-50%); width:42px; height:9px; border-radius:8px; background:rgba(255,255,255,.5); border:1px solid rgba(255,255,255,.7); }
+
+/* lanyard strip */
+.lanyard{ width:62px; display:flex; flex-direction:column; align-items:center; }
+.lanyard .strap{ width:30px; flex:1; background:var(--field-grad); position:relative; display:flex; justify-content:center; }
+.lanyard .strap .lw{ writing-mode:vertical-rl; transform:rotate(180deg); font-family:var(--sans); font-weight:700; font-size:9px; letter-spacing:.34em; text-transform:uppercase; color:rgba(255,255,255,.7); padding-top:24px; }
+.lanyard .clip{ width:14px; height:26px; border:3px solid var(--grey-l); border-radius:4px; margin-top:-2px; }
+
+/* ============================================================
+   TABLE TENT  (folded — show the standing front face, 5 × 7 in)
+   ============================================================ */
+.tent{
+  width:360px; height:300px; background:var(--paper); position:relative; overflow:hidden;
+  box-shadow:0 24px 50px -22px rgba(22,35,10,.4); border-radius:4px 4px 0 0;
+  display:flex; flex-direction:column; align-items:center; text-align:center; padding:40px 34px 28px;
+}
+.tent .t-mark{ width:62px; height:62px; }
+.tent .t-firm{ font-family:var(--sans); font-weight:700; font-size:11px; letter-spacing:.30em; text-transform:uppercase; color:var(--accent-text); margin-top:18px; }
+.tent .t-line{ font-family:var(--serif); font-weight:600; font-size:25px; line-height:1.18; color:var(--ink); margin-top:14px; }
+.tent .t-line .ac{ color:var(--accent); font-style:italic; font-weight:500; }
+.tent .t-sub{ font-family:var(--sans); font-weight:400; font-size:10.5px; color:var(--grey); margin-top:auto; letter-spacing:.04em; }
+.tent .t-fold{ position:absolute; left:0; right:0; bottom:0; height:3px; background:var(--hair); }
+
+/* ============================================================
+   POSTCARD  (6 × 4.25 in → 576 × 408 px)
+   ============================================================ */
+.pc{
+  width:576px; height:408px; position:relative; overflow:hidden; background:var(--paper);
+  box-shadow:0 1px 0 rgba(0,0,0,.05), 0 24px 50px -22px rgba(22,35,10,.36); border-radius:6px;
+}
+/* FRONT — field ground, watercolor band, tagline */
+.pc-front{ background:var(--field-grad); color:#fff; display:flex; flex-direction:column; padding:42px 44px; }
+.pc-front .pf-water{ position:absolute; left:0; right:0; bottom:0; height:172px; overflow:hidden;
+  -webkit-mask:linear-gradient(180deg,transparent,#000 46%); mask:linear-gradient(180deg,transparent,#000 46%); }
+.pc-front .pf-water img{ width:100%; height:100%; object-fit:cover; opacity:.62; }
+.pc-front .pf-top{ display:flex; align-items:center; gap:11px; position:relative; z-index:2; }
+.pc-front .pf-top img{ width:40px; height:40px; }
+.pc-front .pf-top .wm{ font-family:var(--sans); font-weight:700; font-size:12px; letter-spacing:.28em; text-transform:uppercase; }
+.pc-front .pf-tag{ font-family:var(--serif); font-weight:600; font-size:34px; line-height:1.1; letter-spacing:-.01em; margin-top:auto; position:relative; z-index:2; max-width:14ch; }
+.pc-front .pf-tag .em{ font-style:italic; font-weight:500; color:var(--vc-leaf); }
+/* BACK — message + address rule */
+.pc-back{ display:flex; padding:34px 36px; gap:26px; }
+.pc-back .pb-msg{ flex:1; display:flex; flex-direction:column; }
+.pc-back .pb-kick{ font-family:var(--sans); font-weight:600; font-size:8.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--accent-text); }
+.pc-back .pb-head{ font-family:var(--serif); font-weight:600; font-size:19px; line-height:1.18; color:var(--ink); margin-top:8px; }
+.pc-back .pb-body{ font-family:var(--sans); font-weight:400; font-size:10.5px; line-height:1.6; color:var(--ink); margin-top:10px; }
+.pc-back .pb-sig{ margin-top:auto; font-family:var(--serif); font-style:italic; font-weight:500; font-size:14px; color:var(--vc-pine); }
+.pc-back .pb-divide{ width:1px; background:var(--hair); }
+.pc-back .pb-addr{ width:206px; display:flex; flex-direction:column; }
+.pc-back .pb-stamp{ align-self:flex-end; width:48px; height:54px; border:1px dashed var(--rule); border-radius:3px; display:flex; align-items:center; justify-content:center; text-align:center; font-family:var(--sans); font-weight:500; font-size:6px; letter-spacing:.12em; text-transform:uppercase; color:var(--grey-l); line-height:1.4; }
+.pc-back .pb-lines{ margin-top:auto; display:flex; flex-direction:column; gap:15px; }
+.pc-back .pb-lines .al{ height:1px; background:var(--hair); }
+.pc-back .pb-return{ font-family:var(--sans); font-weight:400; font-size:8px; color:var(--grey-l); line-height:1.5; letter-spacing:.02em; margin-bottom:14px; }
+.pc-back .pb-return .s{ color:var(--accent-text); font-weight:600; }
+
+/* ============================================================
+   CONFERENCE FLYER helpers (built on .page)
+   ============================================================ */
+.fl-hero{ position:relative; margin:0 -60px; padding:0 60px; }
+.fl-meet{ font-family:var(--sans); font-weight:600; font-size:11px; letter-spacing:.26em; text-transform:uppercase; color:var(--accent-text); }
+.fl-event{ font-family:var(--serif); font-weight:600; font-size:34px; line-height:1.08; color:var(--ink); letter-spacing:-.01em; margin-top:12px; }
+.fl-event .ac{ color:var(--accent); }
+.fl-when{ display:flex; gap:26px; margin-top:16px; flex-wrap:wrap; }
+.fl-when .w{ font-family:var(--sans); font-weight:400; font-size:11px; color:var(--grey); letter-spacing:.02em; }
+.fl-when .w b{ display:block; font-family:var(--serif); font-weight:600; font-size:14px; color:var(--ink); letter-spacing:0; margin-top:3px; }
+.fl-cta{ margin-top:auto; display:grid; grid-template-columns:1fr auto; gap:22px; align-items:center;
+  background:var(--field-grad); color:#fff; border-radius:8px; padding:22px 26px; }
+.fl-cta .cta-l .h{ font-family:var(--serif); font-weight:600; font-size:20px; line-height:1.2; }
+.fl-cta .cta-l .h em{ font-style:italic; font-weight:500; color:var(--vc-leaf); }
+.fl-cta .cta-l .s{ font-family:var(--sans); font-weight:400; font-size:11px; color:#E8F0D6; margin-top:6px; line-height:1.5; }
+.fl-cta .cta-qr{ width:104px; height:104px; border-radius:10px; background:#fff; padding:9px; display:flex; align-items:center; justify-content:center; }
+.fl-cta .cta-qr img{ width:100%; height:100%; object-fit:contain; }
+
+/* QR placeholder mark (used until a real QR is dropped in) */
+.qr-ph{ width:100%; height:100%; display:grid; grid-template-columns:repeat(5,1fr); grid-template-rows:repeat(5,1fr); gap:6%; padding:4%; }
+.qr-ph i{ background:var(--vc-field); border-radius:2px; }
+.qr-ph i.o{ background:transparent; }

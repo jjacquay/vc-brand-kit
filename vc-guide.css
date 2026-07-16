@@ -1,0 +1,567 @@
+/* ============================================================
+   VIRTUOUS CYCLE — VISUAL IDENTITY GUIDE
+   Design system stylesheet
+   ============================================================ */
+
+:root {
+  /* Primary — structure & identity */
+  --vc-green:   #5F8604;   /* VC Green — sampled from the logo */
+  --green-deep: #16230A;   /* Deepest field green */
+  --green-2a:   #2A3F0D;
+  --green-3e:   #3E5A02;
+  --green-panel:#22330B;   /* Tomorrow / dark panel */
+  /* Light greens */
+  --light-7f:   #7FA04A;
+  --light-c4:   #C4D4A6;
+  --light-c8:   #C8DCA0;   /* labels on dark green */
+  /* Secondary — warmth & data */
+  --amber:      #C88A2B;
+  --amber-deep: #7A4D00;   /* risk label */
+  --amber-fill: #FDF3E3;
+  /* Client accent (swappable) */
+  --navy:       #2E4A6B;
+  --navy-deep:  #1F3A5F;
+  /* Neutrals — ground */
+  --ink:        #1A2230;
+  --grey:       #555555;
+  --grey-light: #999999;
+  --fill:       #F4F6F1;   /* warm house off-white */
+  --sage-rule:  #C8D4B0;
+  --hair:       #D9DEE5;
+  --paper:      #FFFFFF;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #DBDED3;
+  font-family: 'Poppins', system-ui, sans-serif;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- stage / page ---------- */
+.stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding: 48px 24px 96px;
+}
+
+.page {
+  width: 816px;
+  height: 1056px;
+  background: var(--paper);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 24px 50px -22px rgba(22,35,10,0.30);
+  color: var(--ink);
+}
+
+.page-inner {
+  position: absolute;
+  inset: 0;
+  padding: 72px 68px 56px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- shared type ---------- */
+.kicker {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--vc-green);
+}
+
+.ptitle {
+  font-family: 'Gelasio', Georgia, serif;
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 14px 0 0;
+  text-wrap: balance;
+}
+.ptitle .ac { color: var(--vc-green); }
+.ptitle.smaller { font-size: 32px; }
+
+.lede {
+  font-family: 'Gelasio', Georgia, serif;
+  font-weight: 600;
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: var(--green-2a);
+  margin: 16px 0 0;
+  max-width: 60ch;
+  text-wrap: pretty;
+}
+
+.body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 12.5px;
+  line-height: 1.62;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+.body strong { font-weight: 500; }
+.body + .body { margin-top: 12px; }
+
+.label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--vc-green);
+}
+
+.takeaway {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--green-2a);
+  border-left: 2px solid var(--vc-green);
+  padding-left: 16px;
+  text-wrap: pretty;
+}
+
+/* ---------- footer / folio ---------- */
+.foot {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--sage-rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grey-light);
+}
+.foot .folio { font-weight: 600; color: var(--grey); letter-spacing: 0.18em; }
+
+/* divider rule */
+.rule { height: 1px; background: var(--sage-rule); border: 0; }
+.rule-strong { height: 1.4px; background: var(--vc-green); border: 0; }
+
+/* ============================================================
+   COVER
+   ============================================================ */
+.cover {
+  background:
+    radial-gradient(120% 80% at 80% 0%, #2A3F0D 0%, #16230A 60%, #0E1705 100%);
+  color: #fff;
+}
+.cover .page-inner { padding: 76px 68px 60px; }
+.cover-ribbon {
+  position: absolute;
+  left: 0; right: 0; top: 46%;
+  height: 220px;
+  opacity: 0.92;
+  transform: translateY(-50%);
+}
+.cover-ribbon img { width: 100%; height: 100%; display: block; }
+.cover-top { display: flex; align-items: center; gap: 16px; position: relative; z-index: 2; }
+.cover-icon { width: 58px; height: 58px; }
+.cover-firm {
+  font-family: 'Gelasio', Georgia, serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.cover-block { margin-top: auto; position: relative; z-index: 2; }
+.cover-eyebrow {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--light-c8);
+}
+.cover-title {
+  font-family: 'Gelasio', Georgia, serif;
+  font-weight: 600;
+  font-size: 62px;
+  line-height: 1.0;
+  letter-spacing: -0.015em;
+  margin: 18px 0 0;
+  color: #fff;
+}
+.cover-title em { font-style: italic; font-weight: 400; color: var(--light-c4); }
+.cover-essence {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.45;
+  color: var(--light-c4);
+  margin: 26px 0 0;
+  max-width: 30ch;
+}
+.cover-meta {
+  margin-top: 44px;
+  display: flex;
+  gap: 40px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.62);
+}
+.cover-meta .v { display: block; color: #fff; font-weight: 500; margin-top: 4px; letter-spacing: 0.1em; }
+
+/* ============================================================
+   CONTENTS
+   ============================================================ */
+.toc-list { margin-top: 18px; display: flex; flex-direction: column; }
+.toc-row {
+  display: grid;
+  grid-template-columns: 38px 1fr auto;
+  gap: 18px;
+  align-items: baseline;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--hair);
+}
+.toc-row .n {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; font-size: 11px;
+  color: var(--vc-green); letter-spacing: 0.1em;
+}
+.toc-row .t {
+  font-family: 'Gelasio', Georgia, serif;
+  font-weight: 600; font-size: 17px; color: var(--ink);
+}
+.toc-row .d {
+  font-family: 'Poppins', sans-serif; font-weight: 300;
+  font-size: 10.5px; color: var(--grey); grid-column: 2; margin-top: 1px;
+}
+.toc-row .pg {
+  font-family: 'Poppins', sans-serif; font-weight: 500;
+  font-size: 11px; color: var(--grey-light); letter-spacing: 0.1em;
+}
+
+/* ============================================================
+   PERSONALITY traits
+   ============================================================ */
+.traits { margin-top: 26px; display: flex; flex-direction: column; gap: 0; }
+.trait {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 26px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--hair);
+  align-items: baseline;
+}
+.trait:first-child { border-top: 1px solid var(--hair); }
+.trait .name {
+  font-family: 'Gelasio', Georgia, serif;
+  font-weight: 600; font-size: 22px; color: var(--vc-green);
+}
+.trait .desc {
+  font-family: 'Poppins', sans-serif; font-weight: 300;
+  font-size: 12.5px; line-height: 1.55; color: var(--ink);
+}
+
+/* ============================================================
+   LOGO page
+   ============================================================ */
+.logo-hero {
+  margin-top: 26px;
+  background: var(--fill);
+  border: 1px solid var(--sage-rule);
+  display: flex; align-items: center; justify-content: center;
+  padding: 40px;
+  flex: 1;
+  min-height: 0;
+}
+.logo-hero img { max-height: 360px; max-width: 70%; object-fit: contain; }
+.logo-grid {
+  margin-top: 22px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+.logo-cell {
+  border: 1px solid var(--hair);
+  background: var(--paper);
+  display: flex; flex-direction: column;
+}
+.logo-cell .frame {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  padding: 26px; min-height: 150px;
+}
+.logo-cell .frame.dark { background: var(--green-deep); }
+.logo-cell .frame.tint { background: var(--fill); }
+.logo-cell img { max-height: 96px; max-width: 80%; object-fit: contain; }
+.logo-cell .cap {
+  border-top: 1px solid var(--hair);
+  padding: 8px 12px;
+  font-family: 'Poppins', sans-serif; font-weight: 500;
+  font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey);
+}
+
+/* clear space / min size diagram */
+.spec-row { margin-top: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.spec {
+  border: 1px solid var(--hair); padding: 20px 22px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.clearspace-box {
+  position: relative; background: var(--fill);
+  border: 1px dashed var(--sage-rule);
+  height: 150px; display: flex; align-items: center; justify-content: center;
+}
+.clearspace-box img { height: 96px; }
+.clearspace-box .x {
+  position: absolute; font-family: 'Poppins',sans-serif; font-weight:600;
+  font-size: 11px; color: var(--vc-green);
+}
+
+/* misuse grid */
+.misuse-grid { margin-top: 22px; display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.misuse {
+  border: 1px solid var(--hair); display: flex; flex-direction: column;
+}
+.misuse .vis {
+  height: 130px; display: flex; align-items: center; justify-content: center;
+  background: var(--fill); overflow: hidden; position: relative;
+}
+.misuse .vis img { height: 84px; }
+.misuse .cap {
+  display: flex; gap: 8px; align-items: flex-start;
+  padding: 10px 12px; border-top: 1px solid var(--hair);
+  font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 10.5px;
+  line-height: 1.4; color: var(--ink);
+}
+.misuse .cap .no {
+  flex-shrink: 0; width: 15px; height: 15px; border-radius: 50%;
+  background: var(--ink); color: #fff; display: flex; align-items: center;
+  justify-content: center; font-size: 10px; font-weight: 600;
+}
+
+/* ============================================================
+   COLOR page
+   ============================================================ */
+.color-section { margin-top: 18px; }
+.color-section + .color-section { margin-top: 16px; }
+.cs-label {
+  font-family: 'Poppins', sans-serif; font-weight: 600;
+  font-size: 8.5px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--grey); padding-bottom: 7px; margin-bottom: 12px;
+  border-bottom: 1px solid var(--hair);
+}
+.swatches { display: grid; gap: 10px; }
+.swatches.c4 { grid-template-columns: repeat(4, 1fr); }
+.swatches.c3 { grid-template-columns: repeat(3, 1fr); }
+.swatch { display: flex; flex-direction: column; }
+.swatch .chip {
+  height: 64px; border-radius: 3px; border: 1px solid rgba(0,0,0,0.06);
+  position: relative;
+}
+.swatch .nm {
+  font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 10.5px;
+  color: var(--ink); margin-top: 8px;
+}
+.swatch .hex {
+  font-family: 'Poppins', sans-serif; font-weight: 400; font-size: 9.5px;
+  color: var(--grey); letter-spacing: 0.04em; margin-top: 1px;
+}
+.swatch .use {
+  font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 9px;
+  line-height: 1.4; color: var(--grey); margin-top: 5px;
+}
+.swatch.wide .chip { height: 72px; }
+
+/* ============================================================
+   TYPOGRAPHY page
+   ============================================================ */
+.voice { padding: 20px 0; border-bottom: 1px solid var(--hair); display: grid;
+  grid-template-columns: 150px 1fr; gap: 28px; }
+.voice:first-of-type { border-top: 1px solid var(--hair); }
+.voice .who { }
+.voice .who .face {
+  font-family: 'Gelasio', Georgia, serif; font-weight: 600; font-size: 19px; color: var(--ink);
+}
+.voice .who .role {
+  font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 9px;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--vc-green); margin-top: 6px;
+}
+.voice .who .meta {
+  font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 10px;
+  line-height: 1.5; color: var(--grey); margin-top: 8px;
+}
+.spec-gelasio { font-family: 'Gelasio', Georgia, serif; }
+.spec-poppins { font-family: 'Poppins', sans-serif; }
+.spec-lora { font-family: 'Lora', Georgia, serif; }
+.sample-display { font-family:'Gelasio',Georgia,serif; font-weight:600; font-size:30px; line-height:1.1; color:var(--ink); }
+.sample-display .ac { color: var(--vc-green); }
+.sample-lede { font-family:'Gelasio',Georgia,serif; font-weight:600; font-size:15px; color:var(--green-2a); line-height:1.45; margin-top:8px; }
+.sample-body { font-family:'Poppins',sans-serif; font-weight:300; font-size:12px; line-height:1.6; color:var(--ink); margin-top:8px; }
+.sample-body b { font-weight:500; }
+.sample-take { font-family:'Lora',Georgia,serif; font-style:italic; font-size:14px; color:var(--green-2a); line-height:1.45; }
+.scale-strip { display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-top:6px; }
+.scale-strip span { font-family:'Poppins',sans-serif; color:var(--grey); font-size:9px; letter-spacing:0.1em; text-transform:uppercase; }
+
+/* ============================================================
+   VOICE & LANGUAGE page
+   ============================================================ */
+.dodont { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.dd-col { border: 1px solid var(--hair); padding: 18px 20px; }
+.dd-col.do { border-top: 3px solid var(--vc-green); }
+.dd-col.dont { border-top: 3px solid var(--ink); }
+.dd-col h4 {
+  margin: 0 0 12px; font-family: 'Poppins', sans-serif; font-weight: 600;
+  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+}
+.dd-col.do h4 { color: var(--vc-green); }
+.dd-col.dont h4 { color: var(--ink); }
+.dd-col .ex { padding: 9px 0; border-bottom: 1px dashed var(--hair); }
+.dd-col .ex:last-child { border-bottom: 0; }
+.dd-col .ex .q {
+  font-family: 'Lora', Georgia, serif; font-style: italic; font-size: 12.5px;
+  line-height: 1.4; color: var(--ink);
+}
+.phrases { margin-top: 24px; }
+.phrase-grid { margin-top: 12px; display: grid; grid-template-columns: repeat(2,1fr); gap: 8px 24px; }
+.phrase {
+  display: flex; align-items: baseline; gap: 10px;
+  font-family: 'Gelasio', Georgia, serif; font-weight: 400; font-size: 14px; color: var(--ink);
+  padding: 6px 0; border-bottom: 1px solid var(--hair);
+}
+.phrase::before { content: ''; width: 14px; height: 1.5px; background: var(--vc-green); flex-shrink: 0; transform: translateY(-4px); }
+
+/* ============================================================
+   PROCESS page (5 phase)
+   ============================================================ */
+.process { margin-top: 24px; display: flex; flex-direction: column; gap: 0; flex: 1; }
+.phase {
+  display: grid; grid-template-columns: 56px 150px 1fr; gap: 22px; align-items: center;
+  padding: 19px 0; border-bottom: 1px solid var(--hair); position: relative;
+}
+.phase:first-child { border-top: 1px solid var(--hair); }
+.phase .ring {
+  width: 46px; height: 46px; border-radius: 50%;
+  border: 1.5px solid var(--vc-green); display: flex; align-items: center; justify-content: center;
+  font-family: 'Gelasio', Georgia, serif; font-weight: 600; font-size: 17px; color: var(--vc-green);
+}
+.phase .nm {
+  font-family: 'Gelasio', Georgia, serif; font-weight: 600; font-size: 23px; color: var(--ink);
+}
+.phase .nm small {
+  display: block; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 8.5px;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--vc-green); margin-top: 4px;
+}
+.phase .desc {
+  font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 12px; line-height: 1.55; color: var(--ink);
+}
+
+/* ============================================================
+   RIBBON page
+   ============================================================ */
+.ribbon-show {
+  margin-top: 24px; height: 200px; background: var(--green-deep);
+  display: flex; align-items: center; overflow: hidden;
+}
+.ribbon-show img { width: 100%; height: 130px; display:block; }
+.ribbon-show.light { background: var(--fill); border: 1px solid var(--sage-rule); }
+
+/* ============================================================
+   ANATOMY page
+   ============================================================ */
+.callouts { margin-top: 22px; display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+.callout { padding: 14px 15px; }
+.callout.neutral { background: #EEF3E8; border-left: 3px solid var(--vc-green); border-top: 1px solid var(--vc-green); }
+.callout.risk    { background: var(--fill); border-left: 3px solid var(--ink); border-top: 1px solid var(--ink); }
+.callout.rec     { background: #EDF4E6; border-left: 3px solid #3D5A27; border-top: 1px solid #3D5A27; }
+.callout .cl {
+  font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 8px;
+  letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 7px;
+}
+.callout.neutral .cl { color: var(--vc-green); }
+.callout.risk .cl { color: var(--ink); }
+.callout.rec .cl { color: #3D5A27; }
+.callout p { margin: 0; font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 10px; line-height: 1.45; color: var(--ink); }
+
+.anat { margin-top: 22px; display:grid; grid-template-columns: 280px 1fr; gap: 26px; }
+.minipage {
+  border: 1px solid var(--hair); background: #fff; aspect-ratio: 8.5/11;
+  display: flex; flex-direction: column; padding: 12px; gap: 6px;
+}
+.mp-bar { height: 14px; background: var(--vc-green); }
+.mp-line { height: 5px; background: var(--hair); border-radius: 2px; }
+.mp-line.short { width: 50%; }
+.mp-line.green { background: var(--light-c4); }
+.mp-block { flex:1; background: var(--fill); border:1px solid var(--hair); }
+.anat-notes .an { padding: 8px 0; border-bottom: 1px solid var(--hair); }
+.anat-notes .an .t { font-family:'Poppins',sans-serif; font-weight:600; font-size:10.5px; color:var(--ink); }
+.anat-notes .an .d { font-family:'Poppins',sans-serif; font-weight:300; font-size:10px; line-height:1.45; color:var(--grey); margin-top:2px; }
+
+/* ============================================================
+   COLLATERAL page
+   ============================================================ */
+.collateral { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; flex:1; }
+.collat {
+  border: 1px solid var(--hair); display: flex; flex-direction: column; overflow: hidden;
+}
+.collat .vis {
+  flex: 1; min-height: 0; background: var(--fill); display:flex; align-items:center; justify-content:center;
+  overflow: hidden; padding: 14px;
+}
+.collat .vis img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.collat .cap {
+  border-top: 1px solid var(--hair); padding: 10px 14px;
+}
+.collat .cap .t { font-family:'Poppins',sans-serif; font-weight:600; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--vc-green); }
+.collat .cap .d { font-family:'Poppins',sans-serif; font-weight:300; font-size:10px; line-height:1.4; color:var(--grey); margin-top:3px; }
+
+/* ============================================================
+   BACK COVER
+   ============================================================ */
+.back { background: var(--green-deep); color: #fff; }
+.back .page-inner { justify-content: center; align-items: flex-start; padding: 72px; }
+.back .b-icon { width: 64px; height: 64px; margin-bottom: 32px; }
+.back-quote {
+  font-family: 'Gelasio', Georgia, serif; font-weight: 600; font-size: 40px;
+  line-height: 1.12; letter-spacing: -0.01em; color: #fff; max-width: 16ch;
+}
+.back-quote em { font-style: italic; font-weight: 400; color: var(--light-c4); }
+.back-sub {
+  font-family: 'Lora', Georgia, serif; font-style: italic; font-size: 17px;
+  color: var(--light-c4); margin-top: 24px; max-width: 34ch; line-height: 1.45;
+}
+.back-contact {
+  margin-top: 48px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.18);
+  display: flex; gap: 44px;
+  font-family: 'Poppins', sans-serif; font-weight: 400; font-size: 10px;
+  letter-spacing: 0.12em; color: rgba(255,255,255,0.7);
+}
+.back-contact .v { display:block; color:#fff; font-weight:500; margin-top:4px; letter-spacing:0.06em; }
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+@media print {
+  @page { size: letter portrait; margin: 0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { background: #fff; }
+  .stage { padding: 0; gap: 0; }
+  .page {
+    box-shadow: none;
+    width: 8.5in; height: 11in;
+    page-break-after: always;
+    break-after: page;
+  }
+  .page:last-child { page-break-after: auto; }
+}

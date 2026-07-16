@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Virtuous Cycle — Direction &amp; Decisions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:wght@300;400;500;600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --green:#5F8604;
+  --ink:#1A2230;
+  --grey:#555;
+  --grey-l:#8b9088;
+  --fill:#F4F6F1;
+  --paper:#fff;
+  --sage:#C8D4B0;
+  --hair:#E3E7DE;
+  --field:#16230A;
+  --sun:#C88A2B;     /* warmth from imagery, NOT a brand swatch */
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:#DBDED3;color:var(--ink);
+  font-family:'Poppins',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+
+.wrap{max-width:1000px;margin:0 auto;background:var(--paper);
+  box-shadow:0 24px 60px -28px rgba(22,35,10,.35);}
+.pad{padding:64px 76px;}
+
+/* ---- masthead ---- */
+.mast{background:radial-gradient(130% 90% at 82% 0%,#2A3F0D 0%,#16230A 62%,#0E1705 100%);color:#fff;}
+.mast .pad{padding:60px 76px 56px;}
+.mast .top{display:flex;align-items:center;gap:15px;}
+.mast .knot{width:46px;height:46px;object-fit:contain;display:block;}
+.mast .firm{font-family:'Gelasio',Georgia,serif;font-weight:600;font-size:14px;letter-spacing:.32em;text-transform:uppercase;}
+.mast h1{font-family:'Gelasio',Georgia,serif;font-weight:600;font-size:50px;line-height:1.04;letter-spacing:-.015em;margin:38px 0 0;}
+.mast h1 em{font-style:italic;font-weight:400;color:#C4D4A6;}
+.mast .sub{font-family:'Lora',Georgia,serif;font-style:italic;font-size:17px;color:#C4D4A6;margin:20px 0 0;max-width:52ch;line-height:1.5;}
+.mast .meta{margin-top:34px;display:flex;gap:38px;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6);}
+.mast .meta .v{display:block;color:#fff;font-weight:500;margin-top:4px;letter-spacing:.08em;}
+
+/* ---- section scaffolding ---- */
+.sec{border-top:1px solid var(--hair);}
+.kicker{font-family:'Poppins',sans-serif;font-weight:600;font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--green);}
+.stitle{font-family:'Gelasio',Georgia,serif;font-weight:600;font-size:32px;line-height:1.1;letter-spacing:-.01em;margin:12px 0 0;}
+.stitle .ac{color:var(--green);}
+.lede{font-family:'Gelasio',Georgia,serif;font-weight:500;font-size:15px;line-height:1.5;color:#2A3F0D;margin:14px 0 0;max-width:64ch;}
+.body{font-family:'Poppins',sans-serif;font-weight:300;font-size:13px;line-height:1.62;color:var(--ink);}
+.muted{color:var(--grey);}
+
+.lockchip{display:inline-flex;align-items:center;gap:7px;margin-top:16px;font-family:'Poppins',sans-serif;font-weight:600;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#3D5A27;background:#EDF4E6;border:1px solid #C8DCA0;padding:6px 12px;border-radius:99px;}
+.lockchip::before{content:'';width:7px;height:7px;border-radius:50%;background:#3D5A27;}
+
+/* ---- 01 green (locked) ---- */
+.greens{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.gcard{border:1px solid var(--hair);background:var(--paper);transition:opacity .2s;}
+.gcard.locked{border-color:var(--green);box-shadow:0 0 0 1px var(--green),0 16px 30px -22px rgba(22,35,10,.4);}
+.gcard.faded{opacity:.5;}
+.gcard .show{height:158px;display:flex;align-items:center;justify-content:center;background:var(--fill);border-bottom:1px solid var(--hair);}
+.gcard .show .knot{width:96px;height:96px;object-fit:contain;display:block;}
+.gcard .dark{height:70px;display:flex;align-items:center;justify-content:center;background:var(--field);}
+.gcard .dark .knot{width:44px;height:44px;object-fit:contain;display:block;}
+.gcard .info{padding:15px 18px 18px;}
+.gcard .nm{font-family:'Gelasio',Georgia,serif;font-weight:600;font-size:19px;}
+.gcard .hex{font-family:'Poppins',sans-serif;font-weight:400;font-size:11px;color:var(--grey);letter-spacing:.04em;margin-top:2px;}
+.gcard .ch{font-family:'Poppins',sans-serif;font-weight:300;font-size:11px;line-height:1.5;color:var(--grey);margin-top:9px;}
+.gcard .tag{display:inline-block;margin-top:11px;font-family:'Poppins',sans-serif;font-weight:600;font-size:8px;letter-spacing:.18em;text-transform:uppercase;padding:3px 8px;border-radius:99px;}
+.tag.rec{background:#EDF4E6;color:#3D5A27;}
+.tag.alt{background:var(--fill);color:var(--grey-l);}
+
+/* ---- 02 type ---- */
+.types{margin-top:28px;display:flex;flex-direction:column;gap:18px;}
+.tcard{border:1px solid var(--hair);display:grid;grid-template-columns:172px 1fr;}
+.tcard .meta{padding:24px 22px;border-right:1px solid var(--hair);background:var(--fill);}
+.tcard .meta .pair{font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;color:var(--ink);}
+.tcard .meta .note{font-family:'Poppins',sans-serif;font-weight:300;font-size:10.5px;line-height:1.5;color:var(--grey);margin-top:10px;}
+.tcard .meta .tag{display:inline-block;margin-top:14px;font-family:'Poppins',sans-serif;font-weight:600;font-size:8px;letter-spacing:.18em;text-transform:uppercase;padding:3px 8px;border-radius:99px;}
+.tcard .samp{padding:26px 30px;}
+.tcard .samp .h{line-height:1.1;letter-spacing:-.01em;font-size:27px;}
+.tcard .samp .h .ac{color:var(--green);}
+.tcard .samp .b{font-size:12px;line-height:1.6;color:var(--ink);margin-top:11px;max-width:52ch;}
+.tcard .samp .b b{font-weight:600;}
+.tcard .samp .r{font-style:italic;font-size:13.5px;line-height:1.45;color:#2A3F0D;border-left:2px solid var(--green);padding-left:13px;margin-top:14px;max-width:48ch;}
+.pA .h{font-family:'Spectral',serif;font-weight:600;} .pA .b{font-family:'Inter',sans-serif;font-weight:300;} .pA .r{font-family:'Spectral',serif;}
+.pB .h{font-family:'Lora',serif;font-weight:600;} .pB .b{font-family:'Source Sans 3',sans-serif;font-weight:300;} .pB .r{font-family:'Lora',serif;}
+.pC .h{font-family:'Gelasio',serif;font-weight:600;} .pC .b{font-family:'Poppins',sans-serif;font-weight:300;} .pC .r{font-family:'Lora',serif;}
+
+/* ---- 03 tagline ---- */
+.reg{margin-top:24px;}
+.reg + .reg{margin-top:20px;}
+.reg .rh{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--hair);padding-bottom:8px;}
+.reg .rh .t{font-family:'Poppins',sans-serif;font-weight:600;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);}
+.reg .rh .d{font-family:'Poppins',sans-serif;font-weight:300;font-size:10.5px;color:var(--grey);}
+.lines{margin-top:4px;}
+.line{display:flex;align-items:baseline;gap:14px;padding:11px 4px;border-bottom:1px solid var(--hair);cursor:pointer;transition:background .15s;}
+.line:hover{background:var(--fill);}
+.line.on{background:#EDF4E6;}
+.line .lt{font-family:'Gelasio',Georgia,serif;font-weight:500;font-size:21px;color:var(--ink);line-height:1.2;}
+.line.on .lt{color:#2F5D3A;}
+.line .ln{font-family:'Poppins',sans-serif;font-weight:300;font-size:10.5px;color:var(--grey-l);margin-left:auto;text-align:right;max-width:32ch;line-height:1.4;flex-shrink:0;}
+.recline{display:inline-block;margin-left:8px;font-family:'Poppins',sans-serif;font-weight:600;font-size:7.5px;letter-spacing:.16em;text-transform:uppercase;background:#EDF4E6;color:#3D5A27;padding:2px 7px;border-radius:99px;transform:translateY(-2px);}
+
+.descbox{margin-top:26px;border:1px solid var(--hair);border-top:3px solid var(--green);padding:22px 26px;background:var(--fill);}
+.descbox .label{font-family:'Poppins',sans-serif;font-weight:600;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--green);}
+.descbox .cap{font-family:'Gelasio',Georgia,serif;font-weight:600;font-size:18px;color:var(--ink);margin-top:8px;}
+.descbox .cap s{color:var(--grey-l);text-decoration-color:var(--grey-l);font-weight:400;}
+.descbox p{font-family:'Poppins',sans-serif;font-weight:300;font-size:11.5px;line-height:1.55;color:var(--grey);margin:8px 0 0;max-width:68ch;}
+
+/* ---- influences ---- */
+.refs{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.ref{border:1px solid var(--hair);padding:22px 22px 24px;display:flex;flex-direction:column;}
+.ref .src{font-family:'Poppins',sans-serif;font-weight:600;font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey-l);}
+.ref .nm{font-family:'Gelasio',Georgia,serif;font-weight:600;font-size:20px;margin-top:7px;color:var(--ink);}
+.ref .what{font-family:'Poppins',sans-serif;font-weight:300;font-size:10.5px;line-height:1.5;color:var(--grey);margin-top:8px;}
+.ref .take{margin-top:14px;padding-top:13px;border-top:1px solid var(--hair);}
+.ref .take .h{font-family:'Poppins',sans-serif;font-weight:600;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:8px;}
+.ref .take li{font-family:'Poppins',sans-serif;font-weight:300;font-size:11px;line-height:1.45;color:var(--ink);list-style:none;padding-left:14px;position:relative;margin-bottom:6px;}
+.ref .take li::before{content:'';position:absolute;left:0;top:7px;width:6px;height:6px;border:1.4px solid var(--green);border-radius:50%;}
+
+.themes{margin-top:30px;}
+.theme{display:grid;grid-template-columns:46px 230px 1fr;gap:22px;align-items:start;padding:20px 0;border-bottom:1px solid var(--hair);}
+.theme:first-child{border-top:1px solid var(--hair);}
+.theme .n{font-family:'Gelasio',Georgia,serif;font-weight:600;font-size:24px;color:var(--green);line-height:1;}
+.theme .t{font-family:'Gelasio',Georgia,serif;font-weight:600;font-size:18px;color:var(--ink);line-height:1.15;}
+.theme .d{font-family:'Poppins',sans-serif;font-weight:300;font-size:12px;line-height:1.55;color:var(--ink);}
+.theme .d b{font-weight:500;color:var(--ink);}
+
+.eco{margin-top:30px;border:1px solid var(--hair);border-left:3px solid var(--green);padding:22px 26px;background:var(--fill);}
+.eco .label{font-family:'Poppins',sans-serif;font-weight:600;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--green);}
+.eco h4{margin:8px 0 0;font-family:'Gelasio',Georgia,serif;font-weight:600;font-size:18px;color:var(--ink);}
+.eco p{font-family:'Poppins',sans-serif;font-weight:300;font-size:11.5px;line-height:1.55;color:var(--grey);margin:9px 0 0;max-width:74ch;}
+.eco p b{font-weight:500;color:var(--ink);}
+.eco .sites{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;}
+.eco .site{font-family:'Poppins',sans-serif;font-weight:500;font-size:10px;color:var(--green);background:#EDF4E6;border:1px solid #C8DCA0;padding:5px 11px;border-radius:99px;}
+.eco .site small{color:var(--grey);font-weight:300;}
+
+/* ---- green family ramp ---- */
+.ramp{margin-top:26px;display:grid;grid-template-columns:repeat(7,1fr);border:1px solid var(--hair);overflow:hidden;border-radius:5px;}
+.ramp .step{display:flex;flex-direction:column;border-right:1px solid var(--hair);}
+.ramp .step:last-child{border-right:0;}
+.ramp .step .chip{height:104px;position:relative;}
+.ramp .step .anchor{position:absolute;left:9px;bottom:9px;font-family:'Poppins',sans-serif;font-weight:600;font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.28);padding:3px 7px;border-radius:99px;}
+.ramp .step .info{padding:11px 13px 15px;border-top:1px solid var(--hair);}
+.ramp .step .nm{font-family:'Gelasio',Georgia,serif;font-weight:600;font-size:13.5px;color:var(--ink);line-height:1.05;}
+.ramp .step .hex{font-family:'Poppins',sans-serif;font-weight:400;font-size:9.5px;color:var(--grey);letter-spacing:.03em;margin-top:3px;}
+.ramp .step .use{font-family:'Poppins',sans-serif;font-weight:300;font-size:8.5px;line-height:1.4;color:var(--grey-l);margin-top:7px;}
+.neut{margin-top:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.neut .n{display:flex;align-items:center;gap:10px;}
+.neut .n .sw{width:32px;height:32px;border-radius:4px;border:1px solid rgba(0,0,0,.08);flex-shrink:0;}
+.neut .n .lab b{display:block;font-family:'Poppins',sans-serif;font-weight:600;font-size:11px;color:var(--ink);}
+.neut .n .lab span{font-family:'Poppins',sans-serif;font-weight:300;font-size:9px;color:var(--grey);}
+.retired{margin-top:18px;display:flex;align-items:center;gap:14px;padding:13px 18px;background:var(--fill);border:1px solid var(--hair);border-radius:5px;}
+.retired .dots{display:flex;gap:6px;}
+.retired .dots i{width:16px;height:16px;border-radius:4px;display:block;opacity:.45;}
+.retired .txt{font-family:'Poppins',sans-serif;font-weight:300;font-size:10.5px;line-height:1.5;color:var(--grey);}
+.retired .txt b{font-weight:600;color:var(--ink);}
+
+/* ---- color note ---- */
+.cnote{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--hair);}
+.cnote .col{padding:24px 26px;}
+.cnote .col:first-child{border-right:1px solid var(--hair);}
+.cnote .label{font-family:'Poppins',sans-serif;font-weight:600;font-size:9px;letter-spacing:.22em;text-transform:uppercase;}
+.cnote .keep .label{color:var(--green);}
+.cnote .drop .label{color:var(--grey);}
+.cnote .row{display:flex;align-items:center;gap:10px;margin-top:14px;}
+.cnote .row .sw{width:30px;height:30px;border-radius:4px;border:1px solid rgba(0,0,0,.07);}
+.cnote .row .lab{font-family:'Poppins',sans-serif;font-size:11px;}
+.cnote .row .lab b{display:block;font-weight:600;color:var(--ink);}
+.cnote .row .lab span{font-size:9.5px;color:var(--grey);}
+.cnote .drop .row .sw{opacity:.4;}
+.cnote .drop .row .lab{text-decoration:line-through;text-decoration-color:var(--grey-l);color:var(--grey-l);}
+.cnote .drop .row .lab span{text-decoration:none;display:block;}
+
+.foot{padding:30px 76px;border-top:1px solid var(--hair);display:flex;justify-content:space-between;align-items:baseline;
+  font-family:'Poppins',sans-serif;font-weight:400;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey-l);}
+.foot b{color:var(--grey);font-weight:600;letter-spacing:.16em;}
+
+@media print{
+  html,body{background:#fff;}
+  .wrap{box-shadow:none;max-width:none;}
+  .gcard,.tcard,.ref,.theme,.sec{break-inside:avoid;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- masthead -->
+  <header class="mast">
+    <div class="pad">
+      <div class="top"><img class="knot" src="assets/knot-white.png" alt="" /><div class="firm">Virtuous Cycle</div></div>
+      <h1>Direction <em>&amp; decisions</em></h1>
+      <p class="sub">Olive is locked and the secondary palette is retired. Two things refined here — the line we lead with, and the influences we're drawing from. Click a tagline to preview it.</p>
+      <div class="meta">
+        <div>Document<span class="v">VC-DIRECTION-2026</span></div>
+        <div>Status<span class="v">Green locked · type open</span></div>
+        <div>Then<span class="v">Rebuild guide + kit</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 01 GREEN — LOCKED -->
+  <section class="sec">
+    <div class="pad">
+      <div class="kicker">Decision 01 · Locked</div>
+      <h2 class="stitle">The green is <span class="ac">olive</span></h2>
+      <p class="lede">Per your call, olive holds — #5F8604, sampled straight from the logo, so every existing asset stays valid as-is. Forest and moss are shown for the record only.</p>
+      <div class="lockchip">Locked — VC Green #5F8604</div>
+
+      <div class="greens">
+        <div class="gcard locked">
+          <div class="show"><img class="knot" src="assets/knot-olive.png" alt="" /></div>
+          <div class="dark"><img class="knot" src="assets/knot-white.png" alt="" /></div>
+          <div class="info">
+            <div class="nm">Olive</div>
+            <div class="hex">#5F8604</div>
+            <div class="ch">The true ink — optimistic, agrarian, alive. No re-rendering needed.</div>
+            <span class="tag rec">Locked</span>
+          </div>
+        </div>
+        <div class="gcard faded">
+          <div class="show"><img class="knot" src="assets/knot-forest.png" alt="" /></div>
+          <div class="dark"><img class="knot" src="assets/knot-white.png" alt="" /></div>
+          <div class="info">
+            <div class="nm">Forest</div>
+            <div class="hex">#2F5D3A</div>
+            <div class="ch">Cooler, more institutional. Not chosen.</div>
+            <span class="tag alt">For the record</span>
+          </div>
+        </div>
+        <div class="gcard faded">
+          <div class="show"><img class="knot" src="assets/knot-moss.png" alt="" /></div>
+          <div class="dark"><img class="knot" src="assets/knot-white.png" alt="" /></div>
+          <div class="info">
+            <div class="nm">Moss</div>
+            <div class="hex">#46611E</div>
+            <div class="ch">A darker olive. Not chosen.</div>
+            <span class="tag alt">For the record</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 TAGLINE -->
+  <section class="sec">
+    <div class="pad">
+      <div class="kicker">Decision 02 · The line we lead with</div>
+      <h2 class="stitle">Retiring <span class="ac">“place-strengthening”</span></h2>
+      <p class="lede">Agreed — it's clunky. The descriptor goes back to plain language, and the lead line carries the mission. Your reference brands (and your own ecosystem) point clearly to one register: <strong>the common good</strong>. Click any line to preview it in the masthead.</p>
+
+      <div class="reg">
+        <div class="rh"><div class="t">Common good</div><div class="d">Your own language — and what Capita &amp; convivium circle. Substantive, not soft.</div></div>
+        <div class="lines">
+          <div class="line on" data-tag="Development advisory for the common good."><div class="lt">Development advisory for the common good.<span class="recline">Recommended</span></div><div class="ln">Plain, mission-true, no posturing.</div></div>
+          <div class="line" data-tag="Strategy and capital for the common good."><div class="lt">Strategy and capital for the common good.</div><div class="ln">Names the two levers you pull.</div></div>
+          <div class="line" data-tag="Helping communities flourish."><div class="lt">Helping communities flourish.</div><div class="ln">Warmer; “flourish” over “strengthen.”</div></div>
+        </div>
+      </div>
+
+      <div class="reg">
+        <div class="rh"><div class="t">Plainspoken &amp; functional</div><div class="d">Authority through economy — the Toole / Fourth Economy register.</div></div>
+        <div class="lines">
+          <div class="line" data-tag="Development advisory for places that last."><div class="lt">Development advisory for places that last.</div><div class="ln">Durable, concrete.</div></div>
+          <div class="line" data-tag="Strategy for high-stakes decisions about land."><div class="lt">Strategy for high-stakes decisions about land.</div><div class="ln">Speaks to the stakes.</div></div>
+        </div>
+      </div>
+
+      <div class="reg">
+        <div class="rh"><div class="t">Place &amp; convergence</div><div class="d">Carries the knot's meaning — where things meet and return.</div></div>
+        <div class="lines">
+          <div class="line" data-tag="Where land, capital, and community meet."><div class="lt">Where land, capital, and community meet.</div><div class="ln">The intersection you work in.</div></div>
+          <div class="line" data-tag="Value that returns to its source."><div class="lt">Value that returns to its source.</div><div class="ln">The virtuous cycle, stated.</div></div>
+        </div>
+      </div>
+
+      <div class="descbox">
+        <div class="label">The descriptor (capability line)</div>
+        <div class="cap">PPP + Development Advisory for <s>Place-Strengthening</s> Mission-Aligned Projects</div>
+        <p><strong>“Place-strengthening” retired.</strong> “Mission-aligned” is plainer, already live on your site, and stays functional. Keep this separate from the tagline: the wordmark stays descriptor-free, and this swappable line scales from advisory through principal, GP / co-GP, JV, and SPV roles. The tagline sets tone; the capability line states the offer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 INFLUENCES -->
+  <section class="sec">
+    <div class="pad">
+      <div class="kicker">Direction · Influences</div>
+      <h2 class="stitle">What we're <span class="ac">drawing from</span></h2>
+      <p class="lede">Your three references work in different sectors but share one ethos — and Virtuous Cycle already speaks its language. We keep the colors exactly as they are; what we borrow is tone, structure, and posture. <span class="muted" style="font-style:normal;font-size:12.5px;">(Read from each brand's voice and architecture; if you want me to match specific visual details, send screenshots and I'll pull them precisely.)</span></p>
+
+      <div class="refs">
+        <div class="ref">
+          <div class="src">Reference</div>
+          <div class="nm">Fourth Economy</div>
+          <div class="what">Community &amp; economic development consulting. Leads with a plainspoken triad — strong communities, impactful organizations, thriving economies.</div>
+          <div class="take">
+            <div class="h">What we take</div>
+            <ul style="margin:0;padding:0;">
+              <li>Triadic framing for VC: <b>land · livelihood · common good</b>.</li>
+              <li>A clear “what we do” + markets grid, warm and data-driven.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ref">
+          <div class="src">Reference</div>
+          <div class="nm">Toole Design</div>
+          <div class="what">Transportation &amp; active-mobility planning and engineering. Bold, declarative headlines; values-led (“the New E's”); people-first.</div>
+          <div class="take">
+            <div class="h">What we take</div>
+            <ul style="margin:0;padding:0;">
+              <li>The hero as <b>one confident sentence</b>, not a slogan.</li>
+              <li>Posture: “envision the possible, then build it.”</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ref">
+          <div class="src">Reference</div>
+          <div class="nm">Capita</div>
+          <div class="what">A think tank on the common good and human flourishing. Warm, humane, idea-led — one bold accent over generous white space.</div>
+          <div class="take">
+            <div class="h">What we take</div>
+            <ul style="margin:0;padding:0;">
+              <li>The <b>common-good / flourishing</b> vocabulary, made concrete.</li>
+              <li>Restraint: lots of air, one warm note, ideas first.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="themes">
+        <div class="theme">
+          <div class="n">01</div>
+          <div class="t">The common good, stated plainly</div>
+          <div class="d">All three lead with purpose in concrete, un-precious language. VC already has the phrase — <b>“land, livelihood, and the common good.”</b> Lead with it everywhere, and drop the softer “soul/purpose” framings.</div>
+        </div>
+        <div class="theme">
+          <div class="n">02</div>
+          <div class="t">People and place at the center</div>
+          <div class="d">Toole “moves people”; Fourth Economy is people-centered; Capita starts from dignity. For VC this means <b>naming real places and people</b> — and letting the Pensacola Bay watercolor (and photography) do the emotional work the palette won't.</div>
+        </div>
+        <div class="theme">
+          <div class="n">03</div>
+          <div class="t">A clear, declarative voice</div>
+          <div class="d">Confident sentence-headlines, generous white space, ideas before ornament. VC's hero is <b>one plainspoken sentence</b>; restraint is the signal of command — which is already your “restraint is the brand.”</div>
+        </div>
+        <div class="theme">
+          <div class="n">04</div>
+          <div class="t">Forward-looking, but grounded</div>
+          <div class="d">Resilient futures, “envision the possible,” renewal. VC frames today's decision by <b>the value it compounds tomorrow</b> — the virtuous cycle — pairing rigor with genuine optimism.</div>
+        </div>
+        <div class="theme">
+          <div class="n">05</div>
+          <div class="t">Warmth from imagery, not a second color</div>
+          <div class="d">Capita earns warmth with one bold accent over white; you've retired off-family secondaries. So VC's warmth comes through <b>the watercolor's own sunset tones and real photography</b> — the olive family + neutrals stay the only brand colors, and the work supplies the heat.</div>
+        </div>
+      </div>
+
+      <div class="eco">
+        <div class="label">Your ecosystem</div>
+        <h4>One family of marks, around a common-life idea</h4>
+        <p><b>convivium</b> means a shared table — conviviality, common life — which sits naturally beside “the common good.” These should feel related, not identical. As you've offered, <b>jjacquay.com</b> can flex toward VC's olive + type system to read as the person behind the firm; <b>bluffline.org</b> shares the Gulf-Coast place and palette even where you don't control it. Recommendation: harmonize type and the olive/neutral ground across what you own; let each keep its own name and mark.</p>
+        <div class="sites">
+          <div class="site">virtuouscycle.dev</div>
+          <div class="site">convivium.dev <small>· common life</small></div>
+          <div class="site">jjacquay.com <small>· the person</small></div>
+          <div class="site">bluffline.org <small>· the place</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 TYPE (still open) -->
+  <section class="sec">
+    <div class="pad">
+      <div class="kicker">Decision 03 · Still open</div>
+      <h2 class="stitle">The <span class="ac">type system</span></h2>
+      <p class="lede">Move from three families to two — one serif that speaks, one sans that explains. Your references lean clean, humane, and sans-forward; <strong>A (Spectral + Inter)</strong> best matches that civic, contemporary read. Same words across all three so the comparison is pure type.</p>
+
+      <div class="types">
+        <div class="tcard pA">
+          <div class="meta">
+            <div class="pair">A · Spectral + Inter</div>
+            <div class="note">Editorial serif with a civic, contemporary edge; Inter is the cleanest neutral sans for data and body. Closest to the references.</div>
+            <span class="tag rec" style="background:#EDF4E6;color:#3D5A27">Recommended</span>
+          </div>
+          <div class="samp">
+            <div class="h">Land, livelihood, and the <span class="ac">common good</span></div>
+            <p class="b"><b>The evidence suggests</b> a corridor commitment must be locked before negotiation, not after. Informal assurances do not survive a change in counterparty.</p>
+            <div class="r">Stewardship is not the opposite of return; over a long enough horizon, it is the source of it.</div>
+          </div>
+        </div>
+        <div class="tcard pB">
+          <div class="meta">
+            <div class="pair">B · Lora + Source Sans 3</div>
+            <div class="note">Warmer, more humanist. Lora softens the serif; Source Sans is friendly and highly legible.</div>
+            <span class="tag alt" style="background:var(--fill);color:var(--grey)">Alt · warmer</span>
+          </div>
+          <div class="samp">
+            <div class="h">Land, livelihood, and the <span class="ac">common good</span></div>
+            <p class="b"><b>The evidence suggests</b> a corridor commitment must be locked before negotiation, not after. Informal assurances do not survive a change in counterparty.</p>
+            <div class="r">Stewardship is not the opposite of return; over a long enough horizon, it is the source of it.</div>
+          </div>
+        </div>
+        <div class="tcard pC">
+          <div class="meta">
+            <div class="pair">C · Gelasio + Poppins</div>
+            <div class="note">The current system, with Lora as a third reflective face. Familiar but the least distinctive.</div>
+            <span class="tag alt" style="background:var(--fill);color:var(--grey)">Current</span>
+          </div>
+          <div class="samp">
+            <div class="h">Land, livelihood, and the <span class="ac">common good</span></div>
+            <p class="b"><b>The evidence suggests</b> a corridor commitment must be locked before negotiation, not after. Informal assurances do not survive a change in counterparty.</p>
+            <div class="r">Stewardship is not the opposite of return; over a long enough horizon, it is the source of it.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLOR CONFIRM -->
+  <section class="sec">
+    <div class="pad">
+      <div class="kicker">Confirmed · Palette</div>
+      <h2 class="stitle">One hue, a <span class="ac">family of tones</span></h2>
+      <p class="lede">Agreed — a richer green reads better than a lone accent. So the palette expands <em>within the olive family</em>: a tonal ramp from pale sage to deep field, all the same hue, no off-family colors. Olive stays the anchor; the lighter and darker tones do the supporting work amber and navy used to.</p>
+
+      <div class="ramp">
+        <div class="step"><div class="chip" style="background:#EDF1E3"></div><div class="info"><div class="nm">Mist</div><div class="hex">#EDF1E3</div><div class="use">Section tints, table fills, quiet panels.</div></div></div>
+        <div class="step"><div class="chip" style="background:#C8D4B0"></div><div class="info"><div class="nm">Sage</div><div class="hex">#C8D4B0</div><div class="use">Rules, ribbon mid-tones, soft dividers.</div></div></div>
+        <div class="step"><div class="chip" style="background:#9FB76A"></div><div class="info"><div class="nm">Leaf</div><div class="hex">#9FB76A</div><div class="use">Diagram fills, secondary bars, charts.</div></div></div>
+        <div class="step"><div class="chip" style="background:#5F8604"><span class="anchor">Anchor</span></div><div class="info"><div class="nm">Olive · VC Green</div><div class="hex">#5F8604</div><div class="use">Identity, accent words, kickers, lead bars.</div></div></div>
+        <div class="step"><div class="chip" style="background:#46611E"></div><div class="info"><div class="nm">Moss</div><div class="hex">#46611E</div><div class="use">Deeper accent, hovers, second-level bars.</div></div></div>
+        <div class="step"><div class="chip" style="background:#2A3F0D"></div><div class="info"><div class="nm">Pine</div><div class="hex">#2A3F0D</div><div class="use">Panels, dividers, chart depth.</div></div></div>
+        <div class="step"><div class="chip" style="background:#16230A"></div><div class="info"><div class="nm">Field</div><div class="hex">#16230A</div><div class="use">Covers, dark panels, reversed type.</div></div></div>
+      </div>
+
+      <div class="neut">
+        <div class="n"><div class="sw" style="background:#1A2230"></div><div class="lab"><b>Ink</b><span>display &amp; body text</span></div></div>
+        <div class="n"><div class="sw" style="background:#555"></div><div class="lab"><b>Grey</b><span>captions, sources, metadata</span></div></div>
+        <div class="n"><div class="sw" style="background:#F4F6F1;border-color:#D9DEE5"></div><div class="lab"><b>Light Fill</b><span>warm house off-white</span></div></div>
+        <div class="n"><div class="sw" style="background:#FFFFFF;border-color:#D9DEE5"></div><div class="lab"><b>White</b><span>page ground</span></div></div>
+      </div>
+
+      <div class="retired">
+        <div class="dots"><i style="background:#C88A2B"></i><i style="background:#2E4A6B"></i></div>
+        <div class="txt"><b>Still retired:</b> amber and client navy — the only truly <em>off-family</em> colors. The green ramp now covers warm-to-deep range, and real warmth still comes from the watercolor and photography, not a swatch.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="foot">
+    <div>Virtuous Cycle LLC · Direction &amp; Decisions · VC-DIRECTION-2026</div>
+    <div><b>Pick a tagline + type, then I rebuild the guide</b></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var sub=document.querySelector('.mast .sub');
+  document.querySelectorAll('.line').forEach(function(line){
+    line.addEventListener('click',function(){
+      document.querySelectorAll('.line').forEach(function(l){l.classList.remove('on');});
+      line.classList.add('on');
+      sub.textContent='“'+line.getAttribute('data-tag')+'”';
+      sub.style.fontStyle='italic';
+    });
+  });
+})();
+</script>
+</body>
+</html>
