@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Jarah Jacquay — GDCI Application (preview)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --ink:#1A2230; --moss:#4F7510; --verd:#6E9E10; --leaf:#9DC65A; --sage:#CFE0A8;
+    --grey:#555555; --greyl:#8A9384; --hair:#E3E7DE;
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:'Calibri','Segoe UI',-apple-system,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#DBDED3;font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased}
+  .wrap{display:flex;flex-direction:column;align-items:center;gap:34px;padding:46px 20px 90px}
+  .tag-top{font-family:var(--sans);font-weight:600;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--greyl);text-align:center}
+  .sheet{width:816px;max-width:calc(100vw - 40px);background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.04),0 24px 50px -22px rgba(22,35,10,.30);padding:62px 70px 70px}
+  .sheet + .lbl{margin-top:-18px}
+
+  /* header block */
+  .name{font-family:var(--serif);font-weight:700;font-size:30px;letter-spacing:.10em;color:var(--ink);text-align:center;margin:0}
+  .creds{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);text-align:center;margin:9px 0 0}
+  .role1{font-weight:700;font-size:12px;letter-spacing:.20em;text-transform:uppercase;color:var(--moss);text-align:center;margin:18px 0 0}
+  .role2{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--greyl);text-align:center;margin:7px 0 0}
+  .contact{font-size:11.5px;color:var(--grey);text-align:center;margin:16px 0 0;padding-bottom:16px;border-bottom:1px solid var(--hair)}
+
+  h2.sec{font-size:11px;font-weight:700;letter-spacing:.20em;text-transform:uppercase;color:var(--moss);margin:24px 0 10px;padding-bottom:7px;border-bottom:1.2px solid var(--verd)}
+  .profile{font-size:12.5px;line-height:1.62;color:var(--ink);margin:0}
+  .inline-list{font-size:12.5px;line-height:1.75;color:var(--ink);margin:0}
+  .inline-list .sep{color:var(--verd);font-weight:700;padding:0 .5em}
+
+  .job{margin-top:11px}
+  .job .r1{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+  .job .org{font-weight:700;font-size:13.5px;color:var(--ink)}
+  .job .dates{font-size:11px;color:var(--grey);white-space:nowrap}
+  .job .r2{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:2px}
+  .job .title{font-style:italic;font-size:12.5px;color:var(--moss)}
+  .job .loc{font-style:italic;font-size:11px;color:var(--grey);white-space:nowrap}
+  ul.b{list-style:none;margin:8px 0 0;padding:0}
+  ul.b li{position:relative;padding-left:16px;font-size:12px;line-height:1.62;color:var(--ink);margin:0 0 5px}
+  ul.b li::before{content:'•';position:absolute;left:0;top:0;color:var(--verd);font-weight:700}
+  ul.b li b{font-weight:700}
+
+  .edu{margin-top:10px}
+  .edu .r1{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+  .edu .school{font-weight:700;font-size:13px;color:var(--ink)}
+  .edu .date{font-size:11px;color:var(--grey);white-space:nowrap}
+  .edu .deg{font-style:italic;font-size:12px;color:var(--moss);margin-top:2px}
+  .focus{font-style:italic;font-size:11.5px;color:var(--grey);line-height:1.55;margin:12px 0 0}
+  .skill{font-size:12px;line-height:1.62;margin:0 0 8px}
+  .skill b{color:var(--moss)}
+
+  /* cover letter */
+  .cl-date{font-size:12.5px;color:var(--grey);margin:26px 0 22px}
+  .cl-recip .rr{font-size:12.5px;color:var(--ink);line-height:1.5}
+  .cl-recip .rr.org{font-weight:400}
+  .cl-recip .rr.who{font-family:var(--sans);font-size:12.5px;text-align:left;font-weight:700;color:var(--ink)}
+  .cl-recip .rr.role{font-style:italic;color:var(--moss)}
+  .cl-salute{font-size:13px;margin:22px 0 16px}
+  .cl-body p{font-size:13px;line-height:1.72;color:var(--ink);margin:0 0 15px;text-wrap:pretty}
+  .cl-close{font-size:13px;margin:20px 0 0}
+  .cl-sign{font-family:var(--serif);font-weight:700;font-size:19px;color:var(--ink);margin:26px 0 0}
+  .cl-signsub{font-size:11px;color:var(--greyl);margin:8px 0 0}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="tag-top">Preview · mirrors the delivered .docx files</div>
+
+  <!-- ===================== RESUME ===================== -->
+  <div class="sheet" id="resume" data-document-role="page" data-label="Resume">
+    <h1 class="name">JARAH V. JACQUAY</h1>
+    <div class="creds">MSN, RN, PMGT-BC, CNL, CNU-A, WEDG Associate, LSSGB</div>
+    <div class="role1">Programs, Design &amp; Public-Health Executive</div>
+    <div class="role2">People-Centered Streets&nbsp;&nbsp;|&nbsp;&nbsp;Active Transportation&nbsp;&nbsp;|&nbsp;&nbsp;Human Flourishing</div>
+    <div class="contact">Pensacola, Florida&nbsp;&nbsp;|&nbsp;&nbsp;jarah@jjacquay.com&nbsp;&nbsp;|&nbsp;&nbsp;linkedin.com/in/jjacquay&nbsp;&nbsp;|&nbsp;&nbsp;jjacquay.com</div>
+
+    <h2 class="sec">Executive Profile</h2>
+    <p class="profile" data-comment-anchor="7b0961b0a7-p">Public-health systems leader and civic-infrastructure strategist with 15+ years of cross-sector experience spanning active transportation, nonprofit governance, federal healthcare operations, public-private partnerships, and place-based implementation. Co-founder and former executive leader of Bluffline and former Bike Pensacola board member, with a record of building coalitions, translating technical design concepts into civic action, and moving ambitious mobility ideas toward policy adoption, grant funding, and implementation. Brings standards-based design literacy through CNU-A and WEDG, Lean process discipline through LSSGB, and advanced proficiency in executive writing, systems mapping, public-interest research, digital product strategy, and stakeholder communication.</p>
+
+    <h2 class="sec">Core Expertise</h2>
+    <p class="inline-list" data-comment-anchor="b3993aac4b-p">Active Transportation &amp; Safe Streets<span class="sep">•</span>Executive Program Management<span class="sep">•</span>Coalition &amp; Partnership Development<span class="sep">•</span>Design Review &amp; Standards Translation<span class="sep">•</span>Grant Strategy &amp; Funder Communication<span class="sep">•</span>Public Health + Built Environment</p>
+
+    <h2 class="sec">Selected Leadership Experience</h2>
+    <div class="job">
+      <div class="r1"><span class="org">Bluffline, Inc.</span><span class="dates">2022–Present</span></div>
+      <div class="r2"><span class="title">Co-Founder &amp; President-Emeritus</span><span class="loc">Pensacola, FL</span></div>
+      <ul class="b">
+        <li>Co-founded and helped build a regional greenway and civic-infrastructure initiative connecting west and east Pensacola through trails, parks, waterfronts, and neighborhood corridors, framing mobility investment as a public-health, resilience, and community-development strategy.</li>
+        <li>Led coalition development across local government, engineering and planning firms, environmental organizations, philanthropy, universities, neighborhood leaders, and institutional partners; translated a broad civic vision into governance, consultant scopes, grant narratives, and phased implementation pathways.</li>
+        <li>Helped secure a $1.2 million U.S. Department of Transportation Reconnecting Communities planning award and developed or coordinated additional federal, state, philanthropic, and pro bono funding strategies for corridor planning, community engagement, and project readiness.</li>
+        <li>Directed public-facing strategy and executive communications for a 10-mile-plus multimodal corridor, including segment prioritization, partnership positioning, health and access framing, and integration with regional trail, safety, stormwater, and waterfront initiatives.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="r1"><span class="org">Bike Pensacola</span><span class="dates" data-comment-anchor="11b3921ba4-span">2018–2022</span></div>
+      <div class="r2"><span class="title">Board &amp; Advocacy Committee Member</span><span class="loc">Pensacola, FL</span></div>
+      <ul class="b">
+        <li>Helped lead a citywide bicycle coalition combining recurring community rides, public education, policy advocacy, and relationship-building with elected officials, city staff, neighborhood organizations, and transportation partners.</li>
+        <li>Successfully advocated with the coalition for a Complete Streets ordinance, strengthened neighborhood traffic-calming policies, a formal Vision Zero commitment, development of an active transportation master plan, and expansion of the Florida SUN Trail network within Pensacola.</li>
+        <li>Translated technical safety concepts—including protected bicycle facilities, traffic calming, network connectivity, and Safe System principles—into accessible public narratives and politically durable policy asks.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="r1"><span class="org">Virtuous Cycle LLC</span><span class="dates">2021–Present</span></div>
+      <div class="r2"><span class="title">Founder &amp; Managing Principal</span><span class="loc">Pensacola, FL</span></div>
+      <ul class="b">
+        <li>Lead a place-based advisory and civic-technology practice working at the intersection of land use, transportation, environmental health, public infrastructure, housing, and public-private development strategy.</li>
+        <li>Produce decision-oriented research, technical memoranda, digital tools, stakeholder strategies, and implementation frameworks for institutional, nonprofit, and municipal clients; current work includes waterfront resilience, corridor planning, land disposition, infill development, and public-interest data systems.</li>
+        <li>Developed Safer Streets Simplified, a public-facing civic-technology concept that translates street-safety standards and diagnostic workflows into accessible tools for residents and decision-makers; serve as product owner, domain researcher, UX reviewer, and quality-control lead.</li>
+      </ul>
+    </div>
+
+    <h2 class="sec">Additional Executive Experience</h2>
+    <div class="job">
+      <div class="r1"><span class="org">Defense Health Agency / Naval Hospital Pensacola</span><span class="dates">2016–Present</span></div>
+      <div class="r2"><span class="title">Clinical Nurse Leader &amp; Federal Healthcare Operations Leader</span><span class="loc">Pensacola, FL</span></div>
+      <ul class="b">
+        <li>Lead multidisciplinary clinical operations, quality-improvement, readiness, compliance, patient-safety, and process-redesign work in a complex federal matrix organization; translate standards into practical workflows, accountability systems, and measurable operational improvements.</li>
+        <li>Developed and advanced a cone-beam CT implementation initiative projected to avoid approximately $421,000–$843,000 in external imaging costs over 6–12 months while improving access, turnaround time, and radiation stewardship.</li>
+        <li>Apply Lean Six Sigma, human-factors, risk-management, and executive communication methods to high-stakes environments involving clinicians, administrators, military leaders, vendors, and patients.</li>
+      </ul>
+    </div>
+
+    <h2 class="sec">Selected Programs, Projects &amp; Thought Leadership</h2>
+    <ul class="b">
+      <li><b>Bluffline Framework Plan, Segment Readiness &amp; Waterfront Resilience </b>— coordinated multidisciplinary planning and design with public agencies and consultants, including corridor segmentation, governance, stakeholder engagement, and implementation sequencing; applied WEDG principles along Bayfront Parkway to integrate public access, mobility, stormwater, ecology, landscape, and long-term resilience within a broader public-infrastructure context.</li>
+      <li><b>Safer Streets Simplified </b>— directed research and product development using NACTO, FHWA, Vision Zero, Complete Streets, and Safe System frameworks; built a standards-informed digital workflow for public communication and design review.</li>
+      <li>Published and public-facing writing on transportation, public health, land use, institutional reform, and civic infrastructure in Streetsblog USA, CNU Public Square, and regional outlets.</li>
+    </ul>
+
+    <h2 class="sec">Education &amp; Professional Development</h2>
+    <div class="edu">
+      <div class="r1"><span class="school">Johns Hopkins Bloomberg School of Public Health</span><span class="date">Admitted; deferred to Fall 2027</span></div>
+      <div class="deg">Doctor of Public Health, Environmental Health</div>
+    </div>
+    <div class="edu">
+      <div class="r1"><span class="school">University of Pittsburgh</span><span class="date">2015</span></div>
+      <div class="deg">Master of Science in Nursing, Clinical Nurse Leader</div>
+    </div>
+    <div class="edu">
+      <div class="r1"><span class="school">University of South Alabama</span><span class="date">2010</span></div>
+      <div class="deg">Bachelor of Science in Nursing</div>
+    </div>
+    <p class="focus">Planned DrPH focus: land use, transportation systems, environmental exposures, and other built-environment determinants of population health.</p>
+
+    <h2 class="sec">Certifications &amp; Credentials</h2>
+    <p class="inline-list">CNU-Accredited Professional (CNU-A)<span class="sep">•</span>WEDG Associate<span class="sep">•</span>Lean Six Sigma Green Belt<span class="sep">•</span>Clinical Nurse Leader<span class="sep">•</span>Registered Nurse<span class="sep">•</span>Pain Management Nursing Certification<span class="sep">•</span>Secret Security Clearance (inactive/previously held)</p>
+
+    <h2 class="sec">Digital, Analytic &amp; Communication Skills</h2>
+    <p class="skill"><b>Advanced:</b> Google Workspace, Microsoft 365, executive writing, grant narratives, board and stakeholder presentations, research synthesis, public speaking, process mapping, systems analysis.</p>
+    <p class="skill"><b>Working proficiency:</b> GitHub, Vercel, Supabase/Postgres, HTML/CSS editing, static-site deployment, Notion, Figma, Canva, Adobe Acrobat, GIS-informed web mapping, data visualization, Mermaid diagrams, AI-assisted product development and research workflows.</p>
+    <p class="skill"><b>Domain fluency:</b> Global Street Design Guide, NACTO, Complete Streets, Vision Zero, Safe System, active-transportation planning, WEDG, green infrastructure, public-private partnerships, land-use and real-estate feasibility.</p>
+  </div>
+  <div class="tag-top lbl">Resume.docx</div>
+
+  <!-- ===================== COVER LETTER ===================== -->
+  <div class="sheet" id="cover" data-document-role="page" data-label="Cover Letter">
+    <h1 class="name">JARAH V. JACQUAY</h1>
+    <div class="creds">MSN, RN, PMGT-BC, CNL, CNU-A, WEDG Associate, LSSGB</div>
+    <div class="contact">Pensacola, Florida&nbsp;&nbsp;|&nbsp;&nbsp;jarah@jjacquay.com&nbsp;&nbsp;|&nbsp;&nbsp;linkedin.com/in/jjacquay&nbsp;&nbsp;|&nbsp;&nbsp;jjacquay.com</div>
+
+    <div class="cl-date">July 16, 2026</div>
+    <div class="cl-recip">
+      <div class="rr who">Hiring Committee</div>
+      <div class="rr org">Global Designing Cities Initiative</div>
+      <div class="rr role">Associate Director, Programs &amp; Design</div>
+    </div>
+    <div class="cl-salute">Dear GDCI Hiring Committee,</div>
+    <div class="cl-body">
+      <p>The work of transforming streets rarely fails for lack of a good drawing. It fails when design is separated from public health, institutional capacity, political judgment, funding discipline, and the hard work of implementation. My career has developed at precisely that intersection. Through Bike Pensacola and Bluffline, I have helped translate people-first mobility ideas into coalitions, public narratives, policy commitments, consultant scopes, grant strategies, and practical pathways to delivery — working from the same conviction that drives GDCI: that streets designed for people can change cities.</p>
+      <p>My most relevant experience began with Bike Pensacola, where I served on the board of a citywide bicycle coalition combining recurring public programming with sustained policy advocacy. Working with fellow board members and community partners, I helped advocate for a Complete Streets ordinance, stronger neighborhood traffic-calming policies, a formal Vision Zero commitment, an active transportation master plan, and expansion of the Florida SUN Trail network in Pensacola. The durable lesson was that technical recommendations become actionable only when elected officials, staff, residents, and advocates can see how they advance safety, access, public health, and quality of life.</p>
+      <p>I carried that lesson into co-founding Bluffline, a regional greenway and civic-infrastructure initiative designed to reconnect Pensacola neighborhoods through trails, parks, waterfronts, and multimodal corridors. As executive leader and later board-level strategist, I helped build the organization, develop public-private partnerships, coordinate multidisciplinary advisers, and frame the project as more than a trail: a platform for safer mobility, physical activity, resilience, ecological restoration, and community development. That work contributed to a $1.2 million U.S. Department of Transportation Reconnecting Communities planning award and a broader portfolio of federal, state, philanthropic, and pro bono project-development efforts.</p>
+      <p>I am not a licensed architect or transportation engineer, and I would not present myself as a substitute for GDCI's design specialists. I offer complementary executive value: standards-based design fluency, disciplined design-review facilitation, and the ability to help specialized teams succeed within real institutional constraints. CNU-A reflects my grounding in walkable urbanism and land-use/transportation integration. WEDG has strengthened my ability to consider streets, waterfronts, stormwater, ecology, public access, and resilience as one public-infrastructure system capable of achieving multiple endpoints. Lean Six Sigma adds practical discipline for translating standards into repeatable processes, performance measures, and continuous improvement.</p>
+      <p>My public-health background is equally central. I have been admitted to the Doctor of Public Health program in Environmental Health at the Johns Hopkins Bloomberg School of Public Health, with matriculation deferred to 2027. I intend to focus my doctoral work on land use, transportation systems, environmental exposures, and other built-environment determinants of population health. GDCI's portfolio of global road safety, child-centered streets, and protected cycling networks embodies the same premise: streets are not merely transportation assets; they are upstream public-health infrastructure.</p>
+      <p>I also bring 15+ years of experience operating in complex healthcare systems, where safety, compliance, multidisciplinary coordination, and accountability are operational necessities. I have learned to lead experts without pretending to replace their expertise, to build clarity in matrixed organizations, and to maintain momentum when technical, political, and financial considerations compete. My digital and communication fluency includes executive writing, grant development, public-interest research, GIS-informed web mapping, data visualization, GitHub/Vercel/Supabase workflows, and AI-assisted product development.</p>
+      <p>GDCI already has exceptional designers. My case for joining is that I can help design-led work succeed at scale — connecting technical excellence to public health, team development, funder credibility, partnership strategy, organizational systems, and politically intelligent implementation. I understand the current posting is structured for a hire based in Asia, Africa, or Europe, and I welcome a candid conversation about country-of-hire and regional-presence requirements. I would be glad to help GDCI inspire leaders, inform practitioners, and invite communities to imagine what their streets could be.</p>
+    </div>
+    <div class="cl-close">Sincerely,</div>
+    <div class="cl-sign">Jarah V. Jacquay</div>
+    <div class="cl-signsub">MSN, RN&nbsp; ·&nbsp; CNU-A&nbsp; ·&nbsp; WEDG Associate&nbsp; ·&nbsp; Founder, Virtuous Cycle LLC</div>
+  </div>
+  <div class="tag-top lbl">Cover Letter.docx</div>
+
+</div>
+
+
+</body></html>
