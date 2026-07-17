@@ -1,22 +1,58 @@
-# CODING AGENTS: READ THIS FIRST
+# Virtuous Cycle — Brand Kit
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+Canonical brand system, collateral prototypes, and application materials for
+Virtuous Cycle LLC. Imported from a Claude Design handoff bundle (see
+[`HANDOFF.md`](HANDOFF.md) for the original export note).
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+**Brand edition:** VC-BRAND-2026-02 ("Verdant") — the current system.
+The source-of-truth for messaging and design tokens is
+[`brand/Website Brief (Replit).md`](brand/Website%20Brief%20\(Replit\).md).
 
-## What you should do — IMPORTANT
+## Layout
 
-**Read `virtuous-cycle/project/Brand Kit.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+| Path | Contents |
+|---|---|
+| `*.html` (root) | Standalone document prototypes (collateral + guides). Each expects the sibling `vc-*.css` files and the shared `assets/` folder. |
+| `vc-brand.css` · `vc-collateral.css` · `vc-guide.css` · `vc-templates.css` | Shared stylesheets the prototypes link to. |
+| `assets/` | Shared binary assets: logo/knot PNGs (6 colorways), `icon`/`logo` variants, `favicon`, `hero-watercolor`, `ribbon.svg`/`ribbon-v2.svg`, `mockup-*.png`, and `fonts/` (Inter + Spectral woff2 subsets). |
+| `brand/` | Machine-readable / source references — the Replit website brief. |
+| `brand-guide/` | The 14-page **rendered** Visual Identity Guide (`p01`–`p14.png`), edition 2026-02. |
+| `mockups/` | Collateral preview renders (banners, business cards, apparel, etc.). |
+| `application/` | GDCI job-application source documents (`.docx`). |
+| `docpage.js` · `tweaks-panel.jsx` | Claude Design editor scaffolding referenced by some exported pages. |
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+## Documents
 
-## About the design files
+Renders verified locally (fonts load from Google Fonts, so open with a
+network connection or self-host the fonts):
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+- **Collateral** — `Letterhead`, `Memo`, `Invoice`, `Proposal`, `Apparel`,
+  `Stickers`, `Pull-up Banner`, `Advisory Report`
+- **Guides** — `Brand Guide (print)`, `Brand Guide (Express export)`,
+  `Brand Decisions` (direction memo)
+- **Primary** — `Brand Kit.html` (project catalog), `GDCI Application Preview.html`
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+### Superseded
 
-## Bundle contents
+- **`Brand Guide v1 (olive).html`** — the earlier **VC-BRAND-2026-01** edition
+  (Gelasio/Poppins type, amber+navy palette, "place-strengthening"). Kept for
+  reference only; the current guide is the 2026-02 set in `brand-guide/`.
 
-- `virtuous-cycle/README.md` — this file
-- `virtuous-cycle/project/` — the `Virtuous Cycle` project files (HTML prototypes, assets, components)
+## Known gaps
+
+- **8 collateral pages not yet imported** — referenced only as inter-page nav
+  links: `Business Cards`, `Postcard`, `Conference Flyer`, `Conference Kit`,
+  `Capabilities`, `Stationery`, `Email Signature`, and a current `Brand Guide.html`.
+  Links to these 404 until the pages are added.
+- **`brand/tokens.json` and `brand/BRAND.md`** — referenced as download links in
+  `Brand Kit.html`; not present in the imported set.
+
+## Previewing locally
+
+Because the prototypes reference the shared `assets/` folder and `vc-*.css` by
+relative path, serve the repo root rather than opening files directly:
+
+```sh
+python3 -m http.server 8000
+# then open http://localhost:8000/Letterhead.html
+```
