@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Virtuous Cycle — Brand Kit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="The Virtuous Cycle brand system — guidelines, templates, and collateral. Land, livelihood, and the common good." />
+<link rel="icon" href="assets/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --mist:#EEF3E0; --sage:#CFE0A8; --leaf:#9DC65A; --verdant:#6E9E10;
+    --moss:#4F7510; --pine:#2F4A0C; --field:#16230A;
+    --ink:#1A2230; --grey:#555; --grey-l:#8A9384; --fill:#F4F6F1; --hair:#E3E7DE; --paper:#fff;
+    --serif:'Spectral',Georgia,'Times New Roman',serif;
+    --sans:'Inter',system-ui,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--fill);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .kicker{font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--moss)}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;background:linear-gradient(157deg,#5A8A12,#16230A);color:#fff}
+  .hero .wrap{position:relative;z-index:2;padding:64px 24px 128px}
+  .hero .brandrow{display:flex;align-items:center;gap:14px}
+  .hero .mark{width:46px;height:46px;object-fit:contain;filter:brightness(0) invert(1)}
+  .hero .firm{font-family:var(--serif);font-weight:600;font-size:15px;letter-spacing:.30em;text-transform:uppercase}
+  .hero .eyebrow{margin-top:52px;font-weight:600;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--sage)}
+  .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,6vw,60px);line-height:1.04;letter-spacing:-.02em;margin:14px 0 0;max-width:16ch}
+  .hero h1 em{font-style:italic;font-weight:400;color:var(--leaf)}
+  .hero .cap{font-family:var(--serif);font-weight:500;font-style:italic;font-size:clamp(15px,2.4vw,19px);color:#DCE8C4;margin:18px 0 0;max-width:46ch}
+  .hero .meta{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px 34px;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+  .hero .meta .v{display:block;color:#fff;font-weight:500;letter-spacing:.06em;margin-top:4px;font-size:11px}
+  .ribbon{position:absolute;left:0;right:0;bottom:-2px;width:100%;height:120px;object-fit:cover;opacity:.9;z-index:1}
+
+  /* ---------- primary options ---------- */
+  .options{position:relative;z-index:3;margin-top:-72px}
+  .opt-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .opt{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--hair);border-radius:12px;padding:30px 30px 26px;box-shadow:0 24px 50px -30px rgba(22,35,10,.4);transition:transform .15s,box-shadow .15s}
+  .opt:hover{transform:translateY(-3px);box-shadow:0 30px 56px -28px rgba(22,35,10,.45)}
+  .opt .tag{font-weight:600;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss)}
+  .opt h2{font-family:var(--serif);font-weight:600;font-size:27px;letter-spacing:-.01em;margin:10px 0 0}
+  .opt p{font-size:13.5px;color:var(--grey);margin:10px 0 0;flex:1}
+  .opt .go{display:inline-flex;align-items:center;gap:8px;margin-top:20px;align-self:flex-start;background:var(--verdant);color:#fff;font-weight:600;font-size:12.5px;letter-spacing:.02em;padding:11px 20px;border-radius:99px;transition:background .15s}
+  .opt:hover .go{background:var(--moss)}
+  .opt .go svg{width:14px;height:14px}
+  .opt .also{margin-top:16px;padding-top:14px;border-top:1px solid var(--hair);display:flex;flex-wrap:wrap;gap:8px}
+  .opt .also a{font-size:11.5px;color:var(--moss);font-weight:500;background:var(--mist);padding:5px 11px;border-radius:99px}
+  .opt .also a:hover{background:var(--sage)}
+
+  /* ---------- directory sections ---------- */
+  section.dir{padding:56px 0 0}
+  section.dir:last-of-type{padding-bottom:20px}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:1.5px solid var(--verdant);padding-bottom:10px;margin-bottom:20px}
+  .sec-head h3{font-family:var(--serif);font-weight:600;font-size:22px;margin:0}
+  .sec-head .count{font-size:11px;color:var(--grey-l);letter-spacing:.04em}
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:14px}
+  .card{display:block;background:var(--paper);border:1px solid var(--hair);border-radius:9px;padding:16px 18px;transition:border-color .15s,transform .12s,box-shadow .15s}
+  .card:hover{border-color:var(--verdant);transform:translateY(-2px);box-shadow:0 14px 28px -20px rgba(22,35,10,.4)}
+  .card .nm{font-family:var(--serif);font-weight:600;font-size:15.5px;color:var(--ink);display:flex;align-items:center;gap:7px}
+  .card .nm .star{color:var(--verdant);font-size:11px}
+  .card .d{font-size:12px;color:var(--grey);margin-top:5px;line-height:1.5}
+  .card.muted{background:transparent;border-style:dashed}
+  .card.muted .nm{color:var(--grey)}
+
+  /* ---------- footer ---------- */
+  footer{margin-top:60px;background:var(--field);color:#fff}
+  footer .wrap{padding:44px 24px 40px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;align-items:flex-end}
+  footer .q{font-family:var(--serif);font-style:italic;font-weight:500;font-size:20px;color:var(--sage)}
+  footer .q em{color:#fff;font-style:italic}
+  footer .contact{font-size:11px;letter-spacing:.06em;line-height:1.9;color:rgba(255,255,255,.7);text-align:right}
+  footer .contact a{color:#fff}
+  footer .fine{margin-top:26px;border-top:1px solid rgba(255,255,255,.14);padding-top:16px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+
+  @media (max-width:720px){
+    .opt-grid{grid-template-columns:1fr}
+    .options{margin-top:-56px}
+    footer .contact{text-align:left}
+  }
+</style>
+</head>
+<body>
+
+  <!-- ======================= HERO ======================= -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="brandrow">
+        <img class="mark" src="assets/icon-verdant.png" alt="Virtuous Cycle mark" />
+        <span class="firm">Virtuous Cycle</span>
+      </div>
+      <div class="eyebrow">Brand &amp; Visual System</div>
+      <h1>People-powered. Place-rooted. <em>Purpose-driven.</em></h1>
+      <p class="cap">PPP + Development Advisory for financeable, durable projects. Land, livelihood &amp; the common good.</p>
+      <div class="meta">
+        <div>Edition<span class="v">VC-BRAND-2026-02</span></div>
+        <div>Status<span class="v">Canonical</span></div>
+        <div>Type<span class="v">Spectral · Inter</span></div>
+        <div>Anchor<span class="v">Verdant #6E9E10</span></div>
+      </div>
+    </div>
+    <img class="ribbon" src="assets/ribbon-v2.svg" alt="" aria-hidden="true" />
+  </header>
+
+  <!-- ======================= TWO PRIMARY OPTIONS ======================= -->
+  <div class="wrap options">
+    <div class="opt-grid">
+
+      <div class="opt">
+        <div class="tag">Start here</div>
+        <h2>The Brand Kit</h2>
+        <p>The system that governs everything — essence and positioning, the logo, the verdant color family, the type system, voice, and the Virtuous Cycle Process. The version that wins where artifacts disagree.</p>
+        <a class="go" href="Brand%20Guide.html">Open the guidelines
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <div class="also">
+          <a href="Brand%20Kit.html">Kit catalog</a>
+          <a href="Brand%20Decisions.html">Direction &amp; decisions</a>
+          <a href="brand/BRAND.md">BRAND.md</a>
+          <a href="brand/tokens.json">tokens.json</a>
+        </div>
+      </div>
+
+      <div class="opt">
+        <div class="tag">Ready to use</div>
+        <h2>Templates</h2>
+        <p>On-brand collateral you can open, adapt, and send — stationery and business cards, email signatures, event pieces, and one-pagers. Each carries the masthead, the palette, and print-ready specs.</p>
+        <a class="go" href="#templates">Browse templates
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <div class="also">
+          <a href="Letterhead.html">Letterhead</a>
+          <a href="Business%20Cards.html">Business cards</a>
+          <a href="Email%20Signature.html">Email signature</a>
+          <a href="Invoice.html">Invoice</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <!-- ============ BRAND SYSTEM ============ -->
+    <section class="dir" id="system">
+      <div class="sec-head"><h3>Brand system &amp; guidelines</h3><span class="count">the source of truth</span></div>
+      <div class="cards">
+        <a class="card" href="Brand%20Guide.html"><div class="nm">Brand Guide <span class="star">★</span></div><div class="d">Current guidelines — VC-BRAND-2026-02. Logo, color, type, voice, process.</div></a>
+        <a class="card" href="Brand%20Kit.html"><div class="nm">Brand Kit</div><div class="d">Catalog of the whole system and where every artifact lives.</div></a>
+        <a class="card" href="Brand%20Decisions.html"><div class="nm">Direction &amp; Decisions</div><div class="d">The memo behind the current system — what was locked and why.</div></a>
+        <a class="card" href="Brand%20Guide%20(print).html"><div class="nm">Brand Guide (print)</div><div class="d">Print-optimized layout of the guidelines.</div></a>
+        <a class="card" href="Brand%20Guide%20(Express%20export).html"><div class="nm">Brand Guide (Express)</div><div class="d">Adobe Express export of the guide.</div></a>
+        <a class="card muted" href="Brand%20Guide%20v1%20(olive).html"><div class="nm">Brand Guide v1 (olive)</div><div class="d">Archived — superseded 2026-01 edition. Reference only.</div></a>
+      </div>
+    </section>
+
+    <!-- ============ TEMPLATES ============ -->
+    <section class="dir" id="templates">
+      <div class="sec-head"><h3>Templates &amp; collateral</h3><span class="count">15 pieces</span></div>
+      <div class="cards">
+        <a class="card" href="Letterhead.html"><div class="nm">Letterhead</div><div class="d">Correspondence masthead with contact block.</div></a>
+        <a class="card" href="Memo.html"><div class="nm">Memorandum</div><div class="d">Short-form advisory memo — To/From/Re.</div></a>
+        <a class="card" href="Stationery.html"><div class="nm">Stationery</div><div class="d">No. 10 envelope and compliments slip.</div></a>
+        <a class="card" href="Business%20Cards.html"><div class="nm">Business Cards</div><div class="d">Front + back with print spec (bleed, trim, safe).</div></a>
+        <a class="card" href="Email%20Signature.html"><div class="nm">Email Signature</div><div class="d">Full, compact, and minimal — copy-to-clipboard.</div></a>
+        <a class="card" href="Invoice.html"><div class="nm">Invoice</div><div class="d">Statement of services template.</div></a>
+        <a class="card" href="Proposal.html"><div class="nm">Proposal</div><div class="d">Engagement proposal layout.</div></a>
+        <a class="card" href="Capabilities.html"><div class="nm">Capabilities</div><div class="d">One-page overview — who we serve, roles we take.</div></a>
+        <a class="card" href="Advisory%20Report.html"><div class="nm">Advisory Report</div><div class="d">Document anatomy: lede, exhibits, callouts, footer.</div></a>
+        <a class="card" href="Pull-up%20Banner.html"><div class="nm">Pull-up Banner</div><div class="d">Event banner artwork.</div></a>
+        <a class="card" href="Conference%20Flyer.html"><div class="nm">Conference Flyer</div><div class="d">Event leave-behind with QR call-to-action.</div></a>
+        <a class="card" href="Conference%20Kit.html"><div class="nm">Conference Kit</div><div class="d">Name badge, lanyard, and table tent.</div></a>
+        <a class="card" href="Postcard.html"><div class="nm">Postcard</div><div class="d">Direct-mail leave-behind, watercolor front.</div></a>
+        <a class="card" href="Apparel.html"><div class="nm">Apparel</div><div class="d">Merchandise / die-cut mark applications.</div></a>
+        <a class="card" href="Stickers.html"><div class="nm">Stickers</div><div class="d">Sticker sheet with the mark.</div></a>
+      </div>
+    </section>
+
+    <!-- ============ APPLICATION ============ -->
+    <section class="dir">
+      <div class="sec-head"><h3>Application materials</h3><span class="count">GDCI packet</span></div>
+      <div class="cards">
+        <a class="card" href="GDCI%20Application%20Preview.html"><div class="nm">GDCI Application Preview <span class="star">★</span></div><div class="d">Résumé + cover letter, branded preview.</div></a>
+        <a class="card" href="application/Jarah%20Jacquay%20GDCI%20Executive%20Resume.docx"><div class="nm">Executive Résumé (.docx)</div><div class="d">Editable source document.</div></a>
+        <a class="card" href="application/Jarah%20Jacquay%20GDCI%20Cover%20Letter.docx"><div class="nm">Cover Letter (.docx)</div><div class="d">Editable source document.</div></a>
+        <a class="card" href="application/Jarah%20Jacquay%20GDCI%20Resume.docx"><div class="nm">Résumé (.docx)</div><div class="d">Editable source document.</div></a>
+      </div>
+    </section>
+
+    <!-- ============ REFERENCE ============ -->
+    <section class="dir">
+      <div class="sec-head"><h3>Reference &amp; source</h3><span class="count">for people &amp; models</span></div>
+      <div class="cards">
+        <a class="card" href="brand/BRAND.md"><div class="nm">BRAND.md</div><div class="d">Canonical brand doc — paste into any model to brief the brand.</div></a>
+        <a class="card" href="brand/tokens.json"><div class="nm">tokens.json</div><div class="d">Machine-readable design tokens.</div></a>
+        <a class="card" href="brand/Website%20Brief%20(Replit).md"><div class="nm">Website Brief</div><div class="d">Implementation spec for virtuouscycle.dev.</div></a>
+        <a class="card" href="vc-brand.css"><div class="nm">vc-brand.css</div><div class="d">The implemented design system (tokens + components).</div></a>
+        <a class="card" href="brand-guide/p01.png"><div class="nm">Rendered guide</div><div class="d">14-page guide as page images (brand-guide/).</div></a>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer>
+    <div class="wrap">
+      <div class="q">Restraint is <em>the brand</em>.</div>
+      <div class="contact">
+        Web · <a href="https://virtuouscycle.dev">virtuouscycle.dev</a><br/>
+        Email · <a href="mailto:jarah@virtuouscycle.dev">jarah@virtuouscycle.dev</a><br/>
+        Tel · (850) 418-9089
+      </div>
+    </div>
+    <div class="wrap"><div class="fine">Virtuous Cycle LLC · Land, livelihood &amp; the common good · VC-BRAND-2026-02</div></div>
+  </footer>
+
+</body>
+</html>
