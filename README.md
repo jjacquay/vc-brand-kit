@@ -15,7 +15,7 @@ The source-of-truth for messaging and design tokens is
 | `*.html` (root) | Standalone document prototypes (collateral + guides). Each expects the sibling `vc-*.css` files and the shared `assets/` folder. |
 | `vc-brand.css` · `vc-collateral.css` · `vc-guide.css` · `vc-templates.css` | Shared stylesheets the prototypes link to. |
 | `assets/` | Shared binary assets: logo/knot PNGs (6 colorways), `icon`/`logo` variants, `favicon`, `hero-watercolor`, `ribbon.svg`/`ribbon-v2.svg`, `mockup-*.png`, and `fonts/` (Inter + Spectral woff2 subsets). |
-| `brand/` | Machine-readable / source references — the Replit website brief. |
+| `brand/` | Source-of-truth references — `tokens.json` (machine-readable design tokens), `BRAND.md` (canonical brand doc), and the Replit website brief. |
 | `brand-guide/` | The 14-page **rendered** Visual Identity Guide (`p01`–`p14.png`), edition 2026-02. |
 | `mockups/` | Collateral preview renders (banners, business cards, apparel, etc.). |
 | `application/` | GDCI job-application source documents (`.docx`). |
@@ -27,9 +27,12 @@ Renders verified locally (fonts load from Google Fonts, so open with a
 network connection or self-host the fonts):
 
 - **Collateral** — `Letterhead`, `Memo`, `Invoice`, `Proposal`, `Apparel`,
-  `Stickers`, `Pull-up Banner`, `Advisory Report`
-- **Guides** — `Brand Guide (print)`, `Brand Guide (Express export)`,
-  `Brand Decisions` (direction memo)
+  `Stickers`, `Pull-up Banner`, `Advisory Report`, `Business Cards`,
+  `Postcard`, `Stationery`, `Conference Flyer`, `Conference Kit`,
+  `Email Signature`, `Capabilities`
+- **Guides** — `Brand Guide.html` (current VC-BRAND-2026-02 guidelines),
+  `Brand Guide (print)`, `Brand Guide (Express export)`, `Brand Decisions`
+  (direction memo)
 - **Primary** — `Brand Kit.html` (project catalog), `GDCI Application Preview.html`
 
 ### Superseded
@@ -38,14 +41,13 @@ network connection or self-host the fonts):
   (Gelasio/Poppins type, amber+navy palette, "place-strengthening"). Kept for
   reference only; the current guide is the 2026-02 set in `brand-guide/`.
 
-## Known gaps
+## Completeness
 
-- **8 collateral pages not yet imported** — referenced only as inter-page nav
-  links: `Business Cards`, `Postcard`, `Conference Flyer`, `Conference Kit`,
-  `Capabilities`, `Stationery`, `Email Signature`, and a current `Brand Guide.html`.
-  Links to these 404 until the pages are added.
-- **`brand/tokens.json` and `brand/BRAND.md`** — referenced as download links in
-  `Brand Kit.html`; not present in the imported set.
+The import is complete: all 22 HTML documents, both ribbon SVGs, the full
+`assets/` binary set, `tokens.json`, and `BRAND.md` are present, and every
+`href`/`src`/`url()` reference across the HTML and CSS resolves locally
+(verified programmatically). Inter-page navigation between collateral pages
+works end-to-end.
 
 ## Previewing locally
 
