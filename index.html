@@ -77,9 +77,23 @@
   footer .contact a{color:#fff}
   footer .fine{margin-top:26px;border-top:1px solid rgba(255,255,255,.14);padding-top:16px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45)}
 
+  /* contractor handoff band */
+  .handoff{margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;
+    background:var(--field);color:#fff;border-radius:12px;padding:22px 28px}
+  .handoff .t{font-family:var(--serif);font-weight:600;font-size:19px}
+  .handoff .t em{font-style:italic;color:var(--leaf)}
+  .handoff .s{font-size:12.5px;color:rgba(255,255,255,.72);margin-top:4px;max-width:52ch}
+  .handoff .acts{display:flex;flex-wrap:wrap;gap:10px}
+  .handoff a{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:12.5px;padding:10px 18px;border-radius:99px;text-decoration:none}
+  .handoff a.primary{background:var(--leaf);color:var(--field)}
+  .handoff a.primary:hover{background:#B4D77A}
+  .handoff a.ghost{color:#fff;border:1px solid rgba(255,255,255,.35)}
+  .handoff a.ghost:hover{background:rgba(255,255,255,.1)}
+
   @media (max-width:720px){
     .opt-grid{grid-template-columns:1fr}
     .options{margin-top:-56px}
+    .handoff{flex-direction:column;align-items:flex-start}
     footer .contact{text-align:left}
   }
 </style>
@@ -140,6 +154,17 @@
         </div>
       </div>
 
+    </div>
+
+    <div class="handoff">
+      <div>
+        <div class="t">Contracting this out? <em>Start here.</em></div>
+        <div class="s">A one-screen handoff for designers &amp; freelancers — brand rules, downloadable assets, and a reusable project brief.</div>
+      </div>
+      <div class="acts">
+        <a class="primary" href="for-designers.html">For designers →</a>
+        <a class="ghost" href="project-brief-template.html">Project brief</a>
+      </div>
     </div>
   </div>
 

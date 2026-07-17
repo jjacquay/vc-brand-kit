@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Virtuous Cycle — Project Brief Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Reusable design project brief for contracting work out — Virtuous Cycle." />
+<link rel="icon" href="assets/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --mist:#EEF3E0; --sage:#CFE0A8; --leaf:#9DC65A; --verdant:#6E9E10;
+    --moss:#4F7510; --pine:#2F4A0C; --field:#16230A;
+    --ink:#1A2230; --grey:#555; --grey-l:#8A9384; --fill:#F4F6F1; --hair:#E3E7DE; --paper:#fff;
+    --serif:'Spectral',Georgia,'Times New Roman',serif;
+    --sans:'Inter',system-ui,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--fill);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--moss)}
+  .toolbar{max-width:816px;margin:20px auto 0;padding:0 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .toolbar .hint{font-size:12px;color:var(--grey)}
+  .toolbar button{font-family:var(--sans);font-weight:600;font-size:12.5px;background:var(--verdant);color:#fff;border:0;padding:10px 18px;border-radius:99px;cursor:pointer}
+  .toolbar button:hover{background:var(--moss)}
+
+  .sheet{max-width:816px;margin:16px auto 60px;background:var(--paper);box-shadow:0 24px 50px -30px rgba(22,35,10,.35);padding:0 0 48px}
+
+  .mast{background:linear-gradient(157deg,#5A8A12,#16230A);color:#fff;padding:26px 56px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .mast .l{display:flex;align-items:center;gap:12px}
+  .mast .mark{width:34px;height:34px;object-fit:contain;filter:brightness(0) invert(1)}
+  .mast .firm{font-family:var(--serif);font-weight:600;font-size:12px;letter-spacing:.28em;text-transform:uppercase}
+  .mast .doc{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6);text-align:right}
+
+  .body{padding:34px 56px 0}
+  h1{font-family:var(--serif);font-weight:600;font-size:30px;letter-spacing:-.01em;margin:0}
+  .sub{font-family:var(--serif);font-style:italic;font-weight:500;font-size:14px;color:var(--pine);margin:6px 0 0}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:0 30px}
+  .fld{margin-top:20px}
+  .fld.full{grid-column:1 / -1}
+  label{display:block;font-weight:600;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--moss);margin-bottom:6px}
+  label .h{color:var(--grey-l);font-weight:400;letter-spacing:.02em;text-transform:none;font-size:11px;margin-left:6px}
+  .in{min-height:34px;border:1px solid var(--hair);border-radius:6px;padding:8px 11px;font-size:13px;color:var(--ink);background:#fff}
+  .in.tall{min-height:74px}
+  .in:focus{outline:2px solid var(--sage);border-color:var(--verdant)}
+  .in:empty::before{content:attr(data-ph);color:var(--grey-l)}
+
+  h2.sec{font-family:var(--serif);font-weight:600;font-size:17px;margin:30px 0 0;padding-bottom:7px;border-bottom:1.5px solid var(--verdant)}
+
+  /* prefilled constraint block */
+  .locked{margin-top:16px;background:var(--mist);border-left:3px solid var(--verdant);border-radius:6px;padding:16px 20px}
+  .locked .lh{font-weight:600;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--pine)}
+  .locked ul{margin:9px 0 0;padding-left:18px}
+  .locked li{font-size:12px;line-height:1.55;margin:4px 0;color:var(--ink)}
+  .locked a{color:var(--moss);font-weight:600}
+  .pillrow{margin-top:10px;display:flex;flex-wrap:wrap;gap:7px}
+  .pill{font-size:10.5px;font-weight:500;color:var(--pine);background:#fff;border:1px solid var(--sage);border-radius:99px;padding:4px 10px}
+
+  .foot{padding:26px 56px 0;margin-top:30px;border-top:1px solid var(--hair);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-l);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+  @media (max-width:680px){ .grid{grid-template-columns:1fr} .mast,.body,.foot{padding-left:26px;padding-right:26px} }
+  @media print{
+    body{background:#fff}
+    .toolbar{display:none}
+    .sheet{box-shadow:none;margin:0;max-width:none}
+    .in{border-color:#ccc}
+  }
+</style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <span class="hint">Fill in the fields, then <b>Print → Save as PDF</b> to send. Duplicate this file per project. <a href="for-designers.html">← Designer handoff</a></span>
+    <button onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <div class="sheet">
+    <div class="mast">
+      <div class="l"><img class="mark" src="assets/icon-verdant.png" alt="" /><span class="firm">Virtuous Cycle</span></div>
+      <div class="doc">Design Project Brief<br/>VC-[client]-[year]-NN</div>
+    </div>
+
+    <div class="body">
+      <h1>Project brief</h1>
+      <p class="sub">What we need, who it's for, and the rules it must hold to.</p>
+
+      <div class="grid">
+        <div class="fld"><label>Project name</label><div class="in" contenteditable="true" data-ph="e.g. Diocese pitch deck"></div></div>
+        <div class="fld"><label>Date / version</label><div class="in" contenteditable="true" data-ph="2026-00-00 · v1"></div></div>
+        <div class="fld"><label>Prepared by</label><div class="in" contenteditable="true" data-ph="Jarah Jacquay"></div></div>
+        <div class="fld"><label>Contractor</label><div class="in" contenteditable="true" data-ph="Name / studio"></div></div>
+        <div class="fld full"><label>Contractor contact</label><div class="in" contenteditable="true" data-ph="Email · phone"></div></div>
+      </div>
+
+      <h2 class="sec">The deliverable</h2>
+      <div class="grid">
+        <div class="fld full"><label>What we need <span class="h">be specific</span></label><div class="in tall" contenteditable="true" data-ph="e.g. 12-page pitch deck (PDF + editable source); one-page capabilities sheet…"></div></div>
+        <div class="fld"><label>Format(s)</label><div class="in" contenteditable="true" data-ph="Print PDF · editable AI/Figma · PNG/SVG"></div></div>
+        <div class="fld"><label>Dimensions / size</label><div class="in" contenteditable="true" data-ph='e.g. 8.5×11 in · 1920×1080 px'></div></div>
+        <div class="fld"><label>Quantity / variants</label><div class="in" contenteditable="true" data-ph="e.g. 1 layout, 3 sizes"></div></div>
+        <div class="fld"><label>Where it will be used</label><div class="in" contenteditable="true" data-ph="Print · web · social · event"></div></div>
+      </div>
+
+      <h2 class="sec">Purpose &amp; audience</h2>
+      <div class="grid">
+        <div class="fld full"><label>Goal <span class="h">what should it accomplish?</span></label><div class="in tall" contenteditable="true" data-ph="The one thing this piece must do."></div></div>
+        <div class="fld full"><label>Audience</label><div class="in" contenteditable="true" data-ph="e.g. diocesan CFO; institutional landowner; municipal staff"></div></div>
+      </div>
+
+      <h2 class="sec">Content</h2>
+      <div class="grid">
+        <div class="fld full"><label>Headline / key message</label><div class="in" contenteditable="true" data-ph="Provide exact copy, or ask us to."></div></div>
+        <div class="fld full"><label>Body copy / sections</label><div class="in tall" contenteditable="true" data-ph="Paste text or outline. Findings in ranges, never point estimates."></div></div>
+        <div class="fld"><label>Call to action</label><div class="in" contenteditable="true" data-ph="Book a conversation · scan QR…"></div></div>
+        <div class="fld"><label>Imagery</label><div class="in" contenteditable="true" data-ph="Watercolor · real photography · none"></div></div>
+      </div>
+
+      <h2 class="sec">Brand — non-negotiable</h2>
+      <div class="locked">
+        <div class="lh">These govern every deliverable. Source: <a href="brand/BRAND.md">BRAND.md</a> · <a href="brand/tokens.json">tokens.json</a> · <a href="for-designers.html">handoff page</a></div>
+        <ul>
+          <li><b>Color:</b> one verdant hue + its family (Verdant #6E9E10 anchor). No off-family color — warmth comes from imagery, not a second swatch. Small green text on white uses Moss #4F7510.</li>
+          <li><b>Type:</b> Spectral (headings/serif) + Inter (body/sans). Office: Georgia + Arial.</li>
+          <li><b>Logo:</b> Verdant on light, white on Pine/Field. Clear space ≥ one loop; min 32px screen / 0.5in print. Never recolor, stretch, or box it.</li>
+          <li><b>Layout:</b> one signature element per page; separate sections by weight &amp; rule, not hue. Restraint is the brand.</li>
+          <li><b>Voice:</b> warm, clear, convicted. No jargon, clichés, exclamation marks, or the retired words (“place-strengthening,” “strategy with soul”).</li>
+        </ul>
+        <div class="pillrow">
+          <span class="pill">Tagline · People-powered. Place-rooted. Purpose-driven.</span>
+          <span class="pill">Signature · Land, livelihood &amp; the common good.</span>
+        </div>
+      </div>
+      <div class="fld full"><label>Project-specific brand notes <span class="h">any exceptions or emphasis</span></label><div class="in" contenteditable="true" data-ph="Optional"></div></div>
+
+      <h2 class="sec">References &amp; logistics</h2>
+      <div class="grid">
+        <div class="fld full"><label>Closest existing template <span class="h">match this</span></label><div class="in" contenteditable="true" data-ph="e.g. Capabilities.html · Letterhead.html — see the kit"></div></div>
+        <div class="fld"><label>Draft due</label><div class="in" contenteditable="true" data-ph="Date"></div></div>
+        <div class="fld"><label>Final due</label><div class="in" contenteditable="true" data-ph="Date"></div></div>
+        <div class="fld"><label>Budget / rate</label><div class="in" contenteditable="true" data-ph="$ / fixed / hourly"></div></div>
+        <div class="fld"><label>Rounds of revision</label><div class="in" contenteditable="true" data-ph="e.g. 2"></div></div>
+        <div class="fld full"><label>Deliver to / how</label><div class="in" contenteditable="true" data-ph="Editable source + print-ready PDF + exports, to jarah@virtuouscycle.dev"></div></div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <div>Virtuous Cycle LLC · Confidential · Not an appraisal</div>
+      <div>virtuouscycle.dev · VC-BRAND-2026-02</div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Virtuous Cycle — For Designers &amp; Contractors</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Everything a designer or contractor needs to produce on-brand work for Virtuous Cycle — assets, rules, and how to submit." />
+<link rel="icon" href="assets/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --mist:#EEF3E0; --sage:#CFE0A8; --leaf:#9DC65A; --verdant:#6E9E10;
+    --moss:#4F7510; --pine:#2F4A0C; --field:#16230A;
+    --ink:#1A2230; --grey:#555; --grey-l:#8A9384; --fill:#F4F6F1; --hair:#E3E7DE; --paper:#fff;
+    --serif:'Spectral',Georgia,'Times New Roman',serif;
+    --sans:'Inter',system-ui,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--fill);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;line-height:1.62}
+  a{color:var(--moss)}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+  .kicker{font-weight:600;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--moss)}
+
+  .hero{background:linear-gradient(157deg,#5A8A12,#16230A);color:#fff}
+  .hero .wrap{padding:52px 24px 46px}
+  .hero .brandrow{display:flex;align-items:center;gap:13px}
+  .hero .mark{width:40px;height:40px;object-fit:contain;filter:brightness(0) invert(1)}
+  .hero .firm{font-family:var(--serif);font-weight:600;font-size:13px;letter-spacing:.30em;text-transform:uppercase}
+  .hero .eyebrow{margin-top:34px;font-weight:600;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--sage)}
+  .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,5vw,46px);line-height:1.05;letter-spacing:-.02em;margin:12px 0 0}
+  .hero p{font-family:var(--serif);font-style:italic;font-weight:500;font-size:16px;color:#DCE8C4;margin:14px 0 0;max-width:60ch}
+  .hero a{color:#fff}
+  .backlink{display:inline-block;margin-top:22px;font-family:var(--sans);font-style:normal;font-size:12px;color:rgba(255,255,255,.7)}
+
+  section{padding:44px 0 0}
+  .sec-head{border-bottom:1.5px solid var(--verdant);padding-bottom:9px;margin-bottom:18px}
+  h2{font-family:var(--serif);font-weight:600;font-size:23px;margin:0}
+  h2 .n{color:var(--verdant);font-size:15px;margin-right:8px}
+  p.lede{font-family:var(--serif);font-weight:500;font-size:15px;color:var(--pine);margin:0 0 6px;max-width:70ch}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .step{background:var(--paper);border:1px solid var(--hair);border-radius:10px;padding:20px}
+  .step .num{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--verdant)}
+  .step h3{font-family:var(--serif);font-weight:600;font-size:16px;margin:6px 0 6px}
+  .step p{font-size:12.5px;color:var(--grey);margin:0}
+  .step a{font-weight:600}
+
+  /* download buttons */
+  .dl{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--verdant);color:#fff;font-weight:600;font-size:13px;padding:12px 20px;border-radius:99px;text-decoration:none;transition:background .15s}
+  .btn:hover{background:var(--moss)}
+  .btn.alt{background:var(--paper);color:var(--moss);border:1px solid var(--sage)}
+  .btn.alt:hover{background:var(--mist)}
+  .btn svg{width:15px;height:15px}
+
+  /* color */
+  .ramp{display:grid;grid-template-columns:repeat(7,1fr);border:1px solid var(--hair);border-radius:8px;overflow:hidden}
+  .ramp .c{border-right:1px solid rgba(255,255,255,.4)}
+  .ramp .c:last-child{border-right:0}
+  .ramp .sw{height:66px}
+  .ramp .i{padding:8px 9px;background:var(--paper)}
+  .ramp .nm{font-family:var(--serif);font-weight:600;font-size:12px}
+  .ramp .hx{font-size:9.5px;color:var(--grey);letter-spacing:.02em;margin-top:1px}
+  .neut{margin-top:12px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+  .neut .n{display:flex;align-items:center;gap:9px}
+  .neut .nsw{width:26px;height:26px;border-radius:5px;border:1px solid rgba(0,0,0,.1);flex-shrink:0}
+  .neut b{font-size:12px;display:block}
+  .neut span{font-size:10px;color:var(--grey)}
+
+  /* type */
+  .type{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .tcard{background:var(--paper);border:1px solid var(--hair);border-radius:10px;padding:22px}
+  .tcard .big{font-family:var(--serif);font-weight:600;font-size:30px;line-height:1}
+  .tcard.sans .big{font-family:var(--sans);font-weight:600}
+  .tcard .role{font-weight:600;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--moss);margin-top:12px}
+  .tcard .meta{font-size:12px;color:var(--grey);margin-top:6px}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;background:var(--mist);color:var(--pine);padding:2px 6px;border-radius:5px;word-break:break-all}
+
+  /* logo */
+  .logos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .lg{border:1px solid var(--hair);border-radius:10px;overflow:hidden;background:var(--paper)}
+  .lg .box{height:120px;display:flex;align-items:center;justify-content:center;background:var(--fill)}
+  .lg .box.dark{background:var(--field)}
+  .lg .box img{max-height:74px;max-width:70%;object-fit:contain}
+  .lg .cap{padding:10px 12px;font-size:11.5px;color:var(--grey);border-top:1px solid var(--hair)}
+
+  /* two-col rules */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .rulebox{background:var(--paper);border:1px solid var(--hair);border-radius:10px;padding:20px 22px}
+  .rulebox.do{border-top:3px solid var(--verdant)}
+  .rulebox.dont{border-top:3px solid var(--ink)}
+  .rulebox h4{margin:0 0 10px;font-weight:600;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+  .rulebox.do h4{color:var(--moss)} .rulebox.dont h4{color:var(--ink)}
+  .rulebox ul{margin:0;padding:0;list-style:none}
+  .rulebox li{font-size:12.5px;line-height:1.5;padding:6px 0 6px 20px;position:relative;border-bottom:1px solid var(--hair)}
+  .rulebox li:last-child{border-bottom:0}
+  .rulebox li::before{position:absolute;left:0;top:6px;font-weight:700}
+  .rulebox.do li::before{content:'✓';color:var(--verdant)}
+  .rulebox.dont li::before{content:'✕';color:var(--ink)}
+
+  .nono{margin-top:14px;background:var(--mist);border-left:3px solid var(--verdant);border-radius:6px;padding:16px 20px}
+  .nono b{color:var(--pine)}
+  .nono ul{margin:8px 0 0;padding-left:18px}
+  .nono li{font-size:12.5px;margin:3px 0}
+
+  .submit{background:var(--paper);border:1px solid var(--hair);border-radius:10px;padding:22px 24px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+  .submit .c{font-size:11px;letter-spacing:.05em;line-height:1.9;color:var(--grey);text-align:right}
+  .submit .c a{color:var(--moss);font-weight:600}
+  .submit p{margin:0;font-size:13px}
+
+  footer{margin-top:52px;background:var(--field);color:#fff}
+  footer .wrap{padding:34px 24px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+  footer a{color:rgba(255,255,255,.8)}
+
+  @media (max-width:720px){
+    .steps,.type,.cols,.logos{grid-template-columns:1fr}
+    .ramp{grid-template-columns:repeat(2,1fr)}
+    .submit{grid-template-columns:1fr}.submit .c{text-align:left}
+  }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="brandrow"><img class="mark" src="assets/icon-verdant.png" alt="" /><span class="firm">Virtuous Cycle</span></div>
+      <div class="eyebrow">Contractor Handoff</div>
+      <h1>Producing work for Virtuous Cycle</h1>
+      <p>Everything you need to make it on-brand the first time — the system, the assets, the rules, and how to send it back. Restraint is the brand; when in doubt, remove one element.</p>
+      <a class="backlink" href="index.html">← Brand kit home</a>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <!-- START -->
+    <section>
+      <div class="sec-head"><h2><span class="n">1</span>Start here</h2></div>
+      <div class="steps">
+        <div class="step"><div class="num">01</div><h3>Absorb the brand</h3><p>Read <a href="brand/BRAND.md">BRAND.md</a> and load <a href="brand/tokens.json">tokens.json</a>. Together they define voice, color, type, and logo rules — paste them into any AI tool to brief it instantly.</p></div>
+        <div class="step"><div class="num">02</div><h3>Grab the assets</h3><p>Download the kit below — logos, the ribbon motif, the watercolor, the stylesheet, and tokens. Fonts are free from Google Fonts.</p></div>
+        <div class="step"><div class="num">03</div><h3>Match the templates</h3><p>Every piece in the kit is a worked example. Open the closest <a href="index.html#templates">template</a> and match its structure, spacing, and specs.</p></div>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section>
+      <div class="sec-head"><h2><span class="n">2</span>Download the assets</h2></div>
+      <p class="lede">One zip has the whole kit. Or grab the pieces you need.</p>
+      <div class="dl">
+        <a class="btn" href="https://github.com/jjacquay/vc-brand-kit/archive/refs/heads/main.zip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          Download the full kit (.zip)
+        </a>
+        <a class="btn alt" href="https://github.com/jjacquay/vc-brand-kit/tree/main/assets">Logos &amp; assets folder</a>
+        <a class="btn alt" href="brand/tokens.json">tokens.json</a>
+        <a class="btn alt" href="brand/BRAND.md">BRAND.md</a>
+        <a class="btn alt" href="Brand%20Guide.html">Full guidelines</a>
+      </div>
+      <p style="font-size:12px;color:var(--grey);margin-top:14px;">
+        <b>Fonts</b> — Spectral + Inter, free from Google Fonts. Load with:
+        <code>https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;family=Inter:wght@400;500;600;700&amp;display=swap</code>
+        In Office, substitute <b>Georgia</b> (serif) and <b>Arial</b> (sans).
+      </p>
+      <p style="font-size:12px;color:var(--grey-l);margin-top:8px;">Note: logos are supplied as PNG. If your deliverable needs true vector (large-format print, embroidery, cutting), ask for the source vector before starting.</p>
+    </section>
+
+    <!-- COLOR -->
+    <section>
+      <div class="sec-head"><h2><span class="n">3</span>Color — one hue, a family of tones</h2></div>
+      <p class="lede">No off-family color. Warmth comes from imagery, never a second swatch. For small green text on white use <b>Moss</b>, not Verdant.</p>
+      <div class="ramp">
+        <div class="c"><div class="sw" style="background:#EEF3E0"></div><div class="i"><div class="nm">Mist</div><div class="hx">#EEF3E0</div></div></div>
+        <div class="c"><div class="sw" style="background:#CFE0A8"></div><div class="i"><div class="nm">Sage</div><div class="hx">#CFE0A8</div></div></div>
+        <div class="c"><div class="sw" style="background:#9DC65A"></div><div class="i"><div class="nm">Leaf</div><div class="hx">#9DC65A</div></div></div>
+        <div class="c"><div class="sw" style="background:#6E9E10"></div><div class="i"><div class="nm">Verdant ★</div><div class="hx">#6E9E10</div></div></div>
+        <div class="c"><div class="sw" style="background:#4F7510"></div><div class="i"><div class="nm">Moss</div><div class="hx">#4F7510</div></div></div>
+        <div class="c"><div class="sw" style="background:#2F4A0C"></div><div class="i"><div class="nm">Pine</div><div class="hx">#2F4A0C</div></div></div>
+        <div class="c"><div class="sw" style="background:#16230A"></div><div class="i"><div class="nm">Field</div><div class="hx">#16230A</div></div></div>
+      </div>
+      <div class="neut">
+        <div class="n"><div class="nsw" style="background:#1A2230"></div><div><b>Ink</b><span>#1A2230 · text</span></div></div>
+        <div class="n"><div class="nsw" style="background:#555555"></div><div><b>Grey</b><span>#555555 · captions</span></div></div>
+        <div class="n"><div class="nsw" style="background:#8A9384"></div><div><b>Grey Light</b><span>#8A9384 · folios</span></div></div>
+        <div class="n"><div class="nsw" style="background:#F4F6F1;border-color:#D9DEE5"></div><div><b>Light Fill</b><span>#F4F6F1 · house white</span></div></div>
+        <div class="n"><div class="nsw" style="background:#E3E7DE"></div><div><b>Hair</b><span>#E3E7DE · borders</span></div></div>
+        <div class="n"><div class="nsw" style="background:#FFFFFF;border-color:#D9DEE5"></div><div><b>White</b><span>#FFFFFF · ground</span></div></div>
+      </div>
+    </section>
+
+    <!-- TYPE -->
+    <section>
+      <div class="sec-head"><h2><span class="n">4</span>Type — two families</h2></div>
+      <div class="type">
+        <div class="tcard"><div class="big">Spectral</div><div class="role">Speaks &amp; reflects</div><div class="meta">Display, titles, lede, big numbers, and the one reflective <em>italic</em> line that closes a page. Weights 500–700. Office fallback: Georgia.</div></div>
+        <div class="tcard sans"><div class="big">Inter</div><div class="role">Explains</div><div class="meta">Body at 1.6 line-height, labels, captions, UI, data. SemiBold only for lead-in words or tracked-caps labels — never mid-sentence emphasis. Office fallback: Arial.</div></div>
+      </div>
+    </section>
+
+    <!-- LOGO -->
+    <section>
+      <div class="sec-head"><h2><span class="n">5</span>The logo</h2></div>
+      <p class="lede">A woven Celtic knot — four loops returning to their source. Verdant on light, white on Pine/Field. Clear space ≥ one loop; never below 32&nbsp;px on screen or 0.5&nbsp;in in print.</p>
+      <div class="logos">
+        <div class="lg"><div class="box"><img src="assets/logo-verdant.png" alt="primary lockup" /></div><div class="cap">Primary · stacked lockup <code>logo-verdant.png</code></div></div>
+        <div class="lg"><div class="box"><img src="assets/icon-verdant.png" alt="mark" /></div><div class="cap">Mark · favicon &amp; social <code>icon-verdant.png</code></div></div>
+        <div class="lg"><div class="box dark"><img src="assets/knot-white.png" alt="reversed mark" /></div><div class="cap">Reversed · on Pine/Field <code>knot-white.png</code></div></div>
+      </div>
+      <div class="nono">
+        <b>Never</b>
+        <ul>
+          <li>Recolor the mark or place it on an off-brand color.</li>
+          <li>Stretch, squash, or rotate it.</li>
+          <li>Add gradients, shadows, or a containing box.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- VOICE -->
+    <section>
+      <div class="sec-head"><h2><span class="n">6</span>Voice</h2></div>
+      <p class="lede">Warm, clear, convicted. Authority through economy, not volume.</p>
+      <div class="cols">
+        <div class="rulebox do"><h4>Do</h4><ul>
+          <li>“We help communities reimagine what's possible.”</li>
+          <li>“We build with, not for.”</li>
+          <li>“The street typology decision is worth $6–17M.”</li>
+        </ul></div>
+        <div class="rulebox dont"><h4>Don't</h4><ul>
+          <li>“We deliver comprehensive revitalization solutions.”</li>
+          <li>“We execute stakeholder engagement protocols.”</li>
+          <li>“It is worth noting that value may be created.”</li>
+        </ul></div>
+      </div>
+      <div class="nono">
+        <b>Non-negotiables</b>
+        <ul>
+          <li>One signature element per page (a band, a watercolor, or the ribbon — never two).</li>
+          <li>Findings in ranges, never point estimates ($6–17M, not $11M).</li>
+          <li>Sections separate by weight and rule, not by adding hues.</li>
+          <li>No jargon, corporate clichés, exclamation marks, or the retired words: “place-strengthening,” “strategy with soul.”</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SUBMIT -->
+    <section>
+      <div class="sec-head"><h2><span class="n">7</span>Submitting work</h2></div>
+      <div class="submit">
+        <p>Send editable source files (AI/PSD/Figma/InDesign) <b>plus</b> a print-ready PDF and any exported PNG/SVG. Package new assets in the kit's folder structure so they drop straight in. Start each job from the <a href="project-brief-template.html">project brief</a>.</p>
+        <div class="c">
+          <a href="mailto:jarah@virtuouscycle.dev">jarah@virtuouscycle.dev</a><br/>
+          (850) 418-9089<br/>
+          virtuouscycle.dev
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer><div class="wrap">Virtuous Cycle LLC · Contractor handoff · VC-BRAND-2026-02 · <a href="index.html">Brand kit home</a></div></footer>
+
+</body>
+</html>
