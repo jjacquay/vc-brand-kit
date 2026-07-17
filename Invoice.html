@@ -1,0 +1,985 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Virtuous Cycle — Invoice VC-DIO-2026-04</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<style>
+  :root {
+    --vc-green: #6E9E10;
+    --vc-green-deep: #4F7510;
+    --vc-green-soft: #E8F0D4;
+    --vc-green-tint: #F2F7E8;
+    --vc-paper: #FFFFFF;
+    --vc-paper-edge: #EFEFE9;
+    --vc-ink: #1A2230;
+    --vc-ink-soft: #555555;
+    --vc-rule: #E3E7DE;
+    --vc-rule-soft: #EEF1EA;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #DBDED3;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--vc-ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Screen view: present the invoice on a stage */
+  .stage {
+    min-height: 100vh;
+    padding: 56px 24px 96px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  /* The page — sized to US Letter at 96dpi (8.5 x 11) */
+  .page {
+    width: 816px;
+    min-height: 1056px;
+    background: var(--vc-paper);
+    box-shadow:
+      0 1px 0 rgba(0,0,0,0.04),
+      0 30px 60px -20px rgba(47, 74, 12, 0.18),
+      0 12px 24px -8px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+    color: var(--vc-ink);
+    /* Subtle paper texture via layered gradients */
+    background-image:
+      radial-gradient(ellipse 120% 60% at 50% 0%, rgba(110, 158, 16, 0.03), transparent 60%),
+      radial-gradient(ellipse 60% 30% at 100% 100%, rgba(110, 158, 16, 0.025), transparent 70%);
+  }
+
+  /* Top accent rule — thin double rule echoing classic letterhead */
+  .top-rules {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 8px;
+    background:
+      linear-gradient(to bottom, var(--vc-green) 3px, transparent 3px, transparent 6px, var(--vc-green) 6px, var(--vc-green) 7px, transparent 7px);
+  }
+
+  .page-inner {
+    padding: 64px 64px 56px;
+    position: relative;
+  }
+
+  /* ============================== HEADER ============================== */
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: flex-start;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--vc-rule);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .brand-mark {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .brand-wordmark {
+    font-family: 'Spectral', serif;
+    font-weight: 600;
+    color: var(--vc-green);
+    font-size: 26px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .brand-tagline {
+    font-family: 'Spectral', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--vc-ink-soft);
+    letter-spacing: 0.01em;
+    line-height: 1.3;
+  }
+
+  .brand-tagline .ac {
+    color: var(--vc-green-deep);
+  }
+
+  .invoice-stamp {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .invoice-stamp .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--vc-ink-soft);
+  }
+
+  .invoice-stamp .word {
+    font-family: 'Spectral', serif;
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 1;
+    color: var(--vc-ink);
+    letter-spacing: -0.01em;
+    margin-top: 2px;
+  }
+
+  .invoice-stamp .num {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--vc-green-deep);
+    margin-top: 6px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ============================== SUBHEAD BAND ============================== */
+  .subhead {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 28px;
+    margin-bottom: 36px;
+    border: 1px solid var(--vc-rule);
+    background: linear-gradient(180deg, var(--vc-green-tint) 0%, var(--vc-paper) 100%);
+  }
+
+  .subhead-cell {
+    padding: 14px 18px;
+    border-right: 1px solid var(--vc-rule);
+  }
+
+  .subhead-cell:last-child { border-right: none; }
+
+  .subhead-cell .k {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--vc-ink-soft);
+    margin-bottom: 6px;
+  }
+
+  .subhead-cell .v {
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--vc-ink);
+    letter-spacing: -0.005em;
+  }
+
+  .subhead-cell .v.serif {
+    font-family: 'Spectral', serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.1;
+  }
+
+  /* ============================== PARTIES ============================== */
+  .parties {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 36px;
+  }
+
+  .party-block .role {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--vc-green);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .party-block .role::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--vc-rule-soft);
+  }
+
+  .party-block .name {
+    font-family: 'Spectral', serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--vc-ink);
+    line-height: 1.15;
+    margin-bottom: 2px;
+  }
+
+  .party-block .title {
+    font-family: 'Spectral', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--vc-green-deep);
+    margin-bottom: 8px;
+  }
+
+  .party-block .org {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--vc-ink);
+    margin-bottom: 6px;
+  }
+
+  .party-block .addr {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--vc-ink-soft);
+    line-height: 1.55;
+  }
+
+  .party-block .contact {
+    margin-top: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10.5px;
+    color: var(--vc-ink-soft);
+    line-height: 1.55;
+  }
+
+  /* ============================== ENGAGEMENT (replaces single-row line item) ============================== */
+  .engagement {
+    margin-bottom: 28px;
+  }
+
+  .section-title {
+    font-family: 'Spectral', serif;
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--vc-green);
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--vc-rule);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .section-title .pill {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: var(--vc-ink-soft);
+    text-transform: uppercase;
+  }
+
+  .engagement-headline {
+    font-family: 'Spectral', serif;
+    font-size: 26px;
+    line-height: 1.18;
+    color: var(--vc-ink);
+    margin-bottom: 6px;
+    font-weight: 500;
+    text-wrap: pretty;
+  }
+
+  .engagement-headline em {
+    font-style: italic;
+    color: var(--vc-green);
+    font-weight: 500;
+  }
+
+  .engagement-period {
+    font-family: 'Inter', sans-serif;
+    font-size: 10.5px;
+    color: var(--vc-ink-soft);
+    letter-spacing: 0.06em;
+    margin-bottom: 18px;
+  }
+
+  /* Activity tags — pills echoing the site */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+
+  .tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: var(--vc-green-soft);
+    color: var(--vc-green-deep);
+    letter-spacing: 0.005em;
+  }
+
+  /* Activity log — itemized scope of work as deliverables */
+  .activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 8px;
+    border-top: 1px solid var(--vc-rule-soft);
+  }
+
+  .activity {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 12px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--vc-rule-soft);
+    align-items: baseline;
+  }
+
+  .activity .num {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: var(--vc-green);
+    letter-spacing: 0.04em;
+    padding-top: 2px;
+  }
+
+  .activity .body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .activity .title {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--vc-ink);
+    letter-spacing: -0.005em;
+  }
+
+  .activity .detail {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--vc-ink-soft);
+    line-height: 1.5;
+  }
+
+  /* ============================== TOTALS ============================== */
+  .totals {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 48px;
+    margin-top: 28px;
+    align-items: start;
+  }
+
+  .totals-note {
+    font-family: 'Spectral', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--vc-ink-soft);
+    line-height: 1.5;
+    padding-top: 10px;
+    border-top: 1px solid var(--vc-rule-soft);
+  }
+
+  .totals-table {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .totals-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 9px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--vc-ink-soft);
+    border-bottom: 1px solid var(--vc-rule-soft);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .totals-row .v {
+    font-weight: 500;
+    color: var(--vc-ink);
+  }
+
+  .totals-row.due {
+    margin-top: 8px;
+    padding: 14px 18px;
+    background: #2F4A0C;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    align-items: baseline;
+  }
+
+  .totals-row.due .k {
+    font-family: 'Spectral', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 0.01em;
+  }
+
+  .totals-row.due .v {
+    font-family: 'Spectral', serif;
+    font-size: 28px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  /* ============================== PAYMENT ============================== */
+  .payment {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .pay-card {
+    border: 1px solid var(--vc-rule);
+    background: #fff;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+  }
+
+  .pay-card .method {
+    font-family: 'Spectral', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--vc-green);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .pay-card .method::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: var(--vc-green);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .pay-card .lines {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--vc-ink-soft);
+    line-height: 1.55;
+  }
+
+  .pay-card .lines strong {
+    color: var(--vc-ink);
+    font-weight: 600;
+  }
+
+  .pay-card.zelle {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .qr-stub {
+    width: 78px;
+    height: 78px;
+    border: 1px solid var(--vc-rule);
+    background:
+      linear-gradient(45deg, var(--vc-ink) 25%, transparent 25%, transparent 75%, var(--vc-ink) 75%),
+      linear-gradient(45deg, var(--vc-ink) 25%, transparent 25%, transparent 75%, var(--vc-ink) 75%),
+      var(--vc-paper);
+    background-size: 12px 12px;
+    background-position: 0 0, 6px 6px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .qr-stub::after {
+    content: 'QR';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.85);
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: var(--vc-ink-soft);
+    letter-spacing: 0.1em;
+  }
+
+  /* ============================== FOOTER ============================== */
+  .footer {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid var(--vc-rule);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 18px;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 9.5px;
+    color: var(--vc-ink-soft);
+    letter-spacing: 0.05em;
+  }
+
+  .footer .center {
+    text-align: center;
+    font-family: 'Spectral', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--vc-green-deep);
+    letter-spacing: 0.02em;
+  }
+
+  .footer .right {
+    text-align: right;
+  }
+
+  /* ============================== HERO BAND (toggleable) ============================== */
+  .hero-band {
+    height: 150px;
+    margin: 0 -64px 30px;
+    background-image: url('assets/hero-watercolor.png');
+    background-size: cover;
+    background-position: center 42%;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid var(--vc-rule);
+    border-bottom: 1px solid var(--vc-rule);
+  }
+
+  .hero-band::before {
+    /* Soft fade into the paper at top and bottom so the strip sits in the page */
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 22%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.55) 100%);
+  }
+
+  .hero-band::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 14px;
+    background: linear-gradient(180deg, transparent, rgba(47, 74, 12, 0.18));
+  }
+
+  .hero-band .hero-caption {
+    position: absolute;
+    left: 64px;
+    bottom: 10px;
+    font-family: 'Spectral', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--vc-green-deep);
+    background: rgba(255, 255, 255, 0.82);
+    padding: 3px 11px;
+    border-radius: 2px;
+    letter-spacing: 0.01em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .page.compact .hero-band .hero-caption { left: 56px; }
+
+  /* ============================== PRINT ============================== */
+  @media print {
+    @page { size: letter; margin: 0; }
+    body { background: white; }
+    .stage { padding: 0; min-height: 0; }
+    .page {
+      box-shadow: none;
+      width: 8.5in;
+      min-height: 11in;
+    }
+  }
+
+  /* density variants */
+  .page.compact .page-inner { padding: 48px 56px 44px; }
+  .page.compact .subhead-cell { padding: 11px 14px; }
+  .page.compact .activity { padding: 9px 0; }
+  .page.compact .parties { gap: 36px; margin-bottom: 28px; }
+  .page.compact .engagement-headline { font-size: 22px; }
+  .page.compact .invoice-stamp .word { font-size: 38px; }
+  .page.compact .hero-band { height: 118px; margin: 0 -56px 24px; }
+  .page.airy .hero-band { height: 178px; }
+
+  .page.airy .page-inner { padding: 80px 76px 64px; }
+  .page.airy .parties { gap: 56px; margin-bottom: 44px; }
+  .page.airy .engagement-headline { font-size: 30px; }
+</style>
+
+</head>
+<body>
+
+<div class="stage">
+  <div id="root"></div>
+</div>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+const DEFAULTS = /*EDITMODE-BEGIN*/{
+  "density": "default",
+  "showHero": false,
+  "accentStyle": "solid",
+  "showQr": true,
+  "scopeStyle": "narrative",
+  "descriptor": "signature"
+}/*EDITMODE-END*/;
+
+// Brand messaging lines (VC-BRAND-2026-02). Accent is always the trailing phrase,
+// colored Moss for legibility at small size. Default is the signature line;
+// switch via the Descriptor tweak.
+const DESCRIPTORS = {
+  "signature":  { label: "Land, livelihood & the common good",              lead: "Land, livelihood & the ",            accent: "common good" },
+  "tagline":    { label: "People-powered. Place-rooted. Purpose-driven.",   lead: "People-powered. Place-rooted. ",     accent: "Purpose-driven." },
+  "capability": { label: "PPP + Development Advisory for financeable, durable projects", lead: "PPP + Development Advisory for ", accent: "financeable, durable projects" },
+  "motto":      { label: "Development that compounds",                      lead: "Development that ",                  accent: "compounds" }
+};
+const DESCRIPTOR_OPTIONS = Object.entries(DESCRIPTORS).map(([value, d]) => ({ value, label: d.label }));
+
+// Knot-style brand mark (interlocking squares, abstracted from the site logo).
+// This is an original mark inspired by the brand color and silhouette — not a recreation.
+function BrandMark({ size = 44 }) {
+  return (
+    <svg className="brand-mark" width={size} height={size} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Virtuous Cycle mark">
+      <defs>
+        <clipPath id="vcOuter">
+          <rect x="6" y="6" width="36" height="36" />
+          <rect x="22" y="22" width="36" height="36" />
+        </clipPath>
+      </defs>
+      {/* Two interlocking rounded squares forming a continuous loop */}
+      <rect x="6" y="6" width="36" height="36" rx="3" stroke="#6E9E10" strokeWidth="3.5" fill="none" />
+      <rect x="22" y="22" width="36" height="36" rx="3" stroke="#6E9E10" strokeWidth="3.5" fill="none" />
+      {/* Interlock cuts to suggest weaving */}
+      <path d="M22 22 L42 22" stroke="#6E9E10" strokeWidth="3.5" fill="none" />
+      <path d="M22 42 L42 42" stroke="#FFFFFF" strokeWidth="4.5" fill="none" />
+      <path d="M22 42 L42 42" stroke="#6E9E10" strokeWidth="3.5" fill="none" />
+    </svg>
+  );
+}
+
+// More accurate knot — woven over/under
+function KnotMark({ size = 44 }) {
+  return (
+    <svg className="brand-mark" width={size} height={size} viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="Virtuous Cycle mark">
+      {/* Square A (top-left) - drawn first */}
+      <rect x="8" y="8" width="32" height="32" rx="2" stroke="#6E9E10" strokeWidth="3.5" fill="none" />
+      {/* Square B (bottom-right) over A's right edge */}
+      <rect x="24" y="24" width="32" height="32" rx="2" stroke="#6E9E10" strokeWidth="3.5" fill="none" />
+      {/* Cover-up to make A's bottom edge appear under B's top edge (woven look) */}
+      <line x1="24" y1="24" x2="40" y2="24" stroke="#FFFFFF" strokeWidth="5" />
+      <line x1="24" y1="24" x2="40" y2="24" stroke="#6E9E10" strokeWidth="3.5" />
+      {/* Make A's bottom edge appear to weave UNDER B */}
+      <line x1="24" y1="40" x2="40" y2="40" stroke="#FFFFFF" strokeWidth="5" />
+      <line x1="24" y1="40" x2="40" y2="40" stroke="#6E9E10" strokeWidth="3.5" />
+      {/* B's left edge weaving under A's right edge */}
+      <line x1="40" y1="24" x2="40" y2="40" stroke="#FFFFFF" strokeWidth="5" />
+      <line x1="40" y1="24" x2="40" y2="40" stroke="#6E9E10" strokeWidth="3.5" />
+    </svg>
+  );
+}
+
+const ACTIVITIES = [
+  { title: "Beulah Road property site visit", detail: "On-site walkthrough and condition review of the Diocese's Beulah Road parcel; field notes on access, topography, and adjacency to OLF-8." },
+  { title: "Stakeholder interviews", detail: "Structured conversations with Diocesan leadership and adjacent public-sector counterparties to surface objectives and constraints." },
+  { title: "FDOT public records request", detail: "Drafted and submitted records request covering corridor planning and right-of-way intelligence (response pending)." },
+  { title: "GMC design discussion materials", detail: "Prepared design discussion deck and corridor intelligence briefing for the GMC working session." },
+  { title: "Civil engineering scope coordination", detail: "Scoped and coordinated civil engineering engagement with Crabtree Group for forthcoming feasibility work." },
+  { title: "Precedent & best-practices research", detail: "Comparable PPP and ecclesial land-disposition precedents, with structuring lessons applicable to the Beulah Road context." },
+  { title: "Bishop, CFO, and COO memoranda", detail: "Drafted leadership-level memos summarizing options, risks, and recommended next steps for principal review." }
+];
+
+const TAGS = ["PPP", "Site Selection", "Deal Structuring", "Civic Infrastructure", "Public Records", "Stakeholder Engagement"];
+
+function App() {
+  const [tweaks, setTweak] = useTweaks(DEFAULTS);
+  const { density, showHero, accentStyle, showQr, scopeStyle, descriptor } = tweaks;
+  const desc = DESCRIPTORS[descriptor] || DESCRIPTORS['signature'];
+
+  return (
+    <>
+      <div className={`page ${density}`} data-screen-label="01 Invoice">
+        <div className="top-rules" />
+
+        <div className="page-inner">
+
+          {/* HEADER */}
+          <header className="header">
+            <div className="brand">
+              <img className="brand-mark" src="assets/icon-verdant.png" alt="Virtuous Cycle" />
+              <div className="brand-text">
+                <div className="brand-wordmark">Virtuous Cycle</div>
+                <div className="brand-tagline">{desc.lead}<em className="ac">{desc.accent}</em></div>
+              </div>
+            </div>
+
+            <div className="invoice-stamp">
+              <div className="label">Statement of Services</div>
+              <div className="word">Invoice</div>
+              <div className="num">№ VC-DIO-2026-04</div>
+            </div>
+          </header>
+
+          {/* HERO BAND (optional) */}
+          {showHero && (
+            <div className="hero-band" aria-hidden="true">
+              <div className="hero-caption">Pensacola Bay corridor · April 2026</div>
+            </div>
+          )}
+
+          {/* SUBHEAD: dates + terms */}
+          <div className="subhead">
+            <div className="subhead-cell">
+              <div className="k">Invoice Date</div>
+              <div className="v serif">April 30, 2026</div>
+            </div>
+            <div className="subhead-cell">
+              <div className="k">Service Period</div>
+              <div className="v serif">April 1 – 30, 2026</div>
+            </div>
+            <div className="subhead-cell">
+              <div className="k">Terms</div>
+              <div className="v serif">Due on Receipt</div>
+            </div>
+          </div>
+
+          {/* PARTIES */}
+          <div className="parties">
+            <div className="party-block">
+              <div className="role">From</div>
+              <div className="name">Jarah Jacquay</div>
+              <div className="title">Managing Principal</div>
+              <div className="org">Virtuous Cycle LLC</div>
+              <div className="addr">
+                2325 Aegean Terrace<br/>
+                Pensacola, FL 32503
+              </div>
+              <div className="contact">
+                jarah@virtuouscycle.dev<br/>
+                (850) 418-9089
+              </div>
+            </div>
+
+            <div className="party-block">
+              <div className="role">Billed To</div>
+              <div className="name">David Kimbell</div>
+              <div className="title">Chief Financial Officer</div>
+              <div className="org">Catholic Diocese of Pensacola–Tallahassee</div>
+              <div className="addr">
+                11 North B Street<br/>
+                Pensacola, FL 32502
+              </div>
+            </div>
+          </div>
+
+          {/* ENGAGEMENT */}
+          <section className="engagement">
+            <div className="section-title">
+              <span>Engagement</span>
+              <span className="pill">Monthly Retainer</span>
+            </div>
+
+            <h2 className="engagement-headline">
+              Strategic advisory for the Diocese's <em>Beulah Road</em> property and associated <em>OLF-8 / Outlying Fields</em> planning and transaction matters.
+            </h2>
+            <div className="engagement-period">SCOPE · APR 2026 · COORDINATION · RESEARCH · DRAFTING</div>
+
+            <div className="tags">
+              {TAGS.map(t => <span key={t} className="tag">{t}</span>)}
+            </div>
+
+            {scopeStyle === "itemized" && (
+              <div className="activity-list">
+                {ACTIVITIES.map((a, i) => (
+                  <div className="activity" key={i}>
+                    <div className="num">{String(i + 1).padStart(2, '0')}</div>
+                    <div className="body">
+                      <div className="title">{a.title}</div>
+                      <div className="detail">{a.detail}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {scopeStyle === "narrative" && (
+              <p style={{
+                fontFamily: "'Spectral', serif",
+                fontSize: 16,
+                lineHeight: 1.55,
+                color: 'var(--vc-ink)',
+                margin: 0,
+                paddingTop: 8
+              }}>
+                April work included a Beulah Road property site visit, stakeholder interviews,
+                an FDOT public records request (pending), preparation of GMC design discussion
+                materials and corridor intelligence briefing, civil engineering scope coordination
+                with Crabtree Group, precedent and best-practices research, and drafting of
+                Bishop-, CFO-, and COO-level memoranda.
+              </p>
+            )}
+          </section>
+
+          {/* TOTALS */}
+          <div className="totals">
+            <div className="totals-note">
+              Prepared pursuant to the Independent Contractor Advisory Agreement
+              effective March 1, 2026. No reimbursable expenses are included on this invoice.
+            </div>
+
+            <div className="totals-table">
+              <div className="totals-row">
+                <span className="k">Monthly retainer</span>
+                <span className="v">$1,500.00</span>
+              </div>
+              <div className="totals-row">
+                <span className="k">Reimbursables</span>
+                <span className="v">—</span>
+              </div>
+              <div className="totals-row">
+                <span className="k">Subtotal</span>
+                <span className="v">$1,500.00</span>
+              </div>
+              <div className="totals-row due">
+                <span className="k">Amount Due</span>
+                <span className="v">$1,500.00</span>
+              </div>
+            </div>
+          </div>
+
+          {/* PAYMENT */}
+          <section className="payment">
+            <div className="pay-card">
+              <div className="method">By Check</div>
+              <div className="lines">
+                Made payable to <strong>Virtuous Cycle LLC</strong><br/>
+                2325 Aegean Terrace<br/>
+                Pensacola, FL 32503
+              </div>
+            </div>
+
+            <div className="pay-card zelle">
+              <div>
+                <div className="method">By Zelle</div>
+                <div className="lines">
+                  <strong>jarah@virtuouscycle.dev</strong><br/>
+                  {showQr ? "Scan code to pay →" : "Send to email"}
+                </div>
+              </div>
+              {showQr && <div className="qr-stub" aria-label="Zelle QR placeholder" />}
+            </div>
+          </section>
+
+          {/* FOOTER */}
+          <footer className="footer">
+            <div>VC-DIO-2026-04</div>
+            <div className="center">Thank you — <em style={{fontStyle:'italic'}}>Virtuous Cycle</em></div>
+            <div className="right">Page 1 of 1</div>
+          </footer>
+
+        </div>
+      </div>
+
+      <TweaksPanel title="Invoice Tweaks">
+        <TweakSection title="Descriptor">
+          <TweakSelect
+            label="Line"
+            value={descriptor}
+            onChange={v => setTweak('descriptor', v)}
+            options={DESCRIPTOR_OPTIONS}
+          />
+        </TweakSection>
+
+        <TweakSection title="Layout">
+          <TweakRadio
+            label="Density"
+            value={density}
+            onChange={v => setTweak('density', v)}
+            options={[
+              {value: 'compact', label: 'Compact'},
+              {value: 'default', label: 'Default'},
+              {value: 'airy', label: 'Airy'}
+            ]}
+          />
+        </TweakSection>
+
+        <TweakSection title="Scope of work">
+          <TweakRadio
+            label="Style"
+            value={scopeStyle}
+            onChange={v => setTweak('scopeStyle', v)}
+            options={[
+              {value: 'itemized', label: 'Itemized'},
+              {value: 'narrative', label: 'Narrative'}
+            ]}
+          />
+        </TweakSection>
+
+        <TweakSection title="Brand band">
+          <TweakToggle
+            label="Show watercolor band"
+            value={showHero}
+            onChange={v => setTweak('showHero', v)}
+          />
+        </TweakSection>
+
+        <TweakSection title="Payment">
+          <TweakToggle
+            label="Show Zelle QR"
+            value={showQr}
+            onChange={v => setTweak('showQr', v)}
+          />
+        </TweakSection>
+
+        <TweakSection title="Print">
+          <TweakButton onClick={() => window.print()}>Print / Save PDF</TweakButton>
+        </TweakSection>
+      </TweaksPanel>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+
+</body>
+</html>
